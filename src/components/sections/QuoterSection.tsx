@@ -1,36 +1,140 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
-import { Package, Truck, Users, MapPin, Box, Scale, DollarSign, Zap, CheckCircle2, Table2, ArrowRight } from "lucide-react"
+import { MapPin, Scale, Phone, Mail, CheckCircle2, Loader2, AlertCircle } from "lucide-react"
+import { quoterAPI, type Location, type QuoteRequest, type QuoteResponse } from "@/services/quoter-api"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 export function QuoterSection() {
-    const [result, setResult] = useState<number | null>(null)
+    // State for locations
+    const [origins, setOrigins] = useState<Location[]>([])
+    const [destinations, setDestinations] = useState<Location[]>([])
+    const [loadingLocations, setLoadingLocations] = useState(false)
+
+    // State for form
+    const [selectedOrigin, setSelectedOrigin] = useState("")
+    const [selectedDestination, setSelectedDestination] = useState("")
+    const [formData, setFormData] = useState({
+        largo: "",
+        ancho: "",
+        alto: "",
+        peso: "",
+        telefono: "",
+        email: "",
+    })
+
+    // State for quote result
+    const [result, setResult] = useState<QuoteResponse | null>(null)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState<string | null>(null)
     const [activeTab, setActiveTab] = useState("personas")
 
-    const handleQuote = (e: React.FormEvent) => {
-        e.preventDefault()
-        setLoading(true)
-        // Simulate API call for Demo
-        setTimeout(() => {
-            setResult(Math.floor(Math.random() * 20000) + 5000)
-            setLoading(false)
-        }, 1500)
+    // Load origins on mount
+    useEffect(() => {
+        loadOrigins()
+    }, [])
+
+    // Load destinations when origin changes
+    useEffect(() => {
+        if (selectedOrigin) {
+            loadDestinationsByOrigin(selectedOrigin)
+        }
+    }, [selectedOrigin])
+
+    const loadOrigins = async () => {
+        try {
+            setLoadingLocations(true)
+            const data = await quoterAPI.getOrigins()
+            setOrigins(data)
+        } catch (err) {
+            console.error("Error loading origins:", err)
+            setError("No se pudieron cargar las ciudades de origen")
+        } finally {
+            setLoadingLocations(false)
+        }
     }
 
-    const rates = [
-        { dest: "Valparaíso / Viña", price: "4.990", time: "24 hrs" },
-        { dest: "La Serena / Coquimbo", price: "8.990", time: "24 - 48 hrs" },
-        { dest: "Concepción / Talcahuano", price: "9.990", time: "24 - 48 hrs" },
-        { dest: "Antofagasta", price: "14.990", time: "48 - 72 hrs" },
-        { dest: "Puerto Montt", price: "12.990", time: "48 - 72 hrs" },
-    ]
+    const loadDestinationsByOrigin = async (originId: string) => {
+        try {
+            setLoadingLocations(true)
+            const data = await quoterAPI.getDestinationsByOrigin(originId)
+            setDestinations(data)
+        } catch (err) {
+            console.error("Error loading destinations:", err)
+            // Fallback to all destinations
+            try {
+                const allDestinations = await quoterAPI.getDestinations()
+                setDestinations(allDestinations)
+            } catch {
+                setError("No se pudieron cargar las ciudades de destino")
+            }
+        } finally {
+            setLoadingLocations(false)
+        }
+    }
+
+    const handleQuote = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setError(null)
+        setResult(null)
+
+        // Validation
+        if (!selectedOrigin || !selectedDestination) {
+            setError("Por favor selecciona origen y destino")
+            return
+        }
+
+        if (!formData.peso || !formData.largo || !formData.ancho || !formData.alto) {
+            setError("Por favor completa todas las dimensiones y peso")
+            return
+        }
+
+        if (!formData.telefono || !formData.email) {
+            setError("Por favor ingresa tu teléfono y email")
+            return
+        }
+
+        try {
+            setLoading(true)
+
+            const quoteRequest: QuoteRequest = {
+                selected: "CGR", // Cargo service
+                origen: selectedOrigin,
+                destino: selectedDestination,
+                pago: "EFE", // Efectivo (cash)
+                lugar: "DOM", // Domicilio (home delivery)
+                largo: formData.largo,
+                ancho: formData.ancho,
+                alto: formData.alto,
+                peso: formData.peso,
+                telefono: formData.telefono,
+                email: formData.email,
+            }
+
+            const response = await quoterAPI.calculateQuote(quoteRequest)
+            setResult(response)
+        } catch (err: any) {
+            console.error("Error calculating quote:", err)
+            setError(err.message || "No se pudo calcular la cotización")
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    const handleInputChange = (field: string, value: string) => {
+        setFormData(prev => ({ ...prev, [field]: value }))
+    }
 
     return (
         <section id="cotizador" className="w-full py-24 bg-white border-t border-gray-100">
@@ -40,7 +144,7 @@ export function QuoterSection() {
                         Cotiza tu <span className="text-[#003fa2]">Envío</span>
                     </h2>
                     <p className="text-gray-500 text-lg">
-                        Elige tu perfil y obtén la mejor opción para tu carga.
+                        Obtén una cotización instantánea para tu envío.
                     </p>
                 </ScrollReveal>
 
@@ -72,40 +176,147 @@ export function QuoterSection() {
                                         <h3 className="text-2xl font-black uppercase text-gray-900 mb-2">Calculadora Express</h3>
                                         <p className="text-sm text-gray-400 font-medium">Cotización inmediata para paquetería.</p>
                                     </div>
+
+                                    {error && (
+                                        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded flex items-start gap-3">
+                                            <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <p className="text-sm text-red-800">{error}</p>
+                                        </div>
+                                    )}
+
                                     <form onSubmit={handleQuote} className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            {/* Origin */}
                                             <div className="space-y-2">
                                                 <Label htmlFor="origin" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
-                                                <div className="relative">
-                                                    <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                                    <Input id="origin" placeholder="Ciudad de origen" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                                </div>
+                                                <Select value={selectedOrigin} onValueChange={setSelectedOrigin} disabled={loadingLocations}>
+                                                    <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold">
+                                                        <SelectValue placeholder={loadingLocations ? "Cargando..." : "Selecciona origen"} />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {origins.map((location) => (
+                                                            <SelectItem key={location.id} value={location.id}>
+                                                                {location.name}
+                                                            </SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
                                             </div>
+
+                                            {/* Destination */}
                                             <div className="space-y-2">
                                                 <Label htmlFor="destination" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
-                                                <div className="relative">
-                                                    <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                                    <Input id="destination" placeholder="Ciudad de destino" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                                </div>
+                                                <Select value={selectedDestination} onValueChange={setSelectedDestination} disabled={!selectedOrigin || loadingLocations}>
+                                                    <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold">
+                                                        <SelectValue placeholder={loadingLocations ? "Cargando..." : "Selecciona destino"} />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {destinations.map((location) => (
+                                                            <SelectItem key={location.id} value={location.id}>
+                                                                {location.name}
+                                                            </SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
                                             </div>
                                         </div>
+
+                                        {/* Dimensions */}
                                         <div className="space-y-2">
                                             <Label className="text-sm font-bold uppercase text-gray-500">Dimensiones (cm)</Label>
                                             <div className="grid grid-cols-3 gap-2">
-                                                <Input placeholder="Largo" type="number" className="h-12 bg-gray-50" />
-                                                <Input placeholder="Ancho" type="number" className="h-12 bg-gray-50" />
-                                                <Input placeholder="Alto" type="number" className="h-12 bg-gray-50" />
+                                                <Input
+                                                    placeholder="Largo"
+                                                    type="number"
+                                                    className="h-12 bg-gray-50"
+                                                    value={formData.largo}
+                                                    onChange={(e) => handleInputChange("largo", e.target.value)}
+                                                    required
+                                                />
+                                                <Input
+                                                    placeholder="Ancho"
+                                                    type="number"
+                                                    className="h-12 bg-gray-50"
+                                                    value={formData.ancho}
+                                                    onChange={(e) => handleInputChange("ancho", e.target.value)}
+                                                    required
+                                                />
+                                                <Input
+                                                    placeholder="Alto"
+                                                    type="number"
+                                                    className="h-12 bg-gray-50"
+                                                    value={formData.alto}
+                                                    onChange={(e) => handleInputChange("alto", e.target.value)}
+                                                    required
+                                                />
                                             </div>
                                         </div>
+
+                                        {/* Weight */}
                                         <div className="space-y-2">
                                             <Label htmlFor="weight" className="text-sm font-bold uppercase text-gray-500">Peso (Kg)</Label>
                                             <div className="relative">
                                                 <Scale className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                                <Input id="weight" placeholder="0.0" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                                <Input
+                                                    id="weight"
+                                                    placeholder="0.0"
+                                                    type="number"
+                                                    step="0.1"
+                                                    className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold"
+                                                    value={formData.peso}
+                                                    onChange={(e) => handleInputChange("peso", e.target.value)}
+                                                    required
+                                                />
                                             </div>
                                         </div>
-                                        <Button disabled={loading} className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4">
-                                            {loading ? "Calculando..." : "Cotizar Ahora"}
+
+                                        {/* Contact Info */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="space-y-2">
+                                                <Label htmlFor="phone" className="text-sm font-bold uppercase text-gray-500">Teléfono</Label>
+                                                <div className="relative">
+                                                    <Phone className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                                    <Input
+                                                        id="phone"
+                                                        placeholder="912345678"
+                                                        type="tel"
+                                                        className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold"
+                                                        value={formData.telefono}
+                                                        onChange={(e) => handleInputChange("telefono", e.target.value)}
+                                                        required
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="email" className="text-sm font-bold uppercase text-gray-500">Email</Label>
+                                                <div className="relative">
+                                                    <Mail className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                                    <Input
+                                                        id="email"
+                                                        placeholder="tu@email.com"
+                                                        type="email"
+                                                        className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold"
+                                                        value={formData.email}
+                                                        onChange={(e) => handleInputChange("email", e.target.value)}
+                                                        required
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <Button
+                                            type="submit"
+                                            disabled={loading}
+                                            className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4"
+                                        >
+                                            {loading ? (
+                                                <>
+                                                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                                                    Calculando...
+                                                </>
+                                            ) : (
+                                                "Cotizar Ahora"
+                                            )}
                                         </Button>
                                     </form>
                                 </div>
@@ -115,11 +326,23 @@ export function QuoterSection() {
                                 {result ? (
                                     <div className="bg-gray-900 p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500">
                                         <div className="relative z-10 text-center space-y-4">
-                                            <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Valor Estimado</p>
-                                            <h3 className="text-6xl font-black text-white">${result.toLocaleString("es-CL")}</h3>
-                                            <p className="text-blue-400 font-medium">IVA Incluido</p>
+                                            <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                                            <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
+                                            <div className="space-y-2">
+                                                {result.price && (
+                                                    <>
+                                                        <h3 className="text-6xl font-black text-white">${result.price.toLocaleString("es-CL")}</h3>
+                                                        <p className="text-blue-400 font-medium">IVA Incluido</p>
+                                                    </>
+                                                )}
+                                                {result.estimatedDays && (
+                                                    <p className="text-gray-300 text-sm">Tiempo estimado: {result.estimatedDays}</p>
+                                                )}
+                                            </div>
                                             <div className="pt-6 border-t border-gray-800">
-                                                <Button className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase">Contratar Servicio</Button>
+                                                <Button className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase">
+                                                    Contratar Servicio
+                                                </Button>
                                             </div>
                                         </div>
                                     </div>
@@ -128,15 +351,28 @@ export function QuoterSection() {
                                         <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
                                             ¿Por qué cotizar con <br /> <span className="text-[#003fa2]">Pullman Cargo?</span>
                                         </h3>
-                                        <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                                            Simula tu envío en tiempo real. Precios transparentes y la red de cobertura más grande de Chile.
-                                        </p>
-                                        <ul className="space-y-3">
-                                            {["Seguimiento 24/7", "Cobertura Arica a Punta Arenas", "Precios Competitivos"].map((item, i) => (
-                                                <li key={i} className="flex items-center gap-3 text-lg font-bold text-gray-700">
-                                                    <CheckCircle2 className="h-5 w-5 text-[#003fa2]" /> {item}
-                                                </li>
-                                            ))}
+                                        <ul className="space-y-4">
+                                            <li className="flex items-start gap-3">
+                                                <CheckCircle2 className="w-6 h-6 text-[#003fa2] flex-shrink-0 mt-1" />
+                                                <div>
+                                                    <p className="font-bold text-gray-900">Tarifas Competitivas</p>
+                                                    <p className="text-sm text-gray-500">Los mejores precios del mercado</p>
+                                                </div>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <CheckCircle2 className="w-6 h-6 text-[#003fa2] flex-shrink-0 mt-1" />
+                                                <div>
+                                                    <p className="font-bold text-gray-900">Cobertura Nacional</p>
+                                                    <p className="text-sm text-gray-500">Llegamos a todo Chile</p>
+                                                </div>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <CheckCircle2 className="w-6 h-6 text-[#003fa2] flex-shrink-0 mt-1" />
+                                                <div>
+                                                    <p className="font-bold text-gray-900">Seguimiento en Tiempo Real</p>
+                                                    <p className="text-sm text-gray-500">Rastrea tu envío en todo momento</p>
+                                                </div>
+                                            </li>
                                         </ul>
                                     </div>
                                 )}
@@ -144,85 +380,10 @@ export function QuoterSection() {
                         </div>
                     </TabsContent>
 
-                    {/* EMPRENDEDORES TAB - CALCULATOR (Demo) */}
+                    {/* EMPRENDEDORES TAB - Same calculator */}
                     <TabsContent value="emprendedores">
-                        <div className="grid lg:grid-cols-2 gap-12 items-start">
-                            <ScrollReveal animation="slide-in-left" className="h-full">
-                                <div className="bg-white border-2 border-gray-100 p-8 shadow-2xl relative">
-                                    <div className="absolute top-0 left-0 w-full h-2 bg-[#003fa2]" />
-                                    <div className="mb-8">
-                                        <h3 className="text-2xl font-black uppercase text-gray-900 mb-2">Cotizador Pyme</h3>
-                                        <p className="text-sm text-gray-400 font-medium">Tarifas preferenciales para emprendedores.</p>
-                                    </div>
-                                    <form onSubmit={handleQuote} className="space-y-6">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            <div className="space-y-2">
-                                                <Label htmlFor="origin-pyme" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
-                                                <div className="relative">
-                                                    <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                                    <Input id="origin-pyme" placeholder="Ciudad de origen" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                                </div>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <Label htmlFor="destination-pyme" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
-                                                <div className="relative">
-                                                    <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                                    <Input id="destination-pyme" placeholder="Ciudad de destino" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label className="text-sm font-bold uppercase text-gray-500">Dimensiones (cm)</Label>
-                                            <div className="grid grid-cols-3 gap-2">
-                                                <Input placeholder="Largo" type="number" className="h-12 bg-gray-50" />
-                                                <Input placeholder="Ancho" type="number" className="h-12 bg-gray-50" />
-                                                <Input placeholder="Alto" type="number" className="h-12 bg-gray-50" />
-                                            </div>
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="weight-pyme" className="text-sm font-bold uppercase text-gray-500">Peso (Kg)</Label>
-                                            <div className="relative">
-                                                <Scale className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                                <Input id="weight-pyme" placeholder="0.0" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                            </div>
-                                        </div>
-                                        <Button disabled={loading} className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4">
-                                            {loading ? "Calculando..." : "Cotizar Ahora"}
-                                        </Button>
-                                    </form>
-                                </div>
-                            </ScrollReveal>
-
-                            <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
-                                {result ? (
-                                    <div className="bg-gray-900 p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500">
-                                        <div className="relative z-10 text-center space-y-4">
-                                            <p className="text-blue-400 uppercase tracking-widest font-bold text-sm">Tarifa Emprendedor</p>
-                                            <h3 className="text-6xl font-black text-white">${(result * 0.85).toLocaleString("es-CL", { maximumFractionDigits: 0 })}</h3>
-                                            <p className="text-gray-400 font-medium">IVA Incluido (15% DCTO aplicado)</p>
-                                            <div className="pt-6 border-t border-gray-800">
-                                                <Button className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase">Contratar con Descuento</Button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="relative">
-                                        <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
-                                            Impulsa tu <br /> <span className="text-[#003fa2]">Emprendimiento</span>
-                                        </h3>
-                                        <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                                            Accede a tarifas preferenciales y herramientas de gestión pensadas para tu negocio.
-                                        </p>
-                                        <ul className="space-y-3">
-                                            {["Descuentos por Volumen", "Ejecutivo de Cuenta", "Retiro a Domicilio"].map((item, i) => (
-                                                <li key={i} className="flex items-center gap-3 text-lg font-bold text-gray-700">
-                                                    <CheckCircle2 className="h-5 w-5 text-[#003fa2]" /> {item}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
-                            </ScrollReveal>
+                        <div className="text-center py-12">
+                            <p className="text-gray-500">Utiliza la misma calculadora en la pestaña "Personas" para obtener tu cotización.</p>
                         </div>
                     </TabsContent>
                 </Tabs>
