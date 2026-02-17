@@ -1,15 +1,16 @@
-// API Configuration - PullmanGo Integration
+// API Configuration - Using Next.js API Routes as Proxy
+// This avoids CORS issues by making requests server-side
 export const API_CONFIG = {
-    BASE_URL: 'https://www.pullmango.cl',
+    BASE_URL: '', // Empty for relative URLs (same origin)
     ENDPOINTS: {
-        GET_ORIGINS: '/api/origenes-cotizador',
-        GET_DESTINATIONS: '/api/destinos-cotizador',
-        GET_DESTINATIONS_BY_ORIGIN: '/api/destinos-cotizador-atlas',
-        CALCULATE_QUOTE: '/api/cotizar',
+        GET_ORIGINS: '/api/quoter/origins',
+        GET_DESTINATIONS: '/api/quoter/destinations',
+        GET_DESTINATIONS_BY_ORIGIN: '/api/quoter/destinations-by-origin',
+        CALCULATE_QUOTE: '/api/quoter/calculate',
     },
     HEADERS: {
-        'accept': 'application/json, text/plain, */*',
-        'content-type': 'application/json;charset=UTF-8',
+        'accept': 'application/json',
+        'content-type': 'application/json',
     },
 }
 
@@ -76,7 +77,7 @@ class QuoterAPIService {
 
     /**
      * Endpoint 1: Get origin cities
-     * GET /api/origenes-cotizador
+     * GET /api/quoter/origins (proxies to /api/origenes-cotizador)
      */
     async getOrigins(): Promise<Location[]> {
         try {
@@ -101,7 +102,7 @@ class QuoterAPIService {
 
     /**
      * Endpoint 2: Get all destination cities
-     * GET /api/destinos-cotizador
+     * GET /api/quoter/destinations (proxies to /api/destinos-cotizador)
      */
     async getDestinations(): Promise<Location[]> {
         try {
@@ -125,7 +126,7 @@ class QuoterAPIService {
 
     /**
      * Endpoint 3: Get destinations filtered by origin city
-     * POST /api/destinos-cotizador-atlas
+     * POST /api/quoter/destinations-by-origin (proxies to /api/destinos-cotizador-atlas)
      * Body: {"id_ciudad": "1310100101&SANTIAGO"}
      */
     async getDestinationsByOrigin(originId: string): Promise<Location[]> {
@@ -156,7 +157,7 @@ class QuoterAPIService {
 
     /**
      * Endpoint 4: Calculate shipping quote
-     * POST /api/cotizar
+     * POST /api/quoter/calculate (proxies to /api/cotizar)
      * Body example:
      * {
      *   "selected": "CGR",
