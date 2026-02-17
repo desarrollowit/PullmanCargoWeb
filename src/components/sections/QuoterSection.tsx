@@ -25,6 +25,8 @@ export function QuoterSection() {
     // State for form
     const [selectedOrigin, setSelectedOrigin] = useState("")
     const [selectedDestination, setSelectedDestination] = useState("")
+    const [formaPago, setFormaPago] = useState("origen") // "origen" or "destino"
+    const [lugarEntrega, setLugarEntrega] = useState("domicilio") // "domicilio" or "oficina"
     const [formData, setFormData] = useState({
         largo: "",
         ancho: "",
@@ -118,8 +120,8 @@ export function QuoterSection() {
                 selected: "CGR", // Cargo service
                 origen: selectedOrigin,
                 destino: selectedDestination,
-                pago: "EFE", // Efectivo (cash)
-                lugar: "DOM", // Domicilio (home delivery)
+                pago: formaPago === "origen" ? "ORI" : "DES", // Pago en origen o destino
+                lugar: lugarEntrega === "domicilio" ? "DOM" : "SUC", // Domicilio o Sucursal
                 largo: formData.largo,
                 ancho: formData.ancho,
                 alto: formData.alto,
@@ -224,6 +226,64 @@ export function QuoterSection() {
                                                         ))}
                                                     </SelectContent>
                                                 </Select>
+                                            </div>
+                                        </div>
+
+                                        {/* Payment Location */}
+                                        <div className="space-y-2">
+                                            <Label className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
+                                            <div className="flex gap-4">
+                                                <label className="flex items-center gap-2 cursor-pointer">
+                                                    <input
+                                                        type="radio"
+                                                        name="formaPago"
+                                                        value="origen"
+                                                        checked={formaPago === "origen"}
+                                                        onChange={(e) => setFormaPago(e.target.value)}
+                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
+                                                    />
+                                                    <span className="text-sm font-medium">Pago en origen</span>
+                                                </label>
+                                                <label className="flex items-center gap-2 cursor-pointer">
+                                                    <input
+                                                        type="radio"
+                                                        name="formaPago"
+                                                        value="destino"
+                                                        checked={formaPago === "destino"}
+                                                        onChange={(e) => setFormaPago(e.target.value)}
+                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
+                                                    />
+                                                    <span className="text-sm font-medium">Pago en destino</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        {/* Delivery Location */}
+                                        <div className="space-y-2">
+                                            <Label className="text-sm font-bold uppercase text-gray-500">Lugar de Entrega</Label>
+                                            <div className="flex gap-4">
+                                                <label className="flex items-center gap-2 cursor-pointer">
+                                                    <input
+                                                        type="radio"
+                                                        name="lugarEntrega"
+                                                        value="domicilio"
+                                                        checked={lugarEntrega === "domicilio"}
+                                                        onChange={(e) => setLugarEntrega(e.target.value)}
+                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
+                                                    />
+                                                    <span className="text-sm font-medium">Entrega en domicilio</span>
+                                                </label>
+                                                <label className="flex items-center gap-2 cursor-pointer">
+                                                    <input
+                                                        type="radio"
+                                                        name="lugarEntrega"
+                                                        value="oficina"
+                                                        checked={lugarEntrega === "oficina"}
+                                                        onChange={(e) => setLugarEntrega(e.target.value)}
+                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
+                                                    />
+                                                    <span className="text-sm font-medium">Entrega en oficina</span>
+                                                </label>
                                             </div>
                                         </div>
 
