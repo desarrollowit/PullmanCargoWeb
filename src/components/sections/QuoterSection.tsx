@@ -48,7 +48,13 @@ export function QuoterSection() {
     // Load destinations when origin changes
     useEffect(() => {
         if (selectedOrigin) {
+            // Reset destination when origin changes
+            setSelectedDestination("")
+            setDestinations([])
             loadDestinationsByOrigin(selectedOrigin)
+        } else {
+            // Clear destinations if no origin selected
+            setDestinations([])
         }
     }, [selectedOrigin])
 
@@ -329,14 +335,15 @@ export function QuoterSection() {
                                             <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
                                             <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
                                             <div className="space-y-2">
-                                                {result.price && (
+                                                {result.estado && result.precioTotal && (
                                                     <>
-                                                        <h3 className="text-6xl font-black text-white">${result.price.toLocaleString("es-CL")}</h3>
+                                                        <h3 className="text-6xl font-black text-white">${result.precioTotal.toLocaleString("es-CL")}</h3>
                                                         <p className="text-blue-400 font-medium">IVA Incluido</p>
+                                                        <p className="text-gray-300 text-sm mt-2">{result.descripcionOrigen} → {result.descripcionDestino}</p>
                                                     </>
                                                 )}
-                                                {result.estimatedDays && (
-                                                    <p className="text-gray-300 text-sm">Tiempo estimado: {result.estimatedDays}</p>
+                                                {!result.estado && (
+                                                    <p className="text-red-400 text-sm">{result.mensaje}</p>
                                                 )}
                                             </div>
                                             <div className="pt-6 border-t border-gray-800">

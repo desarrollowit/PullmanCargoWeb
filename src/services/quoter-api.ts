@@ -36,12 +36,15 @@ export interface QuoteRequest {
 }
 
 export interface QuoteResponse {
-    // TODO: Update with actual response structure from API
-    price?: number
-    estimatedDays?: string
-    serviceType?: string
-    currency?: string
-    [key: string]: any // Allow for additional fields from API
+    cantidadItem: string
+    codigo: string // "OK" on success
+    estado: boolean // true on success
+    mensaje: string // Success/error message
+    precioTotal: number // Total price
+    precioUnitario: number // Unit price
+    valorNumerico: number // Numeric value (same as precioTotal)
+    descripcionOrigen: string // Origin city name
+    descripcionDestino: string // Destination city name
 }
 
 // API Service Class
@@ -78,18 +81,19 @@ class QuoterAPIService {
     /**
      * Endpoint 1: Get origin cities
      * GET /api/quoter/origins (proxies to /api/origenes-cotizador)
+     * Response format: [{"codigo": "1310100101", "descripcion": "SANTIAGO"}, ...]
      */
     async getOrigins(): Promise<Location[]> {
         try {
             const data = await this.fetchAPI<any>(API_CONFIG.ENDPOINTS.GET_ORIGINS)
 
             // Transform API response to Location format
-            // Assuming response is an array of objects with id and name
+            // API returns: {codigo: string, descripcion: string}
             if (Array.isArray(data)) {
                 return data.map((item: any) => ({
-                    id: item.id || item.value || `${item.code}&${item.name}`,
-                    name: item.name || item.label || '',
-                    code: item.code,
+                    id: `${item.codigo}&${item.descripcion}`, // Format: "code&NAME"
+                    name: item.descripcion || '',
+                    code: item.codigo,
                 }))
             }
 
@@ -103,17 +107,19 @@ class QuoterAPIService {
     /**
      * Endpoint 2: Get all destination cities
      * GET /api/quoter/destinations (proxies to /api/destinos-cotizador)
+     * Response format: [{"codigo": "0510900101", "descripcion": "VIÑA DEL MAR"}, ...]
      */
     async getDestinations(): Promise<Location[]> {
         try {
             const data = await this.fetchAPI<any>(API_CONFIG.ENDPOINTS.GET_DESTINATIONS)
 
             // Transform API response to Location format
+            // API returns: {codigo: string, descripcion: string}
             if (Array.isArray(data)) {
                 return data.map((item: any) => ({
-                    id: item.id || item.value || `${item.code}&${item.name}`,
-                    name: item.name || item.label || '',
-                    code: item.code,
+                    id: `${item.codigo}&${item.descripcion}`, // Format: "code&NAME"
+                    name: item.descripcion || '',
+                    code: item.codigo,
                 }))
             }
 
@@ -128,6 +134,7 @@ class QuoterAPIService {
      * Endpoint 3: Get destinations filtered by origin city
      * POST /api/quoter/destinations-by-origin (proxies to /api/destinos-cotizador-atlas)
      * Body: {"id_ciudad": "1310100101&SANTIAGO"}
+     * Response format: [{"codigo": "0510900101", "descripcion": "VIÑA DEL MAR"}, ...]
      */
     async getDestinationsByOrigin(originId: string): Promise<Location[]> {
         try {
@@ -140,11 +147,12 @@ class QuoterAPIService {
             )
 
             // Transform API response to Location format
+            // API returns: {codigo: string, descripcion: string}
             if (Array.isArray(data)) {
                 return data.map((item: any) => ({
-                    id: item.id || item.value || `${item.code}&${item.name}`,
-                    name: item.name || item.label || '',
-                    code: item.code,
+                    id: `${item.codigo}&${item.descripcion}`, // Format: "code&NAME"
+                    name: item.descripcion || '',
+                    code: item.codigo,
                 }))
             }
 
