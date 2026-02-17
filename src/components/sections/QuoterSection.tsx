@@ -347,7 +347,23 @@ export function QuoterSection() {
                                                 )}
                                             </div>
                                             <div className="pt-6 border-t border-gray-800">
-                                                <Button className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase">
+                                                <Button
+                                                    className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase"
+                                                    onClick={() => {
+                                                        const params = new URLSearchParams({
+                                                            origen: result.descripcionOrigen,
+                                                            destino: result.descripcionDestino,
+                                                            precio: result.precioTotal.toString(),
+                                                            largo: formData.largo,
+                                                            ancho: formData.ancho,
+                                                            alto: formData.alto,
+                                                            peso: formData.peso,
+                                                            telefono: formData.telefono,
+                                                            email: formData.email,
+                                                        })
+                                                        window.location.href = `/contratar?${params.toString()}`
+                                                    }}
+                                                >
                                                     Contratar Servicio
                                                 </Button>
                                             </div>
