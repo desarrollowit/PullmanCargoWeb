@@ -1,0 +1,329 @@
+{
+  "info": {
+    "_postman_id": "f9c4469a-3e48-48da-8088-14ba8337be8d",
+    "name": "PullmanGo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14119178",
+    "_collection_link": "https://go.postman.co/collection/14119178-f9c4469a-3e48-48da-8088-14ba8337be8d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "https://www.pullmango.cl/api/origenes-cotizador",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "es-419,es;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://www.pullmango.cl/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Cookie",
+            "value": "_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g0$t1771332415$j52$l0$h0"
+          }
+        ],
+        "url": {
+          "raw": "https://www.pullmango.cl/api/origenes-cotizador",
+          "protocol": "https",
+          "host": [
+            "www",
+            "pullmango",
+            "cl"
+          ],
+          "path": [
+            "api",
+            "origenes-cotizador"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://www.pullmango.cl/api/origenes-cotizador' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: es-419,es;q=0.9,en;q=0.8' \\\r\n  -b '_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g0$t1771332415$j52$l0$h0' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.pullmango.cl/' \\\r\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://www.pullmango.cl/api/destinos-cotizador",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "es-419,es;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://www.pullmango.cl/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Cookie",
+            "value": "_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g0$t1771332415$j52$l0$h0"
+          }
+        ],
+        "url": {
+          "raw": "https://www.pullmango.cl/api/destinos-cotizador",
+          "protocol": "https",
+          "host": [
+            "www",
+            "pullmango",
+            "cl"
+          ],
+          "path": [
+            "api",
+            "destinos-cotizador"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://www.pullmango.cl/api/destinos-cotizador' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: es-419,es;q=0.9,en;q=0.8' \\\r\n  -b '_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g0$t1771332415$j52$l0$h0' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.pullmango.cl/' \\\r\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://www.pullmango.cl/api/destinos-cotizador-atlas",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "es-419,es;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json;charset=UTF-8"
+          },
+          {
+            "key": "origin",
+            "value": "https://www.pullmango.cl"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://www.pullmango.cl/cotizador"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Cookie",
+            "value": "_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g1$t1771332417$j50$l0$h0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id_ciudad\":\"1310100101&SANTIAGO\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.pullmango.cl/api/destinos-cotizador-atlas",
+          "protocol": "https",
+          "host": [
+            "www",
+            "pullmango",
+            "cl"
+          ],
+          "path": [
+            "api",
+            "destinos-cotizador-atlas"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://www.pullmango.cl/api/destinos-cotizador-atlas' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: es-419,es;q=0.9,en;q=0.8' \\\r\n  -H 'content-type: application/json;charset=UTF-8' \\\r\n  -b '_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g1$t1771332417$j50$l0$h0' \\\r\n  -H 'origin: https://www.pullmango.cl' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.pullmango.cl/cotizador' \\\r\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36' \\\r\n  --data-raw '{\"id_ciudad\":\"1310100101&SANTIAGO\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://www.pullmango.cl/api/cotizar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "es-419,es;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json;charset=UTF-8"
+          },
+          {
+            "key": "origin",
+            "value": "https://www.pullmango.cl"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://www.pullmango.cl/cotizador"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Cookie",
+            "value": "_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g1$t1771332417$j50$l0$h0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"selected\":\"CGR\",\"origen\":\"1310100101&SANTIAGO\",\"destino\":\"0510900101&VIÑA DEL MAR\",\"pago\":\"EFE\",\"lugar\":\"DOM\",\"largo\":\"100\",\"alto\":\"100\",\"ancho\":\"100\",\"peso\":\"10\",\"telefono\":\"950906625\",\"email\":\"dgonzalez@wit.la\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.pullmango.cl/api/cotizar",
+          "protocol": "https",
+          "host": [
+            "www",
+            "pullmango",
+            "cl"
+          ],
+          "path": [
+            "api",
+            "cotizar"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://www.pullmango.cl/api/cotizar' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: es-419,es;q=0.9,en;q=0.8' \\\r\n  -H 'content-type: application/json;charset=UTF-8' \\\r\n  -b '_ga=GA1.1.438716256.1771332407; _gcl_au=1.1.714182420.1771332407; _fbp=fb.1.1771332407796.229517895496227303; _ga_C07TR647CK=GS2.1.s1771332407$o1$g1$t1771332417$j50$l0$h0' \\\r\n  -H 'origin: https://www.pullmango.cl' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.pullmango.cl/cotizador' \\\r\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36' \\\r\n  --data-raw '{\"selected\":\"CGR\",\"origen\":\"1310100101&SANTIAGO\",\"destino\":\"0510900101&VIÑA DEL MAR\",\"pago\":\"EFE\",\"lugar\":\"DOM\",\"largo\":\"100\",\"alto\":\"100\",\"ancho\":\"100\",\"peso\":\"10\",\"telefono\":\"950906625\",\"email\":\"dgonzalez@wit.la\"}'"
+      },
+      "response": []
+    }
+  ]
+}
