@@ -75,7 +75,7 @@ export default function ContratarPage() {
 
     if (submitted) {
         return (
-            <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+            <div className="min-h-screen bg-white flex items-center justify-center p-4">
                 <Card className="max-w-2xl w-full">
                     <CardContent className="pt-12 pb-12 text-center">
                         <CheckCircle2 className="w-20 h-20 text-green-500 mx-auto mb-6" />
@@ -99,7 +99,7 @@ export default function ContratarPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
+        <div className="min-h-screen bg-white py-12">
             <div className="container px-4 md:px-6 mx-auto max-w-6xl">
                 <ScrollReveal animation="fade-in">
                     <div className="text-center mb-12">
