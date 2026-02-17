@@ -25,7 +25,6 @@ export function QuoterSection() {
     // State for form
     const [selectedOrigin, setSelectedOrigin] = useState("")
     const [selectedDestination, setSelectedDestination] = useState("")
-    const [formaPago, setFormaPago] = useState("origen") // "origen" or "destino"
     const [lugarEntrega, setLugarEntrega] = useState("domicilio") // "domicilio" or "oficina"
     const [formData, setFormData] = useState({
         largo: "",
@@ -120,7 +119,7 @@ export function QuoterSection() {
                 selected: "CGR", // Cargo service
                 origen: selectedOrigin,
                 destino: selectedDestination,
-                pago: formaPago === "origen" ? "ORI" : "DES", // Pago en origen o destino
+                pago: "EFE", // Efectivo - only valid value
                 lugar: lugarEntrega === "domicilio" ? "DOM" : "SUC", // Domicilio o Sucursal
                 largo: formData.largo,
                 ancho: formData.ancho,
@@ -226,35 +225,6 @@ export function QuoterSection() {
                                                         ))}
                                                     </SelectContent>
                                                 </Select>
-                                            </div>
-                                        </div>
-
-                                        {/* Payment Location */}
-                                        <div className="space-y-2">
-                                            <Label className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
-                                            <div className="flex gap-4">
-                                                <label className="flex items-center gap-2 cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="formaPago"
-                                                        value="origen"
-                                                        checked={formaPago === "origen"}
-                                                        onChange={(e) => setFormaPago(e.target.value)}
-                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
-                                                    />
-                                                    <span className="text-sm font-medium">Pago en origen</span>
-                                                </label>
-                                                <label className="flex items-center gap-2 cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="formaPago"
-                                                        value="destino"
-                                                        checked={formaPago === "destino"}
-                                                        onChange={(e) => setFormaPago(e.target.value)}
-                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
-                                                    />
-                                                    <span className="text-sm font-medium">Pago en destino</span>
-                                                </label>
                                             </div>
                                         </div>
 
