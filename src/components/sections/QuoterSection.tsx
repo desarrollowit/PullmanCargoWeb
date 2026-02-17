@@ -25,7 +25,7 @@ export function QuoterSection() {
     // State for form
     const [selectedOrigin, setSelectedOrigin] = useState("")
     const [selectedDestination, setSelectedDestination] = useState("")
-    const [lugarEntrega, setLugarEntrega] = useState("domicilio") // "domicilio" or "oficina"
+    const [lugarEntrega, setLugarEntrega] = useState("oficina") // "domicilio" or "oficina" - default to oficina for better coverage
     const [formData, setFormData] = useState({
         largo: "",
         ancho: "",
