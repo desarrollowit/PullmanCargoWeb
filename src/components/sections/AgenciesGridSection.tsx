@@ -63,7 +63,7 @@ export function AgenciesGridSection() {
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-10 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase mb-2">
-                        Nuestras <span className="text-[#003fa2]">Sucursales</span>
+                        Nuestras <span className="text-secondary">Sucursales</span>
                     </h2>
                     <p className="text-gray-500">
                         Selecciona una región en el mapa o utiliza el buscador para encontrar tu agencia más cercana.
@@ -124,10 +124,10 @@ export function AgenciesGridSection() {
 
                         {/* Region Title */}
                         <div className="flex items-center justify-between border-b pb-2">
-                            <h3 className="text-xl font-bold uppercase text-[#003fa2]">
+                            <h3 className="text-xl font-bold uppercase text-secondary">
                                 {selectedRegion === "all" ? "Todas las Sucursales" : `Sucursales en ${selectedRegion}`}
                             </h3>
-                            <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                            <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-2xl">
                                 {filteredAgencies.length} {filteredAgencies.length === 1 ? 'Disponible' : 'Disponibles'}
                             </span>
                         </div>
@@ -140,8 +140,8 @@ export function AgenciesGridSection() {
                                         <Card className="h-full hover:shadow-md transition-all border-gray-200 hover:border-[#003fa2] group">
                                             <CardContent className="p-5 flex flex-col h-full">
                                                 <div className="flex justify-between items-start mb-3">
-                                                    <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-[#003fa2] transition-colors">
-                                                        <MapPin className="w-5 h-5 text-[#003fa2] group-hover:text-white transition-colors" />
+                                                    <div className="p-2 bg-blue-50 rounded-2xl group-hover:bg-secondary transition-colors">
+                                                        <MapPin className="w-5 h-5 text-secondary group-hover:text-white transition-colors" />
                                                     </div>
                                                     <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 px-2 py-1 rounded">
                                                         {agency.commune || agency.city}
@@ -162,7 +162,7 @@ export function AgenciesGridSection() {
 
                                                 <Button
                                                     variant="outline"
-                                                    className="w-full text-[#003fa2] border-[#003fa2]/20 hover:bg-[#003fa2] hover:text-white text-xs uppercase font-bold h-9"
+                                                    className="w-full text-secondary border-secondary/20 hover:bg-secondary hover:text-white text-xs uppercase font-bold h-9 rounded-2xl"
                                                     asChild
                                                 >
                                                     <a
