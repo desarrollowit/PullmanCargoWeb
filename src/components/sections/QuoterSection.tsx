@@ -390,6 +390,7 @@ export function QuoterSection() {
                                                             peso: formData.peso,
                                                             telefono: formData.telefono,
                                                             email: formData.email,
+                                                            lugar: lugarEntrega,
                                                         })
                                                         window.location.href = `/contratar?${params.toString()}`
                                                     }}

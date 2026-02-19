@@ -5,51 +5,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Clock, Navigation } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+import { agencies } from "@/data/agencies"
+
 export function AgenciesSection() {
-    const agencies = [
-        {
-            city: "Santiago (Matriz)",
-            address: "San Borja 1234, Estación Central",
-            phone: "+56 2 2222 2222",
-            hours: "Lun-Vie: 08:30 - 18:30",
-            region: "Metropolitana"
-        },
-        {
-            city: "Antofagasta",
-            address: "Pedro Aguirre Cerda 1234",
-            phone: "+56 55 2222 222",
-            hours: "Lun-Vie: 09:00 - 18:00",
-            region: "Norte"
-        },
-        {
-            city: "La Serena",
-            address: "Av. Balmaceda 4321",
-            phone: "+56 51 2222 222",
-            hours: "Lun-Vie: 09:00 - 18:00",
-            region: "Norte"
-        },
-        {
-            city: "Viña del Mar",
-            address: "Av. Libertad 987",
-            phone: "+56 32 2222 222",
-            hours: "Lun-Vie: 09:00 - 18:30",
-            region: "Centro"
-        },
-        {
-            city: "Concepción",
-            address: "Autopista Concepción-Talcahuano 8000",
-            phone: "+56 41 2222 222",
-            hours: "Lun-Vie: 09:00 - 18:00",
-            region: "Sur"
-        },
-        {
-            city: "Puerto Montt",
-            address: "Ruta 5 Sur Km 1000",
-            phone: "+56 65 2222 222",
-            hours: "Lun-Vie: 09:00 - 18:00",
-            region: "Sur"
-        }
-    ]
+    // Agencies data imported from @/data/agencies
 
     return (
         <section id="agencias" className="w-full py-24 bg-gray-50 text-gray-900 overflow-hidden relative">
