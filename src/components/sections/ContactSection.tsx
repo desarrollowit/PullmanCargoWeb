@@ -9,14 +9,13 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function ContactSection() {
     return (
-        <section id="contacto" className="w-full py-24 bg-white relative overflow-hidden">
-            {/* Decorative Background */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -skew-x-12 translate-x-32 z-0" />
+        <section id="contacto" className="w-full py-24 bg-background relative overflow-hidden">
+
 
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-                        Conversemos sobre tu <span className="text-[#003fa2]">Logística</span>
+                        Conversemos sobre tu <span className="text-secondary">Logística</span>
                     </h2>
                     <p className="text-gray-500 text-lg">
                         Estamos listos para resolver tus dudas y optimizar tus envíos. Escríbenos o visítanos.
@@ -27,23 +26,23 @@ export function ContactSection() {
                     {/* LEFT: INFO & MAP */}
                     <ScrollReveal animation="slide-in-left" className="space-y-8">
                         <div className="grid sm:grid-cols-2 gap-6">
-                            <div className="bg-gray-50 p-6 border-l-4 border-[#003fa2] hover:shadow-lg transition-shadow">
-                                <MapPin className="h-8 w-8 text-[#003fa2] mb-4" />
+                            <div className="bg-gray-50 p-6 border-l-4 border-secondary hover:shadow-lg transition-shadow">
+                                <MapPin className="h-8 w-8 text-secondary mb-4" />
                                 <h3 className="font-bold text-lg uppercase mb-2">Casa Matriz</h3>
                                 <p className="text-gray-500 text-sm">San Borja 1234, Estación Central<br />Santiago, Chile</p>
                             </div>
-                            <div className="bg-gray-50 p-6 border-l-4 border-[#003fa2] hover:shadow-lg transition-shadow">
-                                <Phone className="h-8 w-8 text-[#003fa2] mb-4" />
+                            <div className="bg-gray-50 p-6 border-l-4 border-secondary hover:shadow-lg transition-shadow">
+                                <Phone className="h-8 w-8 text-secondary mb-4" />
                                 <h3 className="font-bold text-lg uppercase mb-2">Llámanos</h3>
                                 <p className="text-gray-500 text-sm">600 300 3000<br />+56 2 2222 2222</p>
                             </div>
-                            <div className="bg-gray-50 p-6 border-l-4 border-[#003fa2] hover:shadow-lg transition-shadow">
-                                <Mail className="h-8 w-8 text-[#003fa2] mb-4" />
+                            <div className="bg-gray-50 p-6 border-l-4 border-secondary hover:shadow-lg transition-shadow">
+                                <Mail className="h-8 w-8 text-secondary mb-4" />
                                 <h3 className="font-bold text-lg uppercase mb-2">Escríbenos</h3>
                                 <p className="text-gray-500 text-sm">contacto@pullmancargo.cl<br />ventas@pullmancargo.cl</p>
                             </div>
-                            <div className="bg-gray-50 p-6 border-l-4 border-[#003fa2] hover:shadow-lg transition-shadow">
-                                <Clock className="h-8 w-8 text-[#003fa2] mb-4" />
+                            <div className="bg-gray-50 p-6 border-l-4 border-secondary hover:shadow-lg transition-shadow">
+                                <Clock className="h-8 w-8 text-secondary mb-4" />
                                 <h3 className="font-bold text-lg uppercase mb-2">Horario</h3>
                                 <p className="text-gray-500 text-sm">Lunes a Viernes: 08:30 - 18:30<br />Sábados: 09:00 - 14:00</p>
                             </div>
@@ -66,28 +65,28 @@ export function ContactSection() {
 
                     {/* RIGHT: FORM */}
                     <ScrollReveal animation="slide-in-right" delay={200}>
-                        <div className="bg-white p-8 md:p-10 shadow-2xl border-t-4 border-[#003fa2] relaitve">
+                        <div className="bg-white p-8 md:p-10 shadow-2xl border-t-4 border-secondary relaitve">
                             <h3 className="text-2xl font-black uppercase text-gray-900 mb-6">Formulario de Contacto</h3>
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold uppercase text-gray-500">Nombre Completo</label>
-                                        <Input placeholder="Tu nombre" className="bg-gray-50 border-gray-200 focus:border-[#003fa2] h-12" />
+                                        <Input placeholder="Tu nombre" className="bg-gray-50 border-gray-200 focus:border-primary h-12" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold uppercase text-gray-500">Teléfono</label>
-                                        <Input placeholder="+56 9 ..." className="bg-gray-50 border-gray-200 focus:border-[#003fa2] h-12" />
+                                        <Input placeholder="+56 9 ..." className="bg-gray-50 border-gray-200 focus:border-primary h-12" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold uppercase text-gray-500">Correo Electrónico</label>
-                                    <Input placeholder="correo@ejemplo.com" className="bg-gray-50 border-gray-200 focus:border-[#003fa2] h-12" />
+                                    <Input placeholder="correo@ejemplo.com" className="bg-gray-50 border-gray-200 focus:border-primary h-12" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold uppercase text-gray-500">Mensaje</label>
-                                    <Textarea placeholder="Cuéntanos en qué podemos ayudarte..." className="bg-gray-50 border-gray-200 focus:border-[#003fa2] min-h-[150px]" />
+                                    <Textarea placeholder="Cuéntanos en qué podemos ayudarte..." className="bg-gray-50 border-gray-200 focus:border-primary min-h-[150px]" />
                                 </div>
-                                <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-lg hover:shadow-xl group">
+                                <Button className="w-full h-14 bg-primary hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-2xl transition-all shadow-lg hover:shadow-xl group">
                                     Enviar Mensaje <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </form>
