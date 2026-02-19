@@ -130,30 +130,19 @@ export function Header() {
             </form>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            {isEmpresas ? (
-              // Empresas page: Only show orange Ingresar button
-              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                <a href="https://empresas.pullmango.cl/login.php" target="_blank" rel="noopener noreferrer">
-                  Ingresar
-                </a>
+          {/* CTA Button + WIT Logo */}
+          <div className="hidden lg:flex items-center gap-6">
+            {!isEmpresas && (
+              <Button asChild className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                <Link href="/#cotizador">
+                  Cotizar Ahora
+                </Link>
               </Button>
-            ) : (
-              // Home page: Show both buttons
-              <>
-                <Button asChild className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                  <Link href="/#cotizador">
-                    Cotizar Ahora
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="border-[#003fa2] text-[#003fa2] hover:bg-[#003fa2] hover:text-white rounded-full font-medium transition-all duration-300">
-                  <Link href="/login">
-                    Ingresar
-                  </Link>
-                </Button>
-              </>
             )}
+            {/* WIT Logo */}
+            <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-200">
+              <img src="/brand/wit-logo.svg" alt="A Global Partnership wit" className="h-10 w-auto object-contain" />
+            </a>
           </div>
 
           {/* Mobile Nav */}
@@ -219,11 +208,12 @@ export function Header() {
                         <Link href="#cotizador">Cotizar Ahora</Link>
                       </Button>
                     </SheetClose>
-                    <SheetClose asChild>
-                      <Button asChild variant="outline" className="w-full border-[#003fa2] text-[#003fa2] hover:bg-blue-50 h-12 text-lg font-semibold border-2">
-                        <Link href="/login">Ingresar</Link>
-                      </Button>
-                    </SheetClose>
+                    {/* WIT Logo in mobile menu */}
+                    <div className="flex justify-center pt-2">
+                      <a href="https://wit.la" target="_blank" rel="noopener noreferrer">
+                        <img src="/brand/wit-logo.svg" alt="A Global Partnership wit" className="h-10 w-auto object-contain opacity-70" />
+                      </a>
+                    </div>
                   </div>
 
                   {/* Menu Footer */}
