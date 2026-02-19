@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Footer() {
     return (
-        <footer id="contacto" className="bg-[#003fa2] text-white">
+        <footer id="contacto" className="bg-secondary text-white">
             <div className="container mx-auto px-4 py-16">
                 <ScrollReveal animation="slide-in-bottom" className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
                     {/* Company Info */}
@@ -34,13 +34,13 @@ export function Footer() {
                         </div>
                         {/* Social Links */}
                         <div className="flex gap-3">
-                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
+                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Facebook className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
+                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Instagram className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
+                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Linkedin className="w-5 h-5" />
                             </Link>
                         </div>
@@ -81,14 +81,23 @@ export function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-white/20">
-                <div className="container mx-auto px-4 py-6">
-                    <ScrollReveal animation="slide-in-bottom" delay={200} className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
-                        <p>© {new Date().getFullYear()} Pullman Cargo. Todos los derechos reservados.</p>
-                        <div className="flex gap-6">
-                            <Link href="#" className="hover:text-white transition-colors">Política de Privacidad</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Términos de Servicio</Link>
-                        </div>
+            <div className="border-t border-white/10">
+                <div className="container mx-auto px-4 py-8">
+                    <ScrollReveal animation="fade-in" delay={200} className="text-center">
+                        <p className="text-sm text-white/50 font-medium tracking-wide">
+                            © {new Date().getFullYear()} Pullman Cargo. Todos los derechos reservados. {" "}
+                            <span className="mx-2 hidden sm:inline">|</span>
+                            <br className="sm:hidden" />
+                            Página Web desarrollada por{" "}
+                            <a
+                                href="https://wit.la"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-white font-bold transition-all underline-offset-4 hover:underline"
+                            >
+                                WIT.la
+                            </a>
+                        </p>
                     </ScrollReveal>
                 </div>
             </div>
