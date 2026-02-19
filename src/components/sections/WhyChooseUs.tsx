@@ -30,7 +30,7 @@ export function WhyChooseUs() {
     ]
 
     return (
-        <section id="nosotros" className="w-full py-20 bg-primary text-white overflow-hidden">
+        <section id="nosotros" className="w-full py-20 bg-secondary text-white overflow-hidden">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     <ScrollReveal animation="slide-in-left" className="lg:w-1/3 space-y-6">
