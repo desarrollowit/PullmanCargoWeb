@@ -56,8 +56,8 @@ export function ServicesSectionEmpresas() {
                     <div className="inline-block bg-primary px-4 py-1 text-xs font-bold text-white uppercase tracking-widest mb-4">
                         Servicios B2B
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 uppercase">
-                        Soluciones para <span className="text-primary">Empresas</span>
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-secondary uppercase">
+                        Soluciones para <span className="text-secondary">Empresas</span>
                     </h2>
                     <div className="w-24 h-1.5 bg-primary mx-auto mt-6" />
                 </ScrollReveal>
