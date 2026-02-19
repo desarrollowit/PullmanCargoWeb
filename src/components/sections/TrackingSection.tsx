@@ -14,19 +14,19 @@ export function TrackingSection() {
         <section id="tracking" className="relative w-full py-32 overflow-hidden">
             {/* ... (backgrounds remain same) ... */}
             <div className="absolute inset-0 bg-fixed bg-cover bg-center z-0" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200')" }} />
-            <div className="absolute inset-0 bg-[#003fa2]/80 mix-blend-multiply z-0" />
+            <div className="absolute inset-0 bg-secondary/80 mix-blend-multiply z-0" />
             <div className="absolute inset-0 bg-black/40 z-0" />
 
             <div className="container relative z-10 px-4 md:px-6 mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <ScrollReveal animation="slide-in-left" className="space-y-8">
                         {/* ... (left content remains same) ... */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white text-[#003fa2] text-sm font-bold uppercase tracking-wider transform -skew-x-12">
-                            <span className="skew-x-12 flex items-center gap-2">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white text-primary text-sm font-bold uppercase tracking-wider">
+                            <span className="flex items-center gap-2">
                                 <Info className="w-4 h-4" /> Tracking en Tiempo Real
                             </span>
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase italic leading-[0.9]">
+                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9]">
                             Control <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Total</span>
                         </h2>
@@ -37,10 +37,10 @@ export function TrackingSection() {
 
                     <ScrollReveal animation="slide-in-right">
                         <div className="bg-white p-8 md:p-10 shadow-2xl relative overflow-hidden group">
-                            <div className="absolute top-0 left-0 w-2 h-full bg-[#003fa2]" />
+                            <div className="absolute top-0 left-0 w-2 h-full bg-secondary" />
                             <div className="space-y-8 relative z-10">
                                 <div>
-                                    <h3 className="text-3xl font-black text-[#003fa2] uppercase mb-2">Rastrea tu envío</h3>
+                                    <h3 className="text-3xl font-black text-secondary uppercase mb-2">Rastrea tu envío</h3>
                                     <p className="text-gray-500 font-medium">
                                         Ingresa tu número de orden o guía de despacho.
                                     </p>
@@ -57,12 +57,12 @@ export function TrackingSection() {
                                     <div className="relative">
                                         <Input
                                             name="trackingId"
-                                            className="h-14 bg-gray-50 text-black border-2 border-gray-200 focus:border-[#003fa2] rounded-none px-4 text-lg font-bold placeholder:font-normal transition-all"
+                                            className="h-14 bg-gray-50 text-black border-2 border-gray-200 focus:border-primary rounded-2xl px-6 text-lg font-bold placeholder:font-normal transition-all"
                                             placeholder="Ingrese su ODT"
                                             type="text"
                                         />
                                     </div>
-                                    <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black text-lg uppercase tracking-widest transition-all duration-300 rounded-none shadow-xl hover:shadow-2xl">
+                                    <Button className="w-full h-14 bg-primary hover:bg-black text-white font-black text-lg uppercase tracking-widest transition-all duration-300 rounded-2xl shadow-xl hover:shadow-2xl">
                                         <Search className="w-5 h-5 mr-3" /> Buscar Ahora
                                     </Button>
                                 </form>
