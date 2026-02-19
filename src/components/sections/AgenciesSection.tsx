@@ -11,11 +11,11 @@ export function AgenciesSection() {
     // Agencies data imported from @/data/agencies
 
     return (
-        <section id="agencias" className="w-full py-24 bg-gray-50 text-gray-900 overflow-hidden relative">
+        <section id="agencias" className="w-full py-24 bg-background text-gray-900 overflow-hidden relative">
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-                        Nuestras <span className="text-[#003fa2]">Agencias</span>
+                        Nuestras <span className="text-secondary">Agencias</span>
                     </h2>
                     <p className="text-gray-500 text-lg">
                         Estamos presentes de Arica a Punta Arenas. Encuentra tu sucursal más cercana.
@@ -24,12 +24,12 @@ export function AgenciesSection() {
 
                 {/* Map Visual (Stylized Placeholder) */}
                 <ScrollReveal animation="zoom-in" className="mb-16">
-                    <div className="w-full h-[400px] bg-[#003fa2] rounded-3xl relative overflow-hidden flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200')] bg-cover bg-center bg-no-repeat bg-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-700 group">
+                    <div className="w-full h-[400px] bg-secondary rounded-3xl relative overflow-hidden flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200')] bg-cover bg-center bg-no-repeat bg-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-700 group">
                         <div className="bg-black/40 absolute inset-0 transition-opacity hover:bg-black/30" />
                         <div className="relative z-10 text-center text-white p-8 border-4 border-white/20 backdrop-blur-sm rounded-none">
                             <h3 className="text-3xl font-black uppercase mb-4">Cobertura Nacional</h3>
                             <p className="text-xl font-medium mb-8">Más de 50 puntos de entrega en todo Chile</p>
-                            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#003fa2] font-bold uppercase h-12 px-8">
+                            <Button className="bg-primary hover:bg-black text-white font-bold uppercase h-12 px-8 rounded-2xl shadow-lg transition-all">
                                 Ver Mapa Completo <Navigation className="ml-2 w-5 h-5" />
                             </Button>
                         </div>
@@ -43,14 +43,14 @@ export function AgenciesSection() {
                             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white group">
                                 <CardContent className="p-6">
                                     <div className="flex justify-between items-start mb-4">
-                                        <div className="p-3 bg-blue-50 rounded-full group-hover:bg-[#003fa2] transition-colors duration-300">
-                                            <MapPin className="w-6 h-6 text-[#003fa2] group-hover:text-white transition-colors duration-300" />
+                                        <div className="p-3 bg-blue-50 rounded-2xl group-hover:bg-secondary transition-colors duration-300">
+                                            <MapPin className="w-6 h-6 text-secondary group-hover:text-white transition-colors duration-300" />
                                         </div>
-                                        <span className="bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                                        <span className="bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-2xl uppercase tracking-wide">
                                             {agency.region}
                                         </span>
                                     </div>
-                                    <h3 className="text-xl font-black uppercase text-gray-900 mb-2 group-hover:text-[#003fa2] transition-colors">{agency.city}</h3>
+                                    <h3 className="text-xl font-black uppercase text-gray-900 mb-2 group-hover:text-secondary transition-colors">{agency.city}</h3>
                                     <p className="text-gray-500 text-sm mb-4 font-medium">{agency.address}</p>
 
                                     <div className="space-y-2 border-t border-gray-100 pt-4">

@@ -144,11 +144,11 @@ export function QuoterSection() {
     }
 
     return (
-        <section id="cotizador" className="w-full py-24 bg-white border-t border-gray-100">
+        <section id="cotizador" className="w-full py-24 bg-background border-t border-gray-100">
             <div className="container px-4 md:px-6 mx-auto">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-                        Cotiza tu <span className="text-[#003fa2]">Envío</span>
+                        Cotiza tu <span className="text-primary">Envío</span>
                     </h2>
                     <p className="text-gray-500 text-lg">
                         Obtén una cotización instantánea para tu envío.
@@ -157,16 +157,16 @@ export function QuoterSection() {
 
                 <Tabs defaultValue="personas" className="w-full" onValueChange={setActiveTab}>
                     <div className="flex justify-center mb-12">
-                        <TabsList className="grid w-full max-w-md grid-cols-2 h-14 bg-gray-100 p-1 rounded-full">
+                        <TabsList className="grid w-full max-w-md grid-cols-2 h-14 bg-gray-100 p-1 rounded-2xl">
                             <TabsTrigger
                                 value="personas"
-                                className="rounded-full text-base font-bold uppercase data-[state=active]:bg-[#003fa2] data-[state=active]:text-white transition-all"
+                                className="rounded-2xl text-base font-bold uppercase data-[state=active]:bg-primary data-[state=active]:text-white transition-all"
                             >
                                 Personas
                             </TabsTrigger>
                             <TabsTrigger
                                 value="emprendedores"
-                                className="rounded-full text-base font-bold uppercase data-[state=active]:bg-[#003fa2] data-[state=active]:text-white transition-all"
+                                className="rounded-2xl text-base font-bold uppercase data-[state=active]:bg-primary data-[state=active]:text-white transition-all"
                             >
                                 Emprendedores
                             </TabsTrigger>
@@ -178,7 +178,7 @@ export function QuoterSection() {
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
                             <ScrollReveal animation="slide-in-left" className="h-full">
                                 <div className="bg-white border-2 border-gray-100 p-8 shadow-2xl relative">
-                                    <div className="absolute top-0 left-0 w-full h-2 bg-[#003fa2]" />
+                                    <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
                                     <div className="mb-8">
                                         <h3 className="text-2xl font-black uppercase text-gray-900 mb-2">Calculadora Express</h3>
                                         <p className="text-sm text-gray-400 font-medium">Cotización inmediata para paquetería.</p>
@@ -197,7 +197,7 @@ export function QuoterSection() {
                                             <div className="space-y-2">
                                                 <Label htmlFor="origin" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
                                                 <Select value={selectedOrigin} onValueChange={setSelectedOrigin} disabled={loadingLocations}>
-                                                    <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold">
+                                                    <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-primary font-semibold">
                                                         <SelectValue placeholder={loadingLocations ? "Cargando..." : "Selecciona origen"} />
                                                     </SelectTrigger>
                                                     <SelectContent>
@@ -214,7 +214,7 @@ export function QuoterSection() {
                                             <div className="space-y-2">
                                                 <Label htmlFor="destination" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
                                                 <Select value={selectedDestination} onValueChange={setSelectedDestination} disabled={!selectedOrigin || loadingLocations}>
-                                                    <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold">
+                                                    <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-primary font-semibold">
                                                         <SelectValue placeholder={loadingLocations ? "Cargando..." : "Selecciona destino"} />
                                                     </SelectTrigger>
                                                     <SelectContent>
@@ -239,7 +239,7 @@ export function QuoterSection() {
                                                         value="domicilio"
                                                         checked={lugarEntrega === "domicilio"}
                                                         onChange={(e) => setLugarEntrega(e.target.value)}
-                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
+                                                        className="w-4 h-4 text-primary focus:ring-primary"
                                                     />
                                                     <span className="text-sm font-medium">Entrega en domicilio</span>
                                                 </label>
@@ -250,7 +250,7 @@ export function QuoterSection() {
                                                         value="oficina"
                                                         checked={lugarEntrega === "oficina"}
                                                         onChange={(e) => setLugarEntrega(e.target.value)}
-                                                        className="w-4 h-4 text-[#003fa2] focus:ring-[#003fa2]"
+                                                        className="w-4 h-4 text-primary focus:ring-primary"
                                                     />
                                                     <span className="text-sm font-medium">Entrega en oficina</span>
                                                 </label>
@@ -298,7 +298,7 @@ export function QuoterSection() {
                                                     placeholder="0.0"
                                                     type="number"
                                                     step="0.1"
-                                                    className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold"
+                                                    className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-primary font-semibold"
                                                     value={formData.peso}
                                                     onChange={(e) => handleInputChange("peso", e.target.value)}
                                                     required
@@ -316,7 +316,7 @@ export function QuoterSection() {
                                                         id="phone"
                                                         placeholder="912345678"
                                                         type="tel"
-                                                        className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold"
+                                                        className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-primary font-semibold"
                                                         value={formData.telefono}
                                                         onChange={(e) => handleInputChange("telefono", e.target.value)}
                                                         required
@@ -331,7 +331,7 @@ export function QuoterSection() {
                                                         id="email"
                                                         placeholder="tu@email.com"
                                                         type="email"
-                                                        className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold"
+                                                        className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-primary font-semibold"
                                                         value={formData.email}
                                                         onChange={(e) => handleInputChange("email", e.target.value)}
                                                         required
@@ -343,7 +343,7 @@ export function QuoterSection() {
                                         <Button
                                             type="submit"
                                             disabled={loading}
-                                            className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4"
+                                            className="w-full h-14 bg-primary hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-2xl transition-all shadow-xl hover:shadow-2xl mt-4"
                                         >
                                             {loading ? (
                                                 <>
@@ -378,7 +378,7 @@ export function QuoterSection() {
                                             </div>
                                             <div className="pt-6 border-t border-gray-800">
                                                 <Button
-                                                    className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase"
+                                                    className="w-full bg-white text-black hover:bg-primary hover:text-white font-bold uppercase rounded-2xl"
                                                     onClick={() => {
                                                         const params = new URLSearchParams({
                                                             origen: result.descripcionOrigen,
@@ -403,25 +403,25 @@ export function QuoterSection() {
                                 ) : (
                                     <div className="relative">
                                         <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
-                                            ¿Por qué cotizar con <br /> <span className="text-[#003fa2]">Pullman Cargo?</span>
+                                            ¿Por qué cotizar con <br /> <span className="text-primary">Pullman Cargo?</span>
                                         </h3>
                                         <ul className="space-y-4">
                                             <li className="flex items-start gap-3">
-                                                <CheckCircle2 className="w-6 h-6 text-[#003fa2] flex-shrink-0 mt-1" />
+                                                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                                                 <div>
                                                     <p className="font-bold text-gray-900">Tarifas Competitivas</p>
                                                     <p className="text-sm text-gray-500">Los mejores precios del mercado</p>
                                                 </div>
                                             </li>
                                             <li className="flex items-start gap-3">
-                                                <CheckCircle2 className="w-6 h-6 text-[#003fa2] flex-shrink-0 mt-1" />
+                                                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                                                 <div>
                                                     <p className="font-bold text-gray-900">Cobertura Nacional</p>
                                                     <p className="text-sm text-gray-500">Llegamos a todo Chile</p>
                                                 </div>
                                             </li>
                                             <li className="flex items-start gap-3">
-                                                <CheckCircle2 className="w-6 h-6 text-[#003fa2] flex-shrink-0 mt-1" />
+                                                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                                                 <div>
                                                     <p className="font-bold text-gray-900">Seguimiento en Tiempo Real</p>
                                                     <p className="text-sm text-gray-500">Rastrea tu envío en todo momento</p>

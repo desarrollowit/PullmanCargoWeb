@@ -60,7 +60,7 @@ export function FleetSection() {
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-                        Nuestra <span className="text-[#003fa2]">Flota</span>
+                        Nuestra <span className="text-secondary">Flota</span>
                     </h2>
                     <p className="text-gray-400 text-lg">
                         Tecnología y potencia en movimiento. Contamos con equipos de última generación para cada tipo de carga.
@@ -72,7 +72,7 @@ export function FleetSection() {
                         <CarouselContent className="-ml-4">
                             {fleet.map((item, index) => (
                                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                                    <div className="group relative h-[450px] overflow-hidden bg-black border border-zinc-800 transition-all duration-500 hover:border-[#003fa2]">
+                                    <div className="group relative h-[450px] overflow-hidden bg-black border border-zinc-800 transition-all duration-500 hover:border-primary rounded-2xl">
                                         {/* Image */}
                                         <div className="absolute inset-0">
                                             <Image
@@ -86,18 +86,18 @@ export function FleetSection() {
 
                                         {/* Content */}
                                         <div className="absolute bottom-0 left-0 width-full p-8 space-y-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                            <div className="w-12 h-1 bg-[#003fa2] mb-4" />
+                                            <div className="w-12 h-1 bg-[primary] mb-4" />
                                             <h3 className="text-2xl font-black uppercase text-white tracking-wide">
                                                 {item.name}
                                             </h3>
-                                            <p className="text-[#003fa2] font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <p className="text-[primary] font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                                 Capacidad: {item.capacity}
                                             </p>
                                         </div>
 
                                         {/* Hover Content */}
                                         <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            <p className="text-gray-200 text-lg font-medium leading-relaxed border-l-2 border-[#003fa2] pl-4">
+                                            <p className="text-gray-200 text-lg font-medium leading-relaxed border-l-2 border-[primary] pl-4">
                                                 {item.desc}
                                             </p>
                                         </div>
@@ -106,8 +106,8 @@ export function FleetSection() {
                             ))}
                         </CarouselContent>
                         <div className="hidden md:block">
-                            <CarouselPrevious className="left-[-50px] bg-transparent border-zinc-700 text-white hover:bg-[#003fa2] hover:border-[#003fa2]" />
-                            <CarouselNext className="right-[-50px] bg-transparent border-zinc-700 text-white hover:bg-[#003fa2] hover:border-[#003fa2]" />
+                            <CarouselPrevious className="left-[-50px] bg-transparent border-zinc-700 text-white hover:bg-primary hover:border-primary" />
+                            <CarouselNext className="right-[-50px] bg-transparent border-zinc-700 text-white hover:bg-primary hover:border-primary" />
                         </div>
                     </Carousel>
                 </ScrollReveal>

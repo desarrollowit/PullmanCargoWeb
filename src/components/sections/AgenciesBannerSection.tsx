@@ -20,7 +20,7 @@ export function AgenciesBannerSection() {
 
             <div className="container px-4 md:px-6 mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <ScrollReveal animation="slide-in-left" className="md:w-1/2 space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
                         <MapPin className="w-4 h-4 text-white" />
                         <span className="text-sm font-bold tracking-wide uppercase">Cobertura Nacional</span>
                     </div>
@@ -33,7 +33,7 @@ export function AgenciesBannerSection() {
                 </ScrollReveal>
 
                 <ScrollReveal animation="slide-in-right" delay={200} className="md:w-1/2 flex justify-center md:justify-end">
-                    <Button asChild className="h-16 px-8 bg-white text-[#003fa2] hover:bg-black hover:text-white text-lg font-black uppercase tracking-widest rounded-none transition-all shadow-2xl hover:translate-x-1">
+                    <Button asChild className="h-16 px-8 bg-primary text-white hover:bg-black font-black uppercase tracking-widest rounded-2xl transition-all shadow-2xl hover:translate-x-1 border-none">
                         <Link href="/sucursales">
                             Ver Todas las Sucursales <ArrowRight className="ml-3 w-6 h-6" />
                         </Link>

@@ -50,25 +50,25 @@ export function ServicesSectionEmpresas() {
     ]
 
     return (
-        <section id="servicios" className="w-full py-24 bg-gray-50">
+        <section id="servicios" className="w-full py-24 bg-background">
             <div className="container px-4 md:px-6 mx-auto">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 space-y-4">
-                    <div className="inline-block bg-[#003fa2] px-4 py-1 text-xs font-bold text-white uppercase tracking-widest mb-4">
+                    <div className="inline-block bg-primary px-4 py-1 text-xs font-bold text-white uppercase tracking-widest mb-4">
                         Servicios B2B
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 uppercase">
-                        Soluciones para <span className="text-[#003fa2]">Empresas</span>
+                        Soluciones para <span className="text-primary">Empresas</span>
                     </h2>
-                    <div className="w-24 h-1.5 bg-[#003fa2] mx-auto mt-6" />
+                    <div className="w-24 h-1.5 bg-primary mx-auto mt-6" />
                 </ScrollReveal>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <ScrollReveal key={index} animation="slide-in-bottom" delay={service.delay} className="h-full">
-                            <div className="group relative h-full bg-white p-8 shadow-lg hover:bg-[#003fa2] transition-colors duration-500 overflow-hidden border-t-4 border-transparent hover:border-black">
+                            <div className="group relative h-full bg-white p-8 shadow-lg hover:bg-primary transition-colors duration-500 overflow-hidden border-t-4 border-transparent hover:border-black">
                                 <div className="relative z-10 flex flex-col h-full">
                                     <div className="mb-6 inline-flex p-4 bg-gray-100 group-hover:bg-white/10 rounded-none transition-colors">
-                                        <div className="text-[#003fa2] group-hover:text-white transition-colors">
+                                        <div className="text-primary group-hover:text-white transition-colors">
                                             {service.icon}
                                         </div>
                                     </div>
