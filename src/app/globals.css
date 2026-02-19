@@ -58,67 +58,68 @@
   :root {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
-    --background: #ffffff;
-    --foreground: #000000;
+    --background: #fefcf4;
+    --foreground: #071123;
 
     --card: #ffffff;
-    --card-foreground: #000000;
+    --card-foreground: #071123;
 
     --popover: #ffffff;
-    --popover-foreground: #000000;
+    --popover-foreground: #071123;
 
-    --primary: #003fa2;
-    /* Tono Normado Pullman Cargo */
+    --primary: #ff5500;
+    /* Naranja primario pullmanviajes.cl */
     --primary-foreground: #ffffff;
 
-    --secondary: #000000;
-    /* Black Accent from Brand Book */
+    --secondary: #003fa2;
+    /* Pullman Blue corporativo */
     --secondary-foreground: #ffffff;
 
-    --muted: #f8fafc;
-    --muted-foreground: #475569;
+    --muted: #eef2f9;
+    --muted-foreground: #5d646f;
 
-    --accent: #003fa2;
+    --accent: #00407c;
+    /* Navy oscuro */
     --accent-foreground: #ffffff;
 
-    --destructive: #ef4444;
+    --destructive: #e40014;
     --destructive-foreground: #ffffff;
 
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #003fa2;
+    --border: #dadee5;
+    --input: #dadee5;
+    --ring: #e46212;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: #020817;
-    --foreground: #f8fafc;
+    --background: #071123;
+    --foreground: #fefcf4;
 
-    --card: #1e293b;
-    --card-foreground: #f8fafc;
+    --card: #0d1a35;
+    --card-foreground: #fefcf4;
 
-    --popover: #020817;
-    --popover-foreground: #f8fafc;
+    --popover: #071123;
+    --popover-foreground: #fefcf4;
 
-    --primary: #003fa2;
+    --primary: #ff5500;
     --primary-foreground: #ffffff;
 
-    --secondary: #000000;
+    --secondary: #003fa2;
     --secondary-foreground: #ffffff;
 
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
+    --muted: #1a2744;
+    --muted-foreground: #8a93a0;
 
-    --accent: #1e293b;
+    --accent: #00407c;
     --accent-foreground: #ffffff;
 
-    --destructive: #7f1d1d;
-    --destructive-foreground: #f8fafc;
+    --destructive: #e40014;
+    --destructive-foreground: #fefcf4;
 
-    --border: #1e293b;
-    --input: #1e293b;
-    --ring: #003fa2;
+    --border: #1e2d4a;
+    --input: #1e2d4a;
+    --ring: #e46212;
   }
 }
 

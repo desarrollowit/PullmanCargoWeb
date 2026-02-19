@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react"
 
 export function BusinessPortalCTA() {
     return (
-        <section id="portal-empresas" className="w-full py-24 bg-gradient-to-br from-[#003fa2] via-[#002d75] to-black text-white relative overflow-hidden">
+        <section id="portal-empresas" className="w-full py-24 bg-gradient-to-br from-secondary via-accent to-black text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "30px 30px" }}></div>
 
@@ -18,7 +18,7 @@ export function BusinessPortalCTA() {
                 <ScrollReveal animation="fade-in" className="text-center max-w-4xl mx-auto">
                     {/* Heading */}
                     <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
-                        Portal de <span className="text-orange-500">Empresas</span>
+                        Portal de <span className="text-primary">Empresas</span>
                     </h2>
 
                     <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
@@ -44,7 +44,7 @@ export function BusinessPortalCTA() {
                     {/* CTA Button */}
                     <Button
                         asChild
-                        className="h-16 px-12 bg-orange-500 hover:bg-orange-600 text-white font-black text-lg uppercase tracking-widest rounded-none shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
+                        className="h-16 px-12 bg-primary hover:bg-primary/90 text-white font-black text-lg uppercase tracking-widest rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
                     >
                         <a
                             href="https://empresas.pullmango.cl/login.php"

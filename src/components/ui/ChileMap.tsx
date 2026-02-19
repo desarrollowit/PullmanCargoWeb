@@ -40,7 +40,7 @@ export function ChileMap({ selectedRegion, onSelectRegion, className }: ChileMap
             <svg
                 viewBox={VIEW_BOX}
                 preserveAspectRatio="xMidYMin meet"
-                style={{ height: "82vh", width: "auto", display: "block" }}
+                style={{ height: "65vh", width: "auto", display: "block" }}
             >
                 {mapRegions.map((region) => {
                     const isActive = selectedRegion === region.id
@@ -64,7 +64,7 @@ export function ChileMap({ selectedRegion, onSelectRegion, className }: ChileMap
                                     transition: "fill 0.2s ease",
                                 }}
                                 onMouseEnter={e => {
-                                    if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#93c5fd"
+                                    if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#ffeedd"
                                 }}
                                 onMouseLeave={e => {
                                     if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#e5e7eb"
