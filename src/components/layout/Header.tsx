@@ -15,7 +15,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
-  const [placeholderText, setPlaceholderText] = React.useState("TRACKING")
+  const [placeholderText, setPlaceholderText] = React.useState("INGRESE ODT")
   const [trackingId, setTrackingId] = React.useState("")
   const router = useRouter()
   const pathname = usePathname()
@@ -43,11 +43,11 @@ export function Header() {
   const showTrackingButton = placeholderText === "INGRESA ODT" || trackingId.length > 0;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white py-4"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-background transition-all duration-300 ${isScrolled ? "shadow-xl py-2" : "shadow-lg py-4"}`}>
       {/* Top Bar (Optional, can be added if needed, kept simple for now as per clean design) */}
 
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link
             href={isEmpresas ? "/empresas" : "/"}
@@ -62,7 +62,7 @@ export function Header() {
             <img
               src="/brand/LOGO2 CARGO.png"
               alt="Pullman Cargo"
-              className="h-12 md:h-16 w-auto object-contain"
+              className="h-[36px] md:h-[43px] w-auto object-contain"
             />
           </Link>
 
@@ -82,10 +82,10 @@ export function Header() {
                     }
                   }
                 }}
-                className="text-gray-600 hover:text-[#003fa2] font-medium transition-colors duration-200 relative group text-sm uppercase tracking-wide"
+                className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 relative group text-sm"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003fa2] group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
@@ -95,37 +95,33 @@ export function Header() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                if (!trackingId) return; // Use state
+                if (!trackingId) return;
                 router.push(`/seguimiento?odt=${trackingId}`);
               }}
-              className="relative h-full flex items-center"
+              className="relative flex items-center"
             >
-              {/* Full height container with skew */}
               <div
-                className="relative h-full flex items-center bg-[#003fa2] transform -skew-x-12 px-6 transition-all duration-300 hover:bg-[#002d75]"
-                onMouseEnter={() => setPlaceholderText("INGRESA ODT")}
-                onMouseLeave={() => setPlaceholderText("TRACKING")}
+                className="flex items-center gap-2 bg-muted border border-input rounded-2xl px-4 py-2 transition-all duration-300 hover:bg-muted/80"
+                onMouseEnter={() => setPlaceholderText("INGRESE ODT")}
+                onMouseLeave={() => setPlaceholderText("INGRESE ODT")}
               >
-                <div className="skew-x-12 flex items-center gap-2">
-                  <input
-                    type="text"
-                    name="trackingId"
-                    value={trackingId}
-                    onChange={(e) => setTrackingId(e.target.value)}
-                    placeholder={placeholderText}
-                    className="bg-transparent border-none outline-none w-40 focus:w-56 text-white placeholder:text-white/70 font-bold uppercase tracking-wider transition-all text-sm"
-                  />
-                  <button
-                    type="submit"
-                    className={`focus:outline-none flex items-center justify-center rounded-full transition-all duration-300 ${showTrackingButton ? "w-7 h-7 bg-white shadow-md hover:shadow-lg hover:scale-110" : ""}`}
-                  >
-                    {showTrackingButton ? (
-                      <Zap className="w-4 h-4 text-[#003fa2] fill-[#003fa2] animate-in fade-in zoom-in duration-200" />
-                    ) : (
-                      <Search className="w-4 h-4 text-white/90 animate-in fade-in zoom-in duration-200" />
-                    )}
-                  </button>
-                </div>
+                <Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <input
+                  type="text"
+                  name="trackingId"
+                  value={trackingId}
+                  onChange={(e) => setTrackingId(e.target.value)}
+                  placeholder={placeholderText}
+                  className="bg-transparent border-none outline-none w-24 focus:w-36 text-foreground placeholder:text-muted-foreground/60 font-medium uppercase tracking-wider transition-all text-xs"
+                />
+                <button
+                  type="submit"
+                  className={`focus:outline-none flex items-center justify-center rounded-2xl transition-all duration-300 ${showTrackingButton ? "w-6 h-6 bg-white shadow-md hover:scale-110" : "hidden"}`}
+                >
+                  {showTrackingButton && (
+                    <Zap className="w-3.5 h-3.5 text-secondary fill-secondary" />
+                  )}
+                </button>
               </div>
             </form>
           </div>
@@ -133,15 +129,19 @@ export function Header() {
           {/* CTA Button + WIT Logo */}
           <div className="hidden lg:flex items-center gap-6">
             {!isEmpresas && (
-              <Button asChild className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              <Button asChild className="bg-primary hover:bg-black text-white font-bold rounded-2xl px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                 <Link href="/#cotizador">
                   Cotizar Ahora
                 </Link>
               </Button>
             )}
+
+            {/* Vertical Separator */}
+            <div className="w-px h-12 bg-gray-200" />
+
             {/* WIT Logo */}
-            <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-200">
-              <img src="/brand/wit-logo.svg" alt="A Global Partnership wit" className="h-10 w-auto object-contain" />
+            <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 border-none outline-none opacity-70 hover:opacity-100 transition-opacity duration-200">
+              <img src="/brand/wit-logo.svg" alt="A Global Partnership wit" className="h-14 w-auto object-contain border-none p-0" />
             </a>
           </div>
 
@@ -149,7 +149,7 @@ export function Header() {
           <div className="lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-[#003fa2] hover:bg-blue-50/50">
+                <Button variant="ghost" size="icon" className="text-foreground hover:bg-muted">
                   <Menu className="h-8 w-8" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
@@ -204,7 +204,7 @@ export function Header() {
                   {/* Call to Actions */}
                   <div className="px-8 pb-4 space-y-3">
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-[#003fa2] hover:bg-[#002d75] text-white font-bold h-12 text-lg shadow-lg hover:shadow-blue-900/20 transition-all duration-300 transform hover:-translate-y-1">
+                      <Button asChild className="w-full bg-primary hover:bg-black text-white font-bold h-12 text-lg shadow-lg hover:shadow-primary/20 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <Link href="#cotizador">Cotizar Ahora</Link>
                       </Button>
                     </SheetClose>
@@ -221,7 +221,7 @@ export function Header() {
                     {/* Social Icons */}
                     <div className="flex justify-center gap-6">
                       {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-                        <Link key={i} href="#" className="p-2 rounded-full bg-white text-gray-500 hover:text-[#003fa2] hover:bg-white shadow-sm hover:shadow-md transition-all duration-300">
+                        <Link key={i} href="#" className="p-2 rounded-2xl bg-white text-gray-500 hover:text-primary hover:bg-white shadow-sm hover:shadow-md transition-all duration-300">
                           <Icon className="w-5 h-5" />
                         </Link>
                       ))}
