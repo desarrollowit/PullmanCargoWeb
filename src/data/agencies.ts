@@ -11,6 +11,426 @@ export interface Agency {
 
 export const agencies: Agency[] = [
     {
+        "city": "Estación Central",
+        "name": "A14-OBISPO UMAÑA",
+        "address": "Obispo Umaña N°1307",
+        "phone": "9-99217249",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Estación Central",
+        "email": "A14@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Bilbao",
+        "name": "A41-BILBAO",
+        "address": "Avenida Bilbao N° 308",
+        "phone": "9-77888602",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Providencia",
+        "email": "A41@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Conchali",
+        "name": "A45-EL CORTIJO",
+        "address": "Eduardo Frei Montalva N°6001 Edificio B-82",
+        "phone": "9-42126656",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Conchali",
+        "email": "A45@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Melipilla",
+        "name": "A53-MELIPILLA SILVA CHAVEZ",
+        "address": "Silvia Chávez N° 561-B",
+        "phone": "9-42465348",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Melipilla",
+        "email": "A53@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Mapocho",
+        "name": "A55-AGENCIA MAPOCHO",
+        "address": "Avenida Mapocho N°5534",
+        "phone": "9-95426254",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Quinta Normal",
+        "email": "A55@PULLMANCARGO.CL"
+    },
+    {
+        "city": "La Cisterna",
+        "name": "A63-LA CISTERNA",
+        "address": "Angamos N° 7763",
+        "phone": "9-35163805",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "La Cisterna",
+        "email": "A63@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Toesca",
+        "name": "A69-TOESCA",
+        "address": "Toesca N° 2698",
+        "phone": "9-54782260",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Santiago Centro",
+        "email": "A69@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Puente Alto",
+        "name": "A82-PUENTE ALTO",
+        "address": "Ernesto Alvear N° 247",
+        "phone": "9-31267359",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Puente Alto",
+        "email": "A82@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Lo Campino",
+        "name": "A85-LO CAMPINO",
+        "address": "Av. Américo Vespucio N° 1651 Local 21, Strip center Lider Lo Campino",
+        "phone": "9-31209093",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Quilicura",
+        "email": "A85@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Bodega San Francisco",
+        "name": "A86-BODEGAS SAN FRANCISCO",
+        "address": "Avenida Laguna Sur 9.660; Bodega 571",
+        "phone": "9-54459505",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Pudahuel",
+        "email": "A86@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Talagante",
+        "name": "A87-TALAGANTE",
+        "address": "Enrique Alcalde N°1336",
+        "phone": "9-79571978",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Talagante",
+        "email": "A87@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Quinta Normal",
+        "name": "A90-QUINTA NORMAL",
+        "address": "Avenida José Joaquín Pérez N°4481",
+        "phone": "9-35585762",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Quinta Normal",
+        "email": "A90@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Lo Barnechea",
+        "name": "B32-LO BARNECHEA",
+        "address": "Comandante Malbec N° 13500 Local 1",
+        "phone": "9-45757725",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Lo Barnechea",
+        "email": "B32@PULLMANCARGO.CL"
+    },
+    {
+        "city": "La Florida",
+        "name": "G58- LA FLORIDA",
+        "address": "Canadá N° 9541",
+        "phone": "9-32712092",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "La Florida",
+        "email": "G58@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Chacabuco",
+        "name": "K07-CHACABUCO",
+        "address": "Chacabuco N° 92",
+        "phone": "9-51604262",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Santiago Centro",
+        "email": "K07@PULLMANCARGO.CL"
+    },
+    {
+        "city": "El Bosque",
+        "name": "M06-EL BOSQUE",
+        "address": "Gran Avenida Jose Miguel Carrera N° 10782 Paradero 33",
+        "phone": "9-77550806",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "El Bosque",
+        "email": "M06@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Thompson",
+        "name": "M08-THOMPSON",
+        "address": "Jotabeche N°137",
+        "phone": "9-99217249",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Estación Central",
+        "email": "M08@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Buin",
+        "name": "M11-BUIN",
+        "address": "Jose Manuel Balmaceda N° 899, Local 3",
+        "phone": "9-87773458",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Buin",
+        "email": "M11@PULLMANCARGO.CL"
+    },
+    {
+        "city": "San Diego",
+        "name": "M13-SAN DIEGO",
+        "address": "Aconcagua N° 1125",
+        "phone": "9-82907764",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Santiago",
+        "email": "M13@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Santiago",
+        "name": "M15-EXPOSICION 2",
+        "address": "Exposicion N° 516",
+        "phone": "9-62654890",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Santiago",
+        "email": "M15@PULLMANCARGO.CL"
+    },
+    {
+        "city": "San Borja",
+        "name": "M16-SAN BORJA",
+        "address": "San Borja N° 201",
+        "phone": "9-76490691",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Estación Central",
+        "email": "M16@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Cerrillos",
+        "name": "M-18 BUZETA",
+        "address": "Av. Cinco N° 2700",
+        "phone": "9-47556231",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Cerrillos",
+        "email": "M18@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Peñalolen",
+        "name": "M21-PEÑALOLEN",
+        "address": "Av. Américo Vespucio N° 886",
+        "phone": "9-81877873",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Peñalolen",
+        "email": "M21@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Lo Prado",
+        "name": "M-22 SAN PABLO",
+        "address": "San Pablo N°5986",
+        "phone": "9-85859540",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Lo Prado",
+        "email": "M22@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Lonquen",
+        "name": "M23-BOD.DESPACHO CLIENTE",
+        "address": "Cerro Sombrero N° 1775",
+        "phone": "9-78887068",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Maipú",
+        "email": "M23@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Matta",
+        "name": "M30-AV. MATTA",
+        "address": "Av. Matta N° 421",
+        "phone": "9-91556748",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Santiago",
+        "email": "M30@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Santiago",
+        "name": "M32-ARTEMIO GUTIERREZ",
+        "address": "Artemio Gutierrez N° 1446",
+        "phone": "9-44367893",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Santiago",
+        "email": "M32@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Jotabeche",
+        "name": "M35-JOTABECHE",
+        "address": "Jotabeche N° 529",
+        "phone": "9-9010 6968",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Estación Central",
+        "email": "M35@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Patronato",
+        "name": "M44-PATRONATO",
+        "address": "Tabaré N° 616",
+        "phone": "9-3867 8416",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Recoleta",
+        "email": "M44@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Ñuñoa",
+        "name": "M47-NUNOA",
+        "address": "Los Alerces N° 2176",
+        "phone": "9-9316 0124",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Ñuñoa",
+        "email": "M47@PULLMANCARGO.CL"
+    },
+    {
+        "city": "San Bernardo",
+        "name": "M54-SAN BERNARDO",
+        "address": "Freire N° 318",
+        "phone": "9-7958 8586",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "San Bernardo",
+        "email": "M54@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Lo Boza",
+        "name": "M58-LO BOZA CD",
+        "address": "Lo Boza N° 107",
+        "phone": "9-84645444",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Pudahuel",
+        "email": "M58@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Einstein",
+        "name": "M60-EINSTEIN",
+        "address": "Av. Einstein N° 1196",
+        "phone": "9-99883002",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Recoleta",
+        "email": "M60@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Macul",
+        "name": "M90-MACUL",
+        "address": "Almirante Cochrane N° 3940",
+        "phone": "9-95394204",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Macul",
+        "email": "M90@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Lo Espejo",
+        "name": "M93-LO ESPEJO",
+        "address": "Av.Lo Espejo N°01565",
+        "phone": "9-41790619",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Lo Espejo",
+        "email": "M93@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Carmen Mena",
+        "name": "N31-SAN MIGUEL",
+        "address": "Carmen Mena N° 981",
+        "phone": "9-36604197",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "San Miguel",
+        "email": "N31@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Bustamante",
+        "name": "N39-PARQUE BUSTAMANTE",
+        "address": "Bustamante N° 656",
+        "phone": "9-36923231",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Ñuñoa",
+        "email": "N39@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Exposicion",
+        "name": "N87-EXPOSICION",
+        "address": "Exposición N° 324",
+        "phone": "9-49226153",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Santiago Centro",
+        "email": "N87@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Serrano",
+        "name": "O14-SERRANO",
+        "address": "Serrano N° 691",
+        "phone": "9-61949901",
+        "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
+        "region": "SANTIAGO",
+        "commune": "Santiago Centro",
+        "email": "O14@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Quilicura",
+        "name": "O18-QUILICURA",
+        "address": "San Ignacio N° 101",
+        "phone": "9-40363364",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "Quilicura",
+        "email": "O18@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Larrain",
+        "name": "Z83-LA REINA",
+        "address": "Alcalde Fernando Castillo Velasco  N° 6985",
+        "phone": "9-94127504",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "La Reina",
+        "email": "Z83@PULLMANCARGO.CL"
+    },
+    {
+        "city": "Santa Rosa",
+        "name": "Z86-SANTA ROSA",
+        "address": "Avenida Santa Rosa N° 5320",
+        "phone": "9-82334201",
+        "hours": "Lun-Vie: 09:00 - 18:30",
+        "region": "SANTIAGO",
+        "commune": "San Joaquín",
+        "email": "Z86@PULLMANCARGO.CL"
+    },
+    {
         "city": "Arica",
         "name": "ARICA CD",
         "address": "Av. Santa Maria N° 2535",
