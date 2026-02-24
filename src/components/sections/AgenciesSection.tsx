@@ -14,7 +14,7 @@ export function AgenciesSection() {
         <section id="agencias" className="w-full py-24 bg-background text-gray-900 overflow-hidden relative">
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
+                    <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter uppercase mb-6 text-secondary">
                         Nuestras <span className="text-secondary">Agencias</span>
                     </h2>
                     <p className="text-gray-500 text-lg">
@@ -27,7 +27,7 @@ export function AgenciesSection() {
                     <div className="w-full h-[400px] bg-secondary rounded-3xl relative overflow-hidden flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200')] bg-cover bg-center bg-no-repeat bg-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-700 group">
                         <div className="bg-black/40 absolute inset-0 transition-opacity hover:bg-black/30" />
                         <div className="relative z-10 text-center text-white p-8 border-4 border-white/20 backdrop-blur-sm rounded-none">
-                            <h3 className="text-3xl font-black uppercase mb-4">Cobertura Nacional</h3>
+                            <h3 className="text-2xl font-semibold uppercase mb-4 text-white">Cobertura Nacional</h3>
                             <p className="text-xl font-medium mb-8">Más de 50 puntos de entrega en todo Chile</p>
                             <Button className="bg-primary hover:bg-black text-white font-bold uppercase h-12 px-8 rounded-2xl shadow-lg transition-all">
                                 Ver Mapa Completo <Navigation className="ml-2 w-5 h-5" />
@@ -50,7 +50,7 @@ export function AgenciesSection() {
                                             {agency.region}
                                         </span>
                                     </div>
-                                    <h3 className="text-xl font-black uppercase text-gray-900 mb-2 group-hover:text-secondary transition-colors">{agency.city}</h3>
+                                    <h3 className="text-xl font-semibold uppercase text-secondary mb-2 group-hover:text-primary transition-colors">{agency.city}</h3>
                                     <p className="text-gray-500 text-sm mb-4 font-medium">{agency.address}</p>
 
                                     <div className="space-y-2 border-t border-gray-100 pt-4">

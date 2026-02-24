@@ -176,7 +176,6 @@ export default function ContratarForm() {
                                         <p className="text-3xl font-black text-[#003fa2]">
                                             ${parseInt(quoteData.price).toLocaleString("es-CL")}
                                         </p>
-                                        <p className="text-xs text-gray-500">IVA Incluido</p>
                                     </div>
 
                                     <Link href="/#cotizador">
@@ -260,7 +259,7 @@ export default function ContratarForm() {
 
                                             {quoteData.lugar === "SUC" ? (
                                                 <div className="space-y-4">
-                                                    <div className="bg-blue-50 p-4 rounded-lg flex items-start gap-3">
+                                                    <div className="bg-gray-50 p-4 rounded-lg flex items-start gap-3">
                                                         <CheckCircle2 className="w-5 h-5 text-[#003fa2] mt-0.5" />
                                                         <div>
                                                             <p className="font-bold text-[#003fa2]">Retiro en Agencia</p>

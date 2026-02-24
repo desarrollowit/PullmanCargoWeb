@@ -29,7 +29,7 @@ export function Footer() {
                             </div>
                             <div className="flex items-center gap-3 text-white/80">
                                 <MapPin className="w-5 h-5 text-[#ffffff]" />
-                                <span>San Borja 235, Estación Central - Santiago</span>
+                                <span>Cerro Sombrero 1775, Maipú - Santiago</span>
                             </div>
                         </div>
                         {/* Social Links */}

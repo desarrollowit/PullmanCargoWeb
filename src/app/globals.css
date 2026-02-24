@@ -72,14 +72,16 @@
     --primary-foreground: #ffffff;
 
     --secondary: #003fa2;
-    /* Pullman Blue corporativo */
+    /* Azul corporativo actualizado */
     --secondary-foreground: #ffffff;
 
-    --muted: #eef2f9;
-    --muted-foreground: #5d646f;
+    --muted: #dddddd;
+    /* Gris claro corporativo */
+    --muted-foreground: #606060;
+    /* Gris oscuro corporativo */
 
-    --accent: #00407c;
-    /* Navy oscuro */
+    --accent: #003fa2;
+    /* Navy oscuro -> Brand Blue */
     --accent-foreground: #ffffff;
 
     --destructive: #e40014;
@@ -108,10 +110,10 @@
     --secondary: #003fa2;
     --secondary-foreground: #ffffff;
 
-    --muted: #1a2744;
-    --muted-foreground: #8a93a0;
+    --muted: #dddddd;
+    --muted-foreground: #606060;
 
-    --accent: #00407c;
+    --accent: #003fa2;
     --accent-foreground: #ffffff;
 
     --destructive: #e40014;

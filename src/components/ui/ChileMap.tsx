@@ -40,73 +40,77 @@ export function ChileMap({ selectedRegion, onSelectRegion, className }: ChileMap
             <svg
                 viewBox={VIEW_BOX}
                 preserveAspectRatio="xMidYMin meet"
-                style={{ height: "65vh", width: "auto", display: "block" }}
+                style={{ height: "88vh", width: "auto", display: "block" }}
             >
+                {/* First pass: All region shapes */}
+                {mapRegions.map((region) => {
+                    const isActive = selectedRegion === region.id
+                    return (
+                        <path
+                            key={`path-${region.id}`}
+                            d={region.d}
+                            onClick={() => onSelectRegion(region.id)}
+                            className="cursor-pointer"
+                            style={{
+                                fill: isActive ? "#ff5500" : "#e5e7eb",
+                                stroke: "#ffffff",
+                                strokeWidth: "0.5",
+                                transition: "fill 0.2s ease",
+                            }}
+                            onMouseEnter={e => {
+                                if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#ffeedd"
+                            }}
+                            onMouseLeave={e => {
+                                if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#e5e7eb"
+                            }}
+                        />
+                    )
+                })}
+
+                {/* Second pass: All labels (lines, dots, text) on top of shapes */}
                 {mapRegions.map((region) => {
                     const isActive = selectedRegion === region.id
                     const label = regionLabels[region.id]
 
+                    if (!label) return null
+
                     return (
                         <g
-                            key={region.id}
+                            key={`label-${region.id}`}
                             onClick={() => onSelectRegion(region.id)}
                             className="cursor-pointer"
-                            role="button"
-                            aria-label={region.name}
+                            style={{ opacity: isActive ? 1 : 0.8, transition: "opacity 0.2s ease" }}
                         >
-                            {/* Region shape */}
-                            <path
-                                d={region.d}
-                                style={{
-                                    fill: isActive ? "#003fa2" : "#e5e7eb",
-                                    stroke: "#ffffff",
-                                    strokeWidth: "0.5",
-                                    transition: "fill 0.2s ease",
-                                }}
-                                onMouseEnter={e => {
-                                    if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#ffeedd"
-                                }}
-                                onMouseLeave={e => {
-                                    if (!isActive) (e.currentTarget as SVGPathElement).style.fill = "#e5e7eb"
-                                }}
+                            <line
+                                x1={label.ax}
+                                y1={label.ay}
+                                x2={label.lx - 3}
+                                y2={label.ly}
+                                stroke="#ff5500"
+                                strokeWidth="0.6"
                             />
-
-                            {/* Label with pointer line */}
-                            {label && (
-                                <g style={{ opacity: isActive ? 1 : 0.6, transition: "opacity 0.2s ease" }}>
-                                    <line
-                                        x1={label.ax}
-                                        y1={label.ay}
-                                        x2={label.lx - 3}
-                                        y2={label.ly}
-                                        stroke={isActive ? "#003fa2" : "#9ca3af"}
-                                        strokeWidth="0.6"
-                                    />
-                                    <circle
-                                        cx={label.ax}
-                                        cy={label.ay}
-                                        r="1.5"
-                                        fill={isActive ? "#003fa2" : "#9ca3af"}
-                                    />
-                                    <text
-                                        x={label.lx + 1}
-                                        y={label.ly}
-                                        dominantBaseline="middle"
-                                        style={{
-                                            fontSize: "9px",
-                                            fontWeight: isActive ? "700" : "500",
-                                            fill: isActive ? "#003fa2" : "#6b7280",
-                                            fontFamily: "Inter, system-ui, sans-serif",
-                                            letterSpacing: "0.02em",
-                                            textTransform: "uppercase",
-                                            transition: "fill 0.2s ease",
-                                            userSelect: "none",
-                                        }}
-                                    >
-                                        {region.name}
-                                    </text>
-                                </g>
-                            )}
+                            <circle
+                                cx={label.ax}
+                                cy={label.ay}
+                                r="1.5"
+                                fill="#ff5500"
+                            />
+                            <text
+                                x={label.lx + 1}
+                                y={label.ly}
+                                dominantBaseline="middle"
+                                style={{
+                                    fontSize: "9px",
+                                    fontWeight: isActive ? "700" : "500",
+                                    fill: "#ff5500",
+                                    fontFamily: "Inter, system-ui, sans-serif",
+                                    letterSpacing: "0.02em",
+                                    textTransform: "uppercase",
+                                    userSelect: "none",
+                                }}
+                            >
+                                {region.name}
+                            </text>
                         </g>
                     )
                 })}

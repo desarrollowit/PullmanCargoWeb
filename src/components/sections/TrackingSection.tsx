@@ -21,12 +21,12 @@ export function TrackingSection() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <ScrollReveal animation="slide-in-left" className="space-y-8">
                         {/* ... (left content remains same) ... */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white text-primary text-sm font-bold uppercase tracking-wider">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-background text-secondary text-sm font-bold uppercase tracking-wider shadow-sm">
                             <span className="flex items-center gap-2">
-                                <Info className="w-4 h-4" /> Tracking en Tiempo Real
+                                <Info className="w-4 h-4 text-primary" /> Tracking en Tiempo Real
                             </span>
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9]">
+                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-white uppercase leading-[0.9]">
                             Control <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Total</span>
                         </h2>
@@ -36,11 +36,10 @@ export function TrackingSection() {
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-in-right">
-                        <div className="bg-white p-8 md:p-10 shadow-2xl relative overflow-hidden group">
-                            <div className="absolute top-0 left-0 w-2 h-full bg-secondary" />
+                        <div className="bg-background p-8 md:p-10 shadow-2xl relative overflow-hidden group rounded-3xl">
                             <div className="space-y-8 relative z-10">
                                 <div>
-                                    <h3 className="text-3xl font-black text-secondary uppercase mb-2">Rastrea tu envío</h3>
+                                    <h3 className="text-2xl font-semibold text-secondary uppercase mb-2">Rastrea tu envío</h3>
                                     <p className="text-gray-500 font-medium">
                                         Ingresa tu número de orden o guía de despacho.
                                     </p>
@@ -57,12 +56,12 @@ export function TrackingSection() {
                                     <div className="relative">
                                         <Input
                                             name="trackingId"
-                                            className="h-14 bg-gray-50 text-black border-2 border-gray-200 focus:border-primary rounded-2xl px-6 text-lg font-bold placeholder:font-normal transition-all"
+                                            className="h-14 bg-muted text-secondary border-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-2xl px-6 text-lg font-bold placeholder:font-normal transition-all"
                                             placeholder="Ingrese su ODT"
                                             type="text"
                                         />
                                     </div>
-                                    <Button className="w-full h-14 bg-primary hover:bg-black text-white font-black text-lg uppercase tracking-widest transition-all duration-300 rounded-2xl shadow-xl hover:shadow-2xl">
+                                    <Button className="w-full h-14 bg-primary hover:bg-black text-white font-bold text-lg uppercase tracking-widest transition-all duration-300 rounded-2xl shadow-xl hover:shadow-2xl">
                                         <Search className="w-5 h-5 mr-3" /> Buscar Ahora
                                     </Button>
                                 </form>

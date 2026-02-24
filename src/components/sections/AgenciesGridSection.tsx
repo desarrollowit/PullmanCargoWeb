@@ -59,11 +59,11 @@ export function AgenciesGridSection() {
     }, [searchTerm, selectedRegion])
 
     return (
-        <section className="w-full py-12 bg-white text-gray-900 relative">
+        <section className="w-full py-12 bg-white text-secondary relative">
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-10 max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase mb-2">
-                        Nuestras <span className="text-secondary">Sucursales</span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-tighter uppercase mb-2">
+                        Nuestras <span className="text-primary">Sucursales</span>
                     </h2>
                     <p className="text-gray-500">
                         Selecciona una región en el mapa o utiliza el buscador para encontrar tu agencia más cercana.
@@ -137,18 +137,18 @@ export function AgenciesGridSection() {
                             {paginatedAgencies.length > 0 ? (
                                 paginatedAgencies.map((agency, index) => (
                                     <ScrollReveal key={`${currentPage}-${index}`} animation="fade-in" delay={index * 50}>
-                                        <Card className="h-full hover:shadow-md transition-all border-gray-200 hover:border-[#003fa2] group">
+                                        <Card className="h-full hover:shadow-md transition-all border-gray-200 hover:border-secondary group">
                                             <CardContent className="p-5 flex flex-col h-full">
                                                 <div className="flex justify-between items-start mb-3">
-                                                    <div className="p-2 bg-blue-50 rounded-2xl group-hover:bg-secondary transition-colors">
-                                                        <MapPin className="w-5 h-5 text-secondary group-hover:text-white transition-colors" />
+                                                    <div className="p-2 bg-orange-50 rounded-2xl group-hover:bg-primary transition-colors">
+                                                        <MapPin className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                                                     </div>
                                                     <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 px-2 py-1 rounded">
                                                         {agency.commune || agency.city}
                                                     </span>
                                                 </div>
 
-                                                <h4 className="font-bold text-gray-900 uppercase mb-1">{agency.city}</h4>
+                                                <h4 className="font-bold text-primary uppercase mb-1">{agency.city}</h4>
                                                 <p className="text-sm text-gray-600 mb-4 line-clamp-1 flex-1">{agency.address}</p>
 
                                                 <div className="space-y-2 mb-4 text-xs text-gray-500">
@@ -162,7 +162,7 @@ export function AgenciesGridSection() {
 
                                                 <Button
                                                     variant="outline"
-                                                    className="w-full text-secondary border-secondary/20 hover:bg-secondary hover:text-white text-xs uppercase font-bold h-9 rounded-2xl"
+                                                    className="w-full text-primary border-primary/20 hover:bg-primary hover:text-white text-xs uppercase font-bold h-9 rounded-2xl"
                                                     asChild
                                                 >
                                                     <a

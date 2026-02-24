@@ -44,3 +44,6 @@ next-env.d.ts
 contextoProyecto.toml
 # brand guidelines
 colores.toml
+
+# agencias.json
+agencias.json

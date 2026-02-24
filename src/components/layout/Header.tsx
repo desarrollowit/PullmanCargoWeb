@@ -67,7 +67,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 ml-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -129,7 +129,7 @@ export function Header() {
           {/* CTA Button + WIT Logo */}
           <div className="hidden lg:flex items-center gap-6">
             {!isEmpresas && (
-              <Button asChild className="bg-primary hover:bg-black text-white font-bold rounded-2xl px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              <Button asChild className="bg-primary hover:bg-secondary text-white font-bold rounded-2xl px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                 <Link href="/#cotizador">
                   Cotizar Ahora
                 </Link>
@@ -204,7 +204,7 @@ export function Header() {
                   {/* Call to Actions */}
                   <div className="px-8 pb-4 space-y-3">
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-primary hover:bg-black text-white font-bold h-12 text-lg shadow-lg hover:shadow-primary/20 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
+                      <Button asChild className="w-full bg-primary hover:bg-secondary text-white font-bold h-12 text-lg shadow-lg hover:shadow-primary/20 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <Link href="#cotizador">Cotizar Ahora</Link>
                       </Button>
                     </SheetClose>
