@@ -53,10 +53,6 @@ export function ServicesSection() {
                     {services.map((service, index) => (
                         <ScrollReveal key={index} animation="slide-in-bottom" delay={service.delay} className="h-full">
                             <div className="group relative h-full bg-white p-8 shadow-lg hover:bg-primary transition-colors duration-500 overflow-hidden rounded-3xl">
-                                {/* Decorative Number */}
-                                <div className="absolute top-4 right-4 text-3xl font-semibold text-gray-100 group-hover:text-white/10 transition-colors">
-                                    0{index + 1}
-                                </div>
 
                                 <div className="relative z-10 flex flex-col h-full">
                                     <div className="mb-6 inline-flex p-4 bg-gray-50 group-hover:bg-white/10 rounded-2xl transition-colors">
