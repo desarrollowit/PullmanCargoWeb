@@ -14,40 +14,34 @@ import {
 export function FleetSection() {
     const fleet = [
         {
-            name: "MAXUS T60 4X4 GLX",
-            capacity: "Pick-up (2023)",
-            desc: "Tracción 4x4 para entregas rápidas y supervisión técnica en terrenos difíciles.",
-            image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800"
-        },
-        {
             name: "MERCEDES BENZ NEW ACTROS",
             capacity: "Tractocamión (2022)",
             desc: "Liderazgo en eficiencia y seguridad para el transporte de carga pesada a larga distancia.",
-            image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=800"
-        },
-        {
-            name: "MAN TGS 2836 BLS",
-            capacity: "Carga Pesada (2022)",
-            desc: "Potencia alemana robusta para operaciones logísticas de alta exigencia.",
-            image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800"
-        },
-        {
-            name: "FREIGHTLINER FBL-90645T",
-            capacity: "Gran Tonelaje (2020)",
-            desc: "Fiabilidad norteamericana para el transporte troncal y grandes volúmenes.",
-            image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800"
+            image: "/flota/camion.png"
         },
         {
             name: "CHEVROLET NPR 816 E5",
             capacity: "Camión 3/4 (2020)",
             desc: "Versatilidad y eficiencia para la distribución urbana y semi-urbana.",
-            image: "https://images.unsplash.com/photo-1616432043562-3671ea2e5242?q=80&w=800"
+            image: "/flota/camion 3-4.png"
         },
         {
             name: "FORD TRANSIT VAN 2.2",
             capacity: "Furgón (2018)",
             desc: "Agilidad urbana optimizada para servicios de paquetería y e-commerce de última milla.",
-            image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?q=80&w=800"
+            image: "/flota/van.png"
+        },
+        {
+            name: "SERVICIOS PUERTA A PUERTA",
+            capacity: "Furgón Pick-up",
+            desc: "Flota ágil para recolección y entrega a domicilio en radios urbanos.",
+            image: "/flota/van puerta a puerta.png"
+        },
+        {
+            name: "DISTRIBUCIÓN CAPILAR",
+            capacity: "Furgón Urbano",
+            desc: "Unidades versátiles para entregas en centros urbanos de difícil acceso.",
+            image: "/flota/van puerta a puerta 2.png"
         }
     ]
 
@@ -86,18 +80,18 @@ export function FleetSection() {
 
                                         {/* Content */}
                                         <div className="absolute bottom-0 left-0 width-full p-8 space-y-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                            <div className="w-12 h-1 bg-[primary] mb-4" />
+                                            <div className="w-12 h-1 bg-primary mb-4" />
                                             <h3 className="text-xl font-semibold uppercase text-white tracking-wide">
                                                 {item.name}
                                             </h3>
-                                            <p className="text-[primary] font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <p className="text-primary font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                                 Capacidad: {item.capacity}
                                             </p>
                                         </div>
 
                                         {/* Hover Content */}
                                         <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            <p className="text-gray-200 text-lg font-medium leading-relaxed border-l-2 border-[primary] pl-4">
+                                            <p className="text-gray-200 text-lg font-medium leading-relaxed border-l-2 border-primary pl-4">
                                                 {item.desc}
                                             </p>
                                         </div>
