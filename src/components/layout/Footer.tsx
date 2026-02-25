@@ -1,8 +1,14 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Footer() {
+    const pathname = usePathname()
+    const isEmpresas = pathname === "/empresas"
+
     return (
         <footer id="contacto" className="bg-secondary text-white">
             <div className="container mx-auto px-4 py-16">
@@ -33,22 +39,16 @@ export function Footer() {
                             </div>
                         </div>
                         {/* Social Links */}
-                        <div className="flex flex-wrap gap-4 items-center">
-                            <div className="flex gap-3">
-                                <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                    <Facebook className="w-5 h-5" />
-                                </Link>
-                                <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                    <Instagram className="w-5 h-5" />
-                                </Link>
-                                <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                    <Linkedin className="w-5 h-5" />
-                                </Link>
-                            </div>
-                            <div className="flex items-center gap-4 border-l border-white/20 pl-4">
-                                <img src="/brand/logo-iso.svg" alt="ISO Logo" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 brightness-0 invert" />
-                                <img src="/brand/pacto-global.jpg" alt="Pacto Global" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 rounded-lg" />
-                            </div>
+                        <div className="flex gap-3">
+                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <Facebook className="w-5 h-5" />
+                            </Link>
+                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <Instagram className="w-5 h-5" />
+                            </Link>
+                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <Linkedin className="w-5 h-5" />
+                            </Link>
                         </div>
                     </div>
 
@@ -73,15 +73,33 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Support */}
-                    <div>
-                        <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Soporte</h3>
-                        <ul className="space-y-3">
-                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Centro de Ayuda</Link></li>
-                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Términos y Condiciones</Link></li>
-                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Política de Privacidad</Link></li>
-                            <li><Link href="#faq" className="text-white/80 hover:text-[#ffffff] transition-colors">Preguntas Frecuentes</Link></li>
-                        </ul>
+                    {/* Support & Certificates */}
+                    <div className="space-y-8">
+                        <div>
+                            <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Soporte</h3>
+                            <ul className="space-y-3">
+                                <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Centro de Ayuda</Link></li>
+                                <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Términos y Condiciones</Link></li>
+                                <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Política de Privacidad</Link></li>
+                                <li><Link href="#faq" className="text-white/80 hover:text-[#ffffff] transition-colors">Preguntas Frecuentes</Link></li>
+                            </ul>
+                        </div>
+
+                        {/* Certificate Logos - Only for Empresas */}
+                        {isEmpresas && (
+                            <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                                <img
+                                    src="/brand/logo-iso.svg"
+                                    alt="ISO Logo"
+                                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
+                                />
+                                <img
+                                    src="/brand/pacto-global.jpg"
+                                    alt="Pacto Global"
+                                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity rounded-lg grayscale hover:grayscale-0"
+                                />
+                            </div>
+                        )}
                     </div>
                 </ScrollReveal>
             </div>
