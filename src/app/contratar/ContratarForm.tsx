@@ -131,14 +131,14 @@ export default function ContratarForm() {
                     {/* Quote Summary - Sidebar */}
                     <div className="lg:col-span-1">
                         <ScrollReveal animation="slide-in-left">
-                            <Card className="sticky top-4">
-                                <CardHeader className="bg-gray-900 text-white">
-                                    <CardTitle className="flex items-center gap-2">
-                                        <Package className="w-5 h-5" />
+                            <Card className="sticky top-4 rounded-3xl shadow-xl border-gray-100 overflow-hidden">
+                                <CardHeader className="bg-secondary text-white border-none py-6">
+                                    <CardTitle className="flex items-center gap-2 uppercase tracking-wider text-sm font-bold">
+                                        <Package className="w-5 h-5 text-primary" />
                                         Resumen de Cotización
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent className="pt-6 space-y-4">
+                                <CardContent className="pt-8 space-y-6">
                                     {/* Route */}
                                     <div>
                                         <p className="text-xs text-gray-500 uppercase font-bold mb-2">Ruta</p>
@@ -192,230 +192,78 @@ export default function ContratarForm() {
                     {/* Hiring Form - Main Content */}
                     <div className="lg:col-span-2">
                         <ScrollReveal animation="slide-in-right">
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle className="text-2xl font-black uppercase">
+                            <Card className="rounded-3xl shadow-2xl border-gray-100 overflow-hidden">
+                                <CardHeader className="border-b border-gray-50 pb-6">
+                                    <CardTitle className="text-2xl font-black uppercase text-secondary">
                                         Detalles del Servicio
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="pt-8">
                                     <form onSubmit={handleSubmit} className="space-y-8">
-                                        {/* Pickup Address */}
-                                        <div>
-                                            <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2">
-                                                <Truck className="w-5 h-5 text-[#003fa2]" />
-                                                Dirección de Retiro
+                                        {/* Simplified Contact Confirmation */}
+                                        <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                            <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2 text-secondary">
+                                                <CheckCircle2 className="w-5 h-5 text-primary" />
+                                                Confirmación de Contacto
                                             </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                <div className="md:col-span-2">
-                                                    <Label htmlFor="pickupAddress">Calle</Label>
+                                            <p className="text-gray-600 mb-6 italic">
+                                                Para agilizar tu servicio, un ejecutivo de Pullman Cargo te contactará a la brevedad para coordinar los detalles de retiro y entrega.
+                                            </p>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                <div className="space-y-2">
+                                                    <Label htmlFor="phone">Teléfono de Contacto</Label>
                                                     <Input
-                                                        id="pickupAddress"
-                                                        placeholder="Av. Libertador Bernardo O'Higgins"
-                                                        value={formData.pickupAddress}
-                                                        onChange={(e) => handleInputChange("pickupAddress", e.target.value)}
-                                                        required
+                                                        id="phone"
+                                                        value={quoteData.phone}
+                                                        disabled
+                                                        className="h-12 bg-white border-gray-200 rounded-2xl"
                                                     />
                                                 </div>
-                                                <div>
-                                                    <Label htmlFor="pickupNumber">Número</Label>
+                                                <div className="space-y-2">
+                                                    <Label htmlFor="email">Correo Electrónico</Label>
                                                     <Input
-                                                        id="pickupNumber"
-                                                        placeholder="1234"
-                                                        value={formData.pickupNumber}
-                                                        onChange={(e) => handleInputChange("pickupNumber", e.target.value)}
-                                                        required
+                                                        id="email"
+                                                        value={quoteData.email}
+                                                        disabled
+                                                        className="h-12 bg-white border-gray-200 rounded-2xl"
                                                     />
                                                 </div>
-                                                <div>
-                                                    <Label htmlFor="pickupCommune">Comuna</Label>
-                                                    <Input
-                                                        id="pickupCommune"
-                                                        placeholder="Santiago Centro"
-                                                        value={formData.pickupCommune}
-                                                        onChange={(e) => handleInputChange("pickupCommune", e.target.value)}
-                                                        required
-                                                    />
-                                                </div>
-                                                <div className="md:col-span-2">
-                                                    <Label htmlFor="pickupDetails">Detalles Adicionales (Opcional)</Label>
-                                                    <Textarea
-                                                        id="pickupDetails"
-                                                        placeholder="Depto 101, Torre A, timbre 5"
-                                                        value={formData.pickupDetails}
-                                                        onChange={(e) => handleInputChange("pickupDetails", e.target.value)}
-                                                        rows={2}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Delivery Info - Dynamic based on "lugar" */}
-                                        <div>
-                                            <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2">
-                                                <MapPin className="w-5 h-5 text-[#003fa2]" />
-                                                Información de Entrega
-                                            </h3>
-
-                                            {quoteData.lugar === "SUC" ? (
-                                                <div className="space-y-4">
-                                                    <div className="bg-gray-50 p-4 rounded-lg flex items-start gap-3">
-                                                        <CheckCircle2 className="w-5 h-5 text-[#003fa2] mt-0.5" />
-                                                        <div>
-                                                            <p className="font-bold text-[#003fa2]">Retiro en Agencia</p>
-                                                            <p className="text-sm text-gray-600">Has seleccionado retiro en sucursal. Por favor elige la agencia de destino.</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="space-y-2">
-                                                        <Label className="text-sm font-bold uppercase text-gray-500">Seleccionar Agencia</Label>
-                                                        <Select
-                                                            value={formData.selectedAgency}
-                                                            onValueChange={(val) => handleInputChange("selectedAgency", val)}
-                                                        >
-                                                            <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold">
-                                                                <SelectValue placeholder="Elige una agencia cercana" />
-                                                            </SelectTrigger>
-                                                            <SelectContent>
-                                                                {displayedAgencies.map((agency, idx) => (
-                                                                    <SelectItem key={idx} value={agency.address}>
-                                                                        {agency.city} - {agency.address}
-                                                                    </SelectItem>
-                                                                ))}
-                                                            </SelectContent>
-                                                        </Select>
-                                                        {availableAgencies.length === 0 && (
-                                                            <p className="text-xs text-amber-600 mt-1">
-                                                                Nota: No encontramos agencias exactas en "{quoteData.destination}". Mostrando todas las disponibles.
-                                                            </p>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            ) : (
-                                                <div className="space-y-4">
-                                                    <div className="bg-gray-100 p-4 rounded-lg flex items-start gap-3">
-                                                        <MapPin className="w-5 h-5 text-gray-500 mt-0.5" />
-                                                        <div>
-                                                            <p className="font-bold text-gray-700">Entrega a Domicilio</p>
-                                                            <p className="text-sm text-gray-600">Ingresa la dirección exacta para la entrega.</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                        <div className="md:col-span-2">
-                                                            <Label htmlFor="deliveryAddress">Calle</Label>
-                                                            <Input
-                                                                id="deliveryAddress"
-                                                                placeholder="Av. Marina"
-                                                                value={formData.deliveryAddress}
-                                                                onChange={(e) => handleInputChange("deliveryAddress", e.target.value)}
-                                                                required={quoteData.lugar !== "SUC"}
-                                                                className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2]"
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            <Label htmlFor="deliveryNumber">Número</Label>
-                                                            <Input
-                                                                id="deliveryNumber"
-                                                                placeholder="5678"
-                                                                value={formData.deliveryNumber}
-                                                                onChange={(e) => handleInputChange("deliveryNumber", e.target.value)}
-                                                                required={quoteData.lugar !== "SUC"}
-                                                                className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2]"
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            <Label htmlFor="deliveryCommune">Comuna</Label>
-                                                            <Input
-                                                                id="deliveryCommune"
-                                                                placeholder="Viña del Mar"
-                                                                value={formData.deliveryCommune}
-                                                                onChange={(e) => handleInputChange("deliveryCommune", e.target.value)}
-                                                                required={quoteData.lugar !== "SUC"}
-                                                                className="h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2]"
-                                                            />
-                                                        </div>
-                                                        <div className="md:col-span-2">
-                                                            <Label htmlFor="deliveryDetails">Detalles Adicionales (Opcional)</Label>
-                                                            <Textarea
-                                                                id="deliveryDetails"
-                                                                placeholder="Casa 15, portón azul"
-                                                                value={formData.deliveryDetails}
-                                                                onChange={(e) => handleInputChange("deliveryDetails", e.target.value)}
-                                                                rows={2}
-                                                                className="bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2]"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-
-                                        {/* Pickup Date & Payment */}
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <div>
-                                                <Label htmlFor="pickupDate" className="flex items-center gap-2">
-                                                    <Calendar className="w-4 h-4" />
-                                                    Fecha Preferida de Retiro
-                                                </Label>
-                                                <Input
-                                                    id="pickupDate"
-                                                    type="date"
-                                                    value={formData.pickupDate}
-                                                    onChange={(e) => handleInputChange("pickupDate", e.target.value)}
-                                                    required
-                                                    min={new Date().toISOString().split('T')[0]}
-                                                />
-                                            </div>
-                                            <div>
-                                                <Label htmlFor="paymentMethod" className="flex items-center gap-2">
-                                                    <CreditCard className="w-4 h-4" />
-                                                    Método de Pago
-                                                </Label>
-                                                <Select value={formData.paymentMethod} onValueChange={(value) => handleInputChange("paymentMethod", value)} required>
-                                                    <SelectTrigger>
-                                                        <SelectValue placeholder="Selecciona método" />
-                                                    </SelectTrigger>
-                                                    <SelectContent>
-                                                        <SelectItem value="efectivo">Efectivo</SelectItem>
-                                                        <SelectItem value="transferencia">Transferencia Bancaria</SelectItem>
-                                                        <SelectItem value="tarjeta">Tarjeta de Crédito/Débito</SelectItem>
-                                                    </SelectContent>
-                                                </Select>
                                             </div>
                                         </div>
 
                                         {/* Additional Notes */}
                                         <div>
-                                            <Label htmlFor="notes">Notas Adicionales (Opcional)</Label>
+                                            <Label htmlFor="notes" className="font-bold uppercase text-gray-400 text-xs">Instrucciones Adicionales (Opcional)</Label>
                                             <Textarea
                                                 id="notes"
-                                                placeholder="Instrucciones especiales, horarios preferidos, etc."
+                                                placeholder="Por favor, indícanos si tienes alguna preferencia de horario o detalle especial..."
                                                 value={formData.notes}
                                                 onChange={(e) => handleInputChange("notes", e.target.value)}
-                                                rows={3}
+                                                rows={4}
+                                                className="bg-gray-50 border-gray-200 rounded-2xl mt-2"
                                             />
                                         </div>
 
                                         {/* Terms */}
-                                        <div className="flex items-start gap-3 p-4 bg-gray-50 rounded">
+                                        <div className="flex items-start gap-3 p-6 bg-primary/5 rounded-2xl border border-primary/10">
                                             <input
                                                 type="checkbox"
                                                 id="acceptTerms"
                                                 checked={formData.acceptTerms}
                                                 onChange={(e) => handleInputChange("acceptTerms", e.target.checked)}
                                                 required
-                                                className="mt-1"
+                                                className="mt-1 w-5 h-5"
                                             />
-                                            <Label htmlFor="acceptTerms" className="text-sm cursor-pointer">
-                                                Acepto los <a href="#" className="text-[#003fa2] underline">términos y condiciones</a> del servicio y autorizo a Pullman Cargo a procesar mis datos personales.
+                                            <Label htmlFor="acceptTerms" className="text-sm cursor-pointer leading-relaxed">
+                                                Confirmo que los datos de contacto son correctos y acepto los <a href="#" className="text-primary font-bold underline">términos y condiciones</a> del servicio.
                                             </Label>
                                         </div>
 
                                         {/* Submit Button */}
                                         <Button
                                             type="submit"
-                                            className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase text-lg"
+                                            className="w-full h-14 bg-primary hover:bg-secondary text-white font-black uppercase text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all"
                                             disabled={!formData.acceptTerms}
                                         >
                                             Confirmar Contratación

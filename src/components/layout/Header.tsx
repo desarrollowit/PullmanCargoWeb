@@ -165,7 +165,7 @@ export function Header() {
                   <div className="p-6 pt-12 flex justify-center border-b border-gray-100/50">
                     <Link href="/" className="group transition-transform duration-300 hover:scale-105">
                       <img
-                        src="/brand/LOGO2 CARGO.png"
+                        src="/brand/logo_cargo.png"
                         alt="Pullman Cargo"
                         className="h-12 w-auto object-contain"
                       />

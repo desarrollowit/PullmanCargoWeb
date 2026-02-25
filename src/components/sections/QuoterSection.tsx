@@ -142,6 +142,14 @@ export function QuoterSection() {
             const response = await quoterAPI.calculateQuote(quoteRequest)
             setResult(response)
 
+            // Scroll to result on mobile
+            setTimeout(() => {
+                const resultElement = document.getElementById('quote-result');
+                if (resultElement) {
+                    resultElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+
             // Trigger Email Notification
             try {
                 await fetch('/api/notifications/quote', {
@@ -425,7 +433,7 @@ export function QuoterSection() {
 
                         <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
                             {result ? (
-                                <div className="bg-white p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500 rounded-3xl shadow-xl border border-gray-100">
+                                <div id="quote-result" className="bg-white p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500 rounded-3xl shadow-xl border border-gray-100 scroll-mt-32">
                                     <div className="relative z-10 text-center space-y-4">
                                         <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
                                         <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
