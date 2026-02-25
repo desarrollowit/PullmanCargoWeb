@@ -30,10 +30,11 @@ export async function POST(request: NextRequest) {
                         <p><strong>Teléfono:</strong> ${formData.telefono}</p>
                         <br />
                         <h3 style="color: #003fa2;">Detalles del Envío</h3>
+                        <p><strong>Tipo de Servicio:</strong> ${formData.servicio}</p>
                         <p><strong>Origen:</strong> ${formData.origen}</p>
                         <p><strong>Destino:</strong> ${formData.destino}</p>
-                        <p><strong>Forma de Pago:</strong> ${formData.formaPago === 'EFE' ? 'Pago en Origen (Efectivo/Debito/Crédito)' : 'Pago en Destino'}</p>
-                        <p><strong>Lugar de Entrega:</strong> ${formData.lugarEntrega === 'DOM' ? 'Domicilio' : 'Oficina Pullman Cargo'}</p>
+                        <p><strong>Forma de Pago:</strong> ${formData.formaPago}</p>
+                        <p><strong>Lugar de Entrega:</strong> ${formData.lugarEntrega}</p>
                         <p><strong>Dimensiones:</strong> ${formData.largo}x${formData.ancho}x${formData.alto} cm</p>
                         <p><strong>Peso:</strong> ${formData.peso} kg</p>
                         <p><strong>Valor Declarado:</strong> $${formData.valorDeclarado}</p>

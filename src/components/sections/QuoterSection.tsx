@@ -42,6 +42,7 @@ export function QuoterSection() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const [activeTab, setActiveTab] = useState("personas")
+    const [serviceType, setServiceType] = useState("CGR") // "CGR", "ENC", "EXP"
 
     // Load origins on mount
     useEffect(() => {
@@ -126,10 +127,10 @@ export function QuoterSection() {
             setLoading(true)
 
             const quoteRequest: QuoteRequest = {
-                selected: "CGR", // Cargo service
+                selected: serviceType, // Dynamic service type
                 origen: selectedOrigin,
                 destino: selectedDestination,
-                pago: formaPago, // EFE or T-D
+                pago: formaPago, // EFE, T-D or CTA
                 lugar: lugarEntrega === "domicilio" ? "DOM" : "SUC", // Domicilio o Sucursal
                 largo: formData.largo,
                 ancho: formData.ancho,
@@ -160,7 +161,8 @@ export function QuoterSection() {
                             ...formData,
                             origen: origins.find(o => o.id === selectedOrigin)?.name,
                             destino: destinations.find(d => d.id === selectedDestination)?.name,
-                            formaPago: formaPago === "EFE" ? "Pago en Origen" : "Pago en Destino",
+                            servicio: serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express",
+                            formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "T-D" ? "Pago en Destino" : "Cuenta Corriente",
                             lugarEntrega: lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal",
                         },
                         result: response
@@ -252,10 +254,25 @@ export function QuoterSection() {
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {/* Service Type */}
+                                        <div className="space-y-2">
+                                            <Label htmlFor="serviceType" className="text-sm font-bold uppercase text-gray-500">Tipo de Servicio</Label>
+                                            <Select value={serviceType} onValueChange={setServiceType}>
+                                                <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
+                                                    <SelectValue placeholder="Tipo de Servicio" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="CGR">Carga Estándar</SelectItem>
+                                                    <SelectItem value="ENC">Encomienda</SelectItem>
+                                                    <SelectItem value="EXP">Servicio Express</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+
                                         {/* Delivery Location */}
                                         <div className="space-y-2 text-left">
                                             <Label className="text-sm font-bold uppercase text-gray-500">Lugar de Entrega</Label>
-                                            <div className="flex gap-4 h-12 items-center bg-gray-50 px-4">
+                                            <div className="flex gap-4 h-12 items-center bg-gray-50 px-4 rounded-2xl border border-gray-200">
                                                 <label className="flex items-center gap-2 cursor-pointer">
                                                     <input
                                                         type="radio"
@@ -280,35 +297,21 @@ export function QuoterSection() {
                                                 </label>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        {/* Payment Method */}
-                                        <div className="space-y-2 text-left">
-                                            <Label className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
-                                            <div className="flex gap-4 h-12 items-center bg-gray-50 px-4">
-                                                <label className="flex items-center gap-2 cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="formaPago"
-                                                        value="EFE"
-                                                        checked={formaPago === "EFE"}
-                                                        onChange={(e) => setFormaPago(e.target.value)}
-                                                        className="w-4 h-4 text-primary focus:ring-primary"
-                                                    />
-                                                    <span className="text-sm font-medium text-secondary font-bold">En Origen</span>
-                                                </label>
-                                                <label className="flex items-center gap-2 cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="formaPago"
-                                                        value="T-D"
-                                                        checked={formaPago === "T-D"}
-                                                        onChange={(e) => setFormaPago(e.target.value)}
-                                                        className="w-4 h-4 text-primary focus:ring-primary"
-                                                    />
-                                                    <span className="text-sm font-medium text-secondary font-bold">En Destino</span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                    {/* Payment Method Selector */}
+                                    <div className="space-y-2">
+                                        <Label htmlFor="formaPago" className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
+                                        <Select value={formaPago} onValueChange={setFormaPago}>
+                                            <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
+                                                <SelectValue placeholder="Forma de Pago" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="EFE">Pago en Origen (Efectivo/Débito/Crédito)</SelectItem>
+                                                <SelectItem value="T-D">Pago en Destino (Tari-Destino)</SelectItem>
+                                                <SelectItem value="CTA">Cuenta Corriente (Corporativo)</SelectItem>
+                                            </SelectContent>
+                                        </Select>
                                     </div>
 
                                     {/* Dimensions */}
