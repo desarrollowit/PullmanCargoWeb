@@ -23,7 +23,7 @@ export function FleetSection() {
             name: "CHEVROLET NPR 816 E5",
             capacity: "Camión 3/4 (2020)",
             desc: "Versatilidad y eficiencia para la distribución urbana y semi-urbana.",
-            image: "/flota/camion 3-4.png"
+            image: "/flota/camion_3-4.png"
         },
         {
             name: "FORD TRANSIT VAN 2.2",
@@ -35,13 +35,13 @@ export function FleetSection() {
             name: "SERVICIOS PUERTA A PUERTA",
             capacity: "Furgón Pick-up",
             desc: "Flota ágil para recolección y entrega a domicilio en radios urbanos.",
-            image: "/flota/van puerta a puerta.png"
+            image: "/flota/van_puerta_a_puerta.png"
         },
         {
             name: "DISTRIBUCIÓN CAPILAR",
             capacity: "Furgón Urbano",
             desc: "Unidades versátiles para entregas en centros urbanos de difícil acceso.",
-            image: "/flota/van puerta a puerta 2.png"
+            image: "/flota/van_puerta_a_puerta_2.png"
         }
     ]
 
@@ -49,7 +49,6 @@ export function FleetSection() {
     return (
         <section id="flota" className="w-full py-24 bg-background text-foreground overflow-hidden relative">
             {/* Background Texture */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(#444 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
 
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">

@@ -16,7 +16,7 @@ export const agencies: Agency[] = [
         "address": "Obispo Umaña N°1307",
         "phone": "9-99217249",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Estación Central",
         "email": "A14@PULLMANCARGO.CL"
     },
@@ -26,7 +26,7 @@ export const agencies: Agency[] = [
         "address": "Avenida Bilbao N° 308",
         "phone": "9-77888602",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Providencia",
         "email": "A41@PULLMANCARGO.CL"
     },
@@ -36,7 +36,7 @@ export const agencies: Agency[] = [
         "address": "Eduardo Frei Montalva N°6001 Edificio B-82",
         "phone": "9-42126656",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Conchali",
         "email": "A45@PULLMANCARGO.CL"
     },
@@ -46,7 +46,7 @@ export const agencies: Agency[] = [
         "address": "Silvia Chávez N° 561-B",
         "phone": "9-42465348",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Melipilla",
         "email": "A53@PULLMANCARGO.CL"
     },
@@ -56,7 +56,7 @@ export const agencies: Agency[] = [
         "address": "Avenida Mapocho N°5534",
         "phone": "9-95426254",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Quinta Normal",
         "email": "A55@PULLMANCARGO.CL"
     },
@@ -66,7 +66,7 @@ export const agencies: Agency[] = [
         "address": "Angamos N° 7763",
         "phone": "9-35163805",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "La Cisterna",
         "email": "A63@PULLMANCARGO.CL"
     },
@@ -76,7 +76,7 @@ export const agencies: Agency[] = [
         "address": "Toesca N° 2698",
         "phone": "9-54782260",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago Centro",
         "email": "A69@PULLMANCARGO.CL"
     },
@@ -86,7 +86,7 @@ export const agencies: Agency[] = [
         "address": "Ernesto Alvear N° 247",
         "phone": "9-31267359",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Puente Alto",
         "email": "A82@PULLMANCARGO.CL"
     },
@@ -96,7 +96,7 @@ export const agencies: Agency[] = [
         "address": "Av. Américo Vespucio N° 1651 Local 21, Strip center Lider Lo Campino",
         "phone": "9-31209093",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Quilicura",
         "email": "A85@PULLMANCARGO.CL"
     },
@@ -106,7 +106,7 @@ export const agencies: Agency[] = [
         "address": "Avenida Laguna Sur 9.660; Bodega 571",
         "phone": "9-54459505",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Pudahuel",
         "email": "A86@PULLMANCARGO.CL"
     },
@@ -116,7 +116,7 @@ export const agencies: Agency[] = [
         "address": "Enrique Alcalde N°1336",
         "phone": "9-79571978",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Talagante",
         "email": "A87@PULLMANCARGO.CL"
     },
@@ -126,7 +126,7 @@ export const agencies: Agency[] = [
         "address": "Avenida José Joaquín Pérez N°4481",
         "phone": "9-35585762",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Quinta Normal",
         "email": "A90@PULLMANCARGO.CL"
     },
@@ -136,7 +136,7 @@ export const agencies: Agency[] = [
         "address": "Comandante Malbec N° 13500 Local 1",
         "phone": "9-45757725",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Lo Barnechea",
         "email": "B32@PULLMANCARGO.CL"
     },
@@ -146,7 +146,7 @@ export const agencies: Agency[] = [
         "address": "Canadá N° 9541",
         "phone": "9-32712092",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "La Florida",
         "email": "G58@PULLMANCARGO.CL"
     },
@@ -156,7 +156,7 @@ export const agencies: Agency[] = [
         "address": "Chacabuco N° 92",
         "phone": "9-51604262",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago Centro",
         "email": "K07@PULLMANCARGO.CL"
     },
@@ -166,7 +166,7 @@ export const agencies: Agency[] = [
         "address": "Gran Avenida Jose Miguel Carrera N° 10782 Paradero 33",
         "phone": "9-77550806",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "El Bosque",
         "email": "M06@PULLMANCARGO.CL"
     },
@@ -176,7 +176,7 @@ export const agencies: Agency[] = [
         "address": "Jotabeche N°137",
         "phone": "9-99217249",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Estación Central",
         "email": "M08@PULLMANCARGO.CL"
     },
@@ -186,7 +186,7 @@ export const agencies: Agency[] = [
         "address": "Jose Manuel Balmaceda N° 899, Local 3",
         "phone": "9-87773458",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Buin",
         "email": "M11@PULLMANCARGO.CL"
     },
@@ -196,7 +196,7 @@ export const agencies: Agency[] = [
         "address": "Aconcagua N° 1125",
         "phone": "9-82907764",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago",
         "email": "M13@PULLMANCARGO.CL"
     },
@@ -206,7 +206,7 @@ export const agencies: Agency[] = [
         "address": "Exposicion N° 516",
         "phone": "9-62654890",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago",
         "email": "M15@PULLMANCARGO.CL"
     },
@@ -216,7 +216,7 @@ export const agencies: Agency[] = [
         "address": "San Borja N° 201",
         "phone": "9-76490691",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Estación Central",
         "email": "M16@PULLMANCARGO.CL"
     },
@@ -226,7 +226,7 @@ export const agencies: Agency[] = [
         "address": "Av. Cinco N° 2700",
         "phone": "9-47556231",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Cerrillos",
         "email": "M18@PULLMANCARGO.CL"
     },
@@ -236,7 +236,7 @@ export const agencies: Agency[] = [
         "address": "Av. Américo Vespucio N° 886",
         "phone": "9-81877873",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Peñalolen",
         "email": "M21@PULLMANCARGO.CL"
     },
@@ -246,7 +246,7 @@ export const agencies: Agency[] = [
         "address": "San Pablo N°5986",
         "phone": "9-85859540",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Lo Prado",
         "email": "M22@PULLMANCARGO.CL"
     },
@@ -256,7 +256,7 @@ export const agencies: Agency[] = [
         "address": "Cerro Sombrero N° 1775",
         "phone": "9-78887068",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Maipú",
         "email": "M23@PULLMANCARGO.CL"
     },
@@ -266,7 +266,7 @@ export const agencies: Agency[] = [
         "address": "Av. Matta N° 421",
         "phone": "9-91556748",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago",
         "email": "M30@PULLMANCARGO.CL"
     },
@@ -276,7 +276,7 @@ export const agencies: Agency[] = [
         "address": "Artemio Gutierrez N° 1446",
         "phone": "9-44367893",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago",
         "email": "M32@PULLMANCARGO.CL"
     },
@@ -286,7 +286,7 @@ export const agencies: Agency[] = [
         "address": "Jotabeche N° 529",
         "phone": "9-9010 6968",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Estación Central",
         "email": "M35@PULLMANCARGO.CL"
     },
@@ -296,7 +296,7 @@ export const agencies: Agency[] = [
         "address": "Tabaré N° 616",
         "phone": "9-3867 8416",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Recoleta",
         "email": "M44@PULLMANCARGO.CL"
     },
@@ -306,7 +306,7 @@ export const agencies: Agency[] = [
         "address": "Los Alerces N° 2176",
         "phone": "9-9316 0124",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Ñuñoa",
         "email": "M47@PULLMANCARGO.CL"
     },
@@ -316,7 +316,7 @@ export const agencies: Agency[] = [
         "address": "Freire N° 318",
         "phone": "9-7958 8586",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "San Bernardo",
         "email": "M54@PULLMANCARGO.CL"
     },
@@ -326,7 +326,7 @@ export const agencies: Agency[] = [
         "address": "Lo Boza N° 107",
         "phone": "9-84645444",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Pudahuel",
         "email": "M58@PULLMANCARGO.CL"
     },
@@ -336,7 +336,7 @@ export const agencies: Agency[] = [
         "address": "Av. Einstein N° 1196",
         "phone": "9-99883002",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Recoleta",
         "email": "M60@PULLMANCARGO.CL"
     },
@@ -346,7 +346,7 @@ export const agencies: Agency[] = [
         "address": "Almirante Cochrane N° 3940",
         "phone": "9-95394204",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Macul",
         "email": "M90@PULLMANCARGO.CL"
     },
@@ -356,7 +356,7 @@ export const agencies: Agency[] = [
         "address": "Av.Lo Espejo N°01565",
         "phone": "9-41790619",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Lo Espejo",
         "email": "M93@PULLMANCARGO.CL"
     },
@@ -366,7 +366,7 @@ export const agencies: Agency[] = [
         "address": "Carmen Mena N° 981",
         "phone": "9-36604197",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "San Miguel",
         "email": "N31@PULLMANCARGO.CL"
     },
@@ -376,7 +376,7 @@ export const agencies: Agency[] = [
         "address": "Bustamante N° 656",
         "phone": "9-36923231",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Ñuñoa",
         "email": "N39@PULLMANCARGO.CL"
     },
@@ -386,7 +386,7 @@ export const agencies: Agency[] = [
         "address": "Exposición N° 324",
         "phone": "9-49226153",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago Centro",
         "email": "N87@PULLMANCARGO.CL"
     },
@@ -396,7 +396,7 @@ export const agencies: Agency[] = [
         "address": "Serrano N° 691",
         "phone": "9-61949901",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Santiago Centro",
         "email": "O14@PULLMANCARGO.CL"
     },
@@ -406,7 +406,7 @@ export const agencies: Agency[] = [
         "address": "San Ignacio N° 101",
         "phone": "9-40363364",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "Quilicura",
         "email": "O18@PULLMANCARGO.CL"
     },
@@ -416,7 +416,7 @@ export const agencies: Agency[] = [
         "address": "Alcalde Fernando Castillo Velasco  N° 6985",
         "phone": "9-94127504",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "La Reina",
         "email": "Z83@PULLMANCARGO.CL"
     },
@@ -426,7 +426,7 @@ export const agencies: Agency[] = [
         "address": "Avenida Santa Rosa N° 5320",
         "phone": "9-82334201",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SANTIAGO",
+        "region": "Metropolitana",
         "commune": "San Joaquín",
         "email": "Z86@PULLMANCARGO.CL"
     },
@@ -436,7 +436,7 @@ export const agencies: Agency[] = [
         "address": "Av. Santa Maria N° 2535",
         "phone": "58- 2220240",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Arica y Parinacota",
         "commune": "Arica",
         "email": "A00@PULLMANCARGO.CL"
     },
@@ -446,7 +446,7 @@ export const agencies: Agency[] = [
         "address": "Sotomayor N° 2385",
         "phone": "57-2413262",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Tarapacá",
         "commune": "Iquique",
         "email": "A02@PULLMANCARGO.CL"
     },
@@ -456,7 +456,7 @@ export const agencies: Agency[] = [
         "address": "Calle Comercio N° 687",
         "phone": "57-2751205",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Tarapacá",
         "commune": "Pozo Almonte",
         "email": "A10@PULLMANCARGO.CL"
     },
@@ -466,7 +466,7 @@ export const agencies: Agency[] = [
         "address": "Ruta A-16 N°3395",
         "phone": "57-2498127",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Tarapacá",
         "commune": "Alto Hospicio",
         "email": "A24@PULLMANCARGO.CL"
     },
@@ -476,7 +476,7 @@ export const agencies: Agency[] = [
         "address": "El Santo N°107",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "La Serena",
         "email": "A61@PULLMANCARGO.CL"
     },
@@ -486,7 +486,7 @@ export const agencies: Agency[] = [
         "address": "Balmaceda N° 4155",
         "phone": "sin fono fijo",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Antofagasta",
         "commune": "Calama",
         "email": "B02@PULLMANCARGO.CL"
     },
@@ -496,7 +496,7 @@ export const agencies: Agency[] = [
         "address": "Ohiggins 285",
         "phone": "55-2639839",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Antofagasta",
         "commune": "Maria Elena",
         "email": "B08@PULLMANCARGO.CL"
     },
@@ -506,7 +506,7 @@ export const agencies: Agency[] = [
         "address": "Latorre N° 799",
         "phone": "55-2622179",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Antofagasta",
         "commune": "Mejillones",
         "email": "B12@PULLMANCARGO.CL"
     },
@@ -516,7 +516,7 @@ export const agencies: Agency[] = [
         "address": "Caimanes N° 271",
         "phone": "55- 2476233",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Antofagasta",
         "commune": "Antofagasta",
         "email": "B14@PULLMANCARGO.CL"
     },
@@ -526,7 +526,7 @@ export const agencies: Agency[] = [
         "address": "Márquez de Montepío 311",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Atacama",
         "commune": "Diego de Almagro",
         "email": "C02@PULLMANCARGO.CL"
     },
@@ -536,7 +536,7 @@ export const agencies: Agency[] = [
         "address": "Los Baños N° 200",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Atacama",
         "commune": "Chañaral",
         "email": "C05@PULLMANCARGO.CL"
     },
@@ -546,7 +546,7 @@ export const agencies: Agency[] = [
         "address": "Ramon Freire N° 761",
         "phone": "232383296-232383297",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Atacama",
         "commune": "Copiapo",
         "email": "C09@PULLMANCARGO.CL"
     },
@@ -556,7 +556,7 @@ export const agencies: Agency[] = [
         "address": "Serrano N° 551",
         "phone": "232383272",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Atacama",
         "commune": "Vallenar",
         "email": "C11@PULLMANCARGO.CL"
     },
@@ -566,7 +566,7 @@ export const agencies: Agency[] = [
         "address": "Av. Potrerillo Norte",
         "phone": "52-2475509",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Atacama",
         "commune": "El Salvador",
         "email": "C18@PULLMANCARGO.CL"
     },
@@ -576,7 +576,7 @@ export const agencies: Agency[] = [
         "address": "Calle Cinco N° 1251",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "La Serena",
         "email": "D03@PULLMANCARGO.CL"
     },
@@ -586,7 +586,7 @@ export const agencies: Agency[] = [
         "address": "Varela N° 1300",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "Coquimbo",
         "email": "d06-carga@pullmancargo.cl"
     },
@@ -596,7 +596,7 @@ export const agencies: Agency[] = [
         "address": "San Martin N° 323",
         "phone": "232383032-232383031",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "Illapel",
         "email": "D11@PULLMANCARGO.CL"
     },
@@ -606,7 +606,7 @@ export const agencies: Agency[] = [
         "address": "Recinto Estacion N° 20",
         "phone": "232383286-232383287",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "Ovalle",
         "email": "D12@PULLMANCARGO.CL"
     },
@@ -616,7 +616,7 @@ export const agencies: Agency[] = [
         "address": "Marquez del Montepio N° 311",
         "phone": "53-2552648",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "Salamanca",
         "email": "D13@PULLMANCARGO.CL"
     },
@@ -626,7 +626,7 @@ export const agencies: Agency[] = [
         "address": "Av. Caupolican N° 1111",
         "phone": "232383033",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "NORTE",
+        "region": "Coquimbo",
         "commune": "Los Vilos",
         "email": "D25@PULLMANCARGO.CL"
     },
@@ -636,7 +636,7 @@ export const agencies: Agency[] = [
         "address": "Almirante Latorre 98",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Cartagena",
         "email": "A18@PULLMANCARGO.CL"
     },
@@ -646,7 +646,7 @@ export const agencies: Agency[] = [
         "address": "Av.Magallanes 1050 Local 25",
         "phone": "9-42913624",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Con Con",
         "email": "A23@PULLMANCARGO.CL"
     },
@@ -656,7 +656,7 @@ export const agencies: Agency[] = [
         "address": "Av. Benidorm N° 1260, L.5",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Viña del Mar Centro",
         "email": "A88@PULLMANCARGO.CL"
     },
@@ -666,7 +666,7 @@ export const agencies: Agency[] = [
         "address": "Av. Maipú N° 386",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "San Felipe",
         "email": "E00@PULLMANCARGO.CL"
     },
@@ -676,7 +676,7 @@ export const agencies: Agency[] = [
         "address": "Av. Carlos Diaz N° 111",
         "phone": "232383593",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Los Andes",
         "email": "E01@PULLMANCARGO.CL"
     },
@@ -686,7 +686,7 @@ export const agencies: Agency[] = [
         "address": "Diego Lillo N° 212",
         "phone": "232383597",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "La Calera",
         "email": "E02@PULLMANCARGO.CL"
     },
@@ -696,7 +696,7 @@ export const agencies: Agency[] = [
         "address": "12 de Febrero N° 360",
         "phone": "32-2212550",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Valparaiso",
         "email": "E05@PULLMANCARGO.CL"
     },
@@ -706,7 +706,7 @@ export const agencies: Agency[] = [
         "address": "Sanfuentes N° 1813",
         "phone": "9-84645369",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "San Antonio",
         "email": "E11@PULLMANCARGO.CL"
     },
@@ -716,7 +716,7 @@ export const agencies: Agency[] = [
         "address": "Ramón de la Cerda N° 205",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Limache",
         "email": "E25@PULLMANCARGO.CL"
     },
@@ -726,7 +726,7 @@ export const agencies: Agency[] = [
         "address": "Terminal Viña Del Mar",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Viña del Mar",
         "email": "E41@PULLMANCARGO.CL"
     },
@@ -736,7 +736,7 @@ export const agencies: Agency[] = [
         "address": "Camino Internacional N° 5100 Con Con",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Viña del Mar",
         "email": "E80@PULLMANCARGO.CL"
     },
@@ -746,7 +746,7 @@ export const agencies: Agency[] = [
         "address": "Los Carrera N° 257",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "QUINTA",
+        "region": "Valparaíso",
         "commune": "Quilpue",
         "email": "Z59@PULLMANCARGO.CL"
     },
@@ -766,7 +766,7 @@ export const agencies: Agency[] = [
         "address": "Javiera Carrera N°330 StripCenter Supermercado Acuenta",
         "phone": "940286562",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "O'Higgins",
         "commune": "Chimbarongo",
         "email": "A39@PULLMANCARGO.CL"
     },
@@ -776,7 +776,7 @@ export const agencies: Agency[] = [
         "address": "Caupolicán N° 565",
         "phone": "232383510",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Araucanía",
         "commune": "Temuco Centro",
         "email": "A43@PULLMANCARGO.CL"
     },
@@ -786,7 +786,7 @@ export const agencies: Agency[] = [
         "address": "Avenida Millaco N° 534, local 14-A",
         "phone": "232383260",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "O'Higgins",
         "commune": "Pichilemu",
         "email": "C70@PULLMANCARGO.CL"
     },
@@ -796,7 +796,7 @@ export const agencies: Agency[] = [
         "address": "Antonio Millan N° 553",
         "phone": "232383002",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "O'Higgins",
         "commune": "Rancagua",
         "email": "F00@PULLMANCARGO.CL"
     },
@@ -806,7 +806,7 @@ export const agencies: Agency[] = [
         "address": "Orlandi N° 34",
         "phone": "442913660",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "O'Higgins",
         "commune": "Santa Cruz",
         "email": "F27@PULLMANCARGO.CL"
     },
@@ -816,7 +816,7 @@ export const agencies: Agency[] = [
         "address": "Av. Tres montes N° 749",
         "phone": "942565273/ 72-2712984",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "O'Higgins",
         "commune": "San Fernando",
         "email": "G00@PULLMANCARGO.CL"
     },
@@ -826,7 +826,7 @@ export const agencies: Agency[] = [
         "address": "Manso del Velasco N° 345",
         "phone": "232383006",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Maule",
         "commune": "Curico",
         "email": "G01@PULLMANCARGO.CL"
     },
@@ -836,7 +836,7 @@ export const agencies: Agency[] = [
         "address": "Av. San Miguel N° 2698",
         "phone": "232383007-23238008",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Maule",
         "commune": "Talca",
         "email": "G02@PULLMANCARGO.CL"
     },
@@ -846,7 +846,7 @@ export const agencies: Agency[] = [
         "address": "Yungay N° 501",
         "phone": "232383012",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Maule",
         "commune": "Linares",
         "email": "G03@PULLMANCARGO.CL"
     },
@@ -866,7 +866,7 @@ export const agencies: Agency[] = [
         "address": "Bulnes N° 623",
         "phone": "9-42897565",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Maule",
         "commune": "Constitución",
         "email": "G05@PULLMANCARGO.CL"
     },
@@ -876,7 +876,7 @@ export const agencies: Agency[] = [
         "address": "Errazuriz N° 700 Local 25",
         "phone": "232383018",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Maule",
         "commune": "Cauquenes",
         "email": "G06@PULLMANCARGO.CL"
     },
@@ -886,7 +886,7 @@ export const agencies: Agency[] = [
         "address": "O´higgins N° 502",
         "phone": "42-2245745",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Ñuble",
         "commune": "Chillan Centro",
         "email": "G08@PULLMANCARGO.CL"
     },
@@ -896,7 +896,7 @@ export const agencies: Agency[] = [
         "address": "Calle Dieciocho N° 315",
         "phone": "232383022",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Maule",
         "commune": "Parral",
         "email": "G18@PULLMANCARGO.CL"
     },
@@ -906,7 +906,7 @@ export const agencies: Agency[] = [
         "address": "Arturo Prat N° 620 Oficina 4-5 Terminal Buses",
         "phone": "9-42160059",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Biobío",
         "commune": "Cabrero",
         "email": "G31@PULLMANCARGO.CL"
     },
@@ -916,7 +916,7 @@ export const agencies: Agency[] = [
         "address": "Panamericana Norte N° 01380",
         "phone": "232383027",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Ñuble",
         "commune": "Chillan",
         "email": "G34@PULLMANCARGO.CL"
     },
@@ -926,7 +926,7 @@ export const agencies: Agency[] = [
         "address": "Av. Sor Vicenta N° 2890",
         "phone": "232383560-232383558",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Biobío",
         "commune": "Los Angeles",
         "email": "H00@PULLMANCARGO.CL"
     },
@@ -936,7 +936,7 @@ export const agencies: Agency[] = [
         "address": "Americo Vespucio N° 550",
         "phone": "41-2430600/41-2432195 Malo",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Biobío",
         "commune": "Concepción",
         "email": "H01@PULLMANCARGO.CL"
     },
@@ -946,7 +946,7 @@ export const agencies: Agency[] = [
         "address": "Maipú N°781",
         "phone": "232383536",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Biobío",
         "commune": "Concepción",
         "email": "H04@PULLMANCARGO.CL"
     },
@@ -956,7 +956,7 @@ export const agencies: Agency[] = [
         "address": "Nestor del Río con Ignacio Carrera Pinto, Terminal de Buses",
         "phone": "43-2551797",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Biobío",
         "commune": "Negrete",
         "email": "H46@PULLMANCARGO.CL"
     },
@@ -966,7 +966,7 @@ export const agencies: Agency[] = [
         "address": "Terminal Collao",
         "phone": "41-2311335",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Biobío",
         "commune": "Concepción",
         "email": "H53@PULLMANCARGO.CL"
     },
@@ -976,7 +976,7 @@ export const agencies: Agency[] = [
         "address": "Rudecindo Ortega N° 02051",
         "phone": "k",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Araucanía",
         "commune": "Temuco",
         "email": "I00@PULLMANCARGO.CL"
     },
@@ -986,7 +986,7 @@ export const agencies: Agency[] = [
         "address": "Palguin N° 555",
         "phone": "45-2443331",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Araucanía",
         "commune": "Pucón",
         "email": "I06@PULLMANCARGO.CL"
     },
@@ -996,7 +996,7 @@ export const agencies: Agency[] = [
         "address": "Francisco Bilbao N° 598",
         "phone": "45-2412971",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Araucanía",
         "commune": "Villarrica",
         "email": "I26@PULLMANCARGO.CL"
     },
@@ -1006,7 +1006,7 @@ export const agencies: Agency[] = [
         "address": "Av. Picarte N° 4029",
         "phone": "63-2215853 /63-2227345",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Ríos",
         "commune": "Valdivia",
         "email": "J00@PULLMANCARGO.CL"
     },
@@ -1016,7 +1016,7 @@ export const agencies: Agency[] = [
         "address": "Los Carrera N° 1235",
         "phone": "23238243",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Osorno Centro",
         "email": "J01@PULLMANCARGO.CL"
     },
@@ -1026,7 +1026,7 @@ export const agencies: Agency[] = [
         "address": "Bima N° 62, Parque Industrial",
         "phone": "9-99208631 /9-32645007",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Puerto Montt",
         "email": "J02@PULLMANCARGO.CL"
     },
@@ -1036,7 +1036,7 @@ export const agencies: Agency[] = [
         "address": "Andres Bello N° 485",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Puerto Varas",
         "email": "J13@PULLMANCARGO.CL"
     },
@@ -1046,7 +1046,7 @@ export const agencies: Agency[] = [
         "address": "Av. Arturo Alessandri N° 430 Local 21",
         "phone": "65-2422880",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Frutillar",
         "email": "J18@PULLMANCARGO.CL"
     },
@@ -1056,7 +1056,7 @@ export const agencies: Agency[] = [
         "address": "Alcalde Manuel Muñoz N° 665",
         "phone": "65-2531078",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Castro",
         "email": "J20@PULLMANCARGO.CL"
     },
@@ -1066,7 +1066,7 @@ export const agencies: Agency[] = [
         "address": "Anibal Pinto N° 1200",
         "phone": "65-2898288",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Ancud",
         "email": "J24@PULLMANCARGO.CL"
     },
@@ -1076,7 +1076,7 @@ export const agencies: Agency[] = [
         "address": "Argomedo N° 640",
         "phone": "232383245",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Lagos",
         "commune": "Osorno",
         "email": "J26@PULLMANCARGO.CL"
     },
@@ -1086,7 +1086,7 @@ export const agencies: Agency[] = [
         "address": "Av.Augusto Grob N°1080",
         "phone": "64-2426541",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Ríos",
         "commune": "La Unión",
         "email": "J50@PULLMANCARGO.CL"
     },
@@ -1096,7 +1096,7 @@ export const agencies: Agency[] = [
         "address": "Prieto N° 500",
         "phone": "64-2342001",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Los Ríos",
         "commune": "Rio Bueno",
         "email": "J72@PULLMANCARGO.CL"
     },
@@ -1106,7 +1106,7 @@ export const agencies: Agency[] = [
         "address": "Baquedano 85",
         "phone": "-",
         "hours": "Lun-Vie: 09:00 - 18:30",
-        "region": "SUR",
+        "region": "Aysén",
         "commune": "Coyhaique",
         "email": "K09@PULLMANCARGO.CL"
     },
@@ -1116,7 +1116,7 @@ export const agencies: Agency[] = [
         "address": "Prolongacion Mardones Lote 2",
         "phone": "61-2222241",
         "hours": "Lun-Vie: 09:00 - 18:30 | Sáb: 09:00 - 13:00",
-        "region": "SUR",
+        "region": "Magallanes",
         "commune": "Punta Arenas",
         "email": "L00@PULLMANCARGO.CL"
     }

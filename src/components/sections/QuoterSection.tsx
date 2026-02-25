@@ -178,7 +178,7 @@ export function QuoterSection() {
             <div className="container px-4 md:px-6 mx-auto">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter uppercase mb-6">
-                        Cotiza tu <span className="text-primary">Envío</span>
+                        <span className="text-primary">Cotiza tu</span> Envío
                     </h2>
                     <p className="text-gray-500 text-lg">
                         Obtén una cotización instantánea para tu envío.
@@ -306,7 +306,7 @@ export function QuoterSection() {
                                     {/* Dimensions */}
                                     <div className="space-y-2">
                                         <Label className="text-sm font-bold uppercase text-gray-500">Dimensiones (cm)</Label>
-                                        <div className="grid grid-cols-3 gap-2">
+                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                                             <Input
                                                 placeholder="Largo"
                                                 type="number"

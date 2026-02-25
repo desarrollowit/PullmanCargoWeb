@@ -60,7 +60,7 @@ export function Header() {
             className="flex items-center group transition-transform duration-300 hover:scale-105"
           >
             <img
-              src="/brand/LOGO2 CARGO.png"
+              src="/brand/logo_cargo.png"
               alt="Pullman Cargo"
               className="h-[36px] md:h-[43px] w-auto object-contain"
             />

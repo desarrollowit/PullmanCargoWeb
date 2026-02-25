@@ -12,22 +12,22 @@ interface ChileMapProps {
 
 // Label positions: ax,ay = dot on region; lx,ly = label text
 const regionLabels: Record<string, { ax: number; ay: number; lx: number; ly: number }> = {
-    "Arica y Parinacota": { ax: 567, ay: 12, lx: 612, ly: 10 },
-    "Tarapacá": { ax: 567, ay: 35, lx: 612, ly: 33 },
-    "Antofagasta": { ax: 570, ay: 85, lx: 612, ly: 83 },
-    "Atacama": { ax: 562, ay: 155, lx: 612, ly: 153 },
-    "Coquimbo": { ax: 553, ay: 210, lx: 612, ly: 208 },
-    "Valparaíso": { ax: 538, ay: 247, lx: 612, ly: 245 },
-    "Metropolitana": { ax: 543, ay: 265, lx: 612, ly: 263 },
-    "O'Higgins": { ax: 544, ay: 285, lx: 612, ly: 283 },
-    "Maule": { ax: 540, ay: 310, lx: 612, ly: 308 },
-    "Ñuble": { ax: 537, ay: 335, lx: 612, ly: 333 },
-    "Biobío": { ax: 535, ay: 355, lx: 612, ly: 353 },
-    "Araucanía": { ax: 528, ay: 385, lx: 612, ly: 383 },
-    "Los Ríos": { ax: 523, ay: 410, lx: 612, ly: 408 },
-    "Los Lagos": { ax: 518, ay: 440, lx: 612, ly: 438 },
-    "Aysén": { ax: 522, ay: 495, lx: 612, ly: 493 },
-    "Magallanes": { ax: 518, ay: 565, lx: 612, ly: 563 },
+    "Arica y Parinacota": { ax: 566, ay: 13, lx: 612, ly: 10 },
+    "Tarapacá": { ax: 570, ay: 40, lx: 612, ly: 33 },
+    "Antofagasta": { ax: 577, ay: 91, lx: 612, ly: 83 },
+    "Atacama": { ax: 563, ay: 152, lx: 612, ly: 153 },
+    "Coquimbo": { ax: 550, ay: 205, lx: 612, ly: 208 },
+    "Valparaíso": { ax: 541, ay: 230, lx: 612, ly: 245 },
+    "Metropolitana": { ax: 551, ay: 254, lx: 612, ly: 263 },
+    "O'Higgins": { ax: 546, ay: 268, lx: 612, ly: 283 },
+    "Maule": { ax: 539, ay: 288, lx: 612, ly: 308 },
+    "Ñuble": { ax: 533, ay: 363, lx: 612, ly: 375 },
+    "Biobío": { ax: 528, ay: 316, lx: 612, ly: 325 },
+    "Araucanía": { ax: 530, ay: 341, lx: 612, ly: 345 },
+    "Los Ríos": { ax: 523, ay: 367, lx: 612, ly: 400 },
+    "Los Lagos": { ax: 504, ay: 404, lx: 612, ly: 435 },
+    "Aysén": { ax: 520, ay: 473, lx: 612, ly: 485 },
+    "Magallanes": { ax: 514, ay: 611, lx: 612, ly: 600 },
 }
 
 // Fixed reliable viewBox that covers all paths + label area
@@ -40,7 +40,7 @@ export function ChileMap({ selectedRegion, onSelectRegion, className }: ChileMap
             <svg
                 viewBox={VIEW_BOX}
                 preserveAspectRatio="xMidYMin meet"
-                style={{ height: "88vh", width: "auto", display: "block" }}
+                style={{ maxHeight: "85vh", width: "100%", height: "auto", display: "block" }}
             >
                 {/* First pass: All region shapes */}
                 {mapRegions.map((region) => {
@@ -86,14 +86,14 @@ export function ChileMap({ selectedRegion, onSelectRegion, className }: ChileMap
                                 y1={label.ay}
                                 x2={label.lx - 3}
                                 y2={label.ly}
-                                stroke="#ff5500"
+                                stroke="#003fa2"
                                 strokeWidth="0.6"
                             />
                             <circle
                                 cx={label.ax}
                                 cy={label.ay}
                                 r="1.5"
-                                fill="#ff5500"
+                                fill="#003fa2"
                             />
                             <text
                                 x={label.lx + 1}
@@ -102,7 +102,7 @@ export function ChileMap({ selectedRegion, onSelectRegion, className }: ChileMap
                                 style={{
                                     fontSize: "9px",
                                     fontWeight: isActive ? "700" : "500",
-                                    fill: "#ff5500",
+                                    fill: "#003fa2",
                                     fontFamily: "Inter, system-ui, sans-serif",
                                     letterSpacing: "0.02em",
                                     textTransform: "uppercase",
