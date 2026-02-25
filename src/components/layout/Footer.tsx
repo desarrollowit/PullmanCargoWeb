@@ -14,7 +14,7 @@ export function Footer() {
                                 <img
                                     src="/brand/logo_cargo.png"
                                     alt="Pullman Cargo"
-                                    className="h-12 w-auto object-contain"
+                                    className="h-12 w-auto object-contain brightness-0 invert"
                                 />
                             </Link>
                         </div>
@@ -33,16 +33,22 @@ export function Footer() {
                             </div>
                         </div>
                         {/* Social Links */}
-                        <div className="flex gap-3">
-                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <Facebook className="w-5 h-5" />
-                            </Link>
-                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <Instagram className="w-5 h-5" />
-                            </Link>
-                            <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <Linkedin className="w-5 h-5" />
-                            </Link>
+                        <div className="flex flex-wrap gap-4 items-center">
+                            <div className="flex gap-3">
+                                <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <Facebook className="w-5 h-5" />
+                                </Link>
+                                <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <Instagram className="w-5 h-5" />
+                                </Link>
+                                <Link href="#" className="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white hover:text-secondary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <Linkedin className="w-5 h-5" />
+                                </Link>
+                            </div>
+                            <div className="flex items-center gap-4 border-l border-white/20 pl-4">
+                                <img src="/brand/logo-iso.svg" alt="ISO Logo" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 brightness-0 invert" />
+                                <img src="/brand/pacto-global.jpg" alt="Pacto Global" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 rounded-lg" />
+                            </div>
                         </div>
                     </div>
 

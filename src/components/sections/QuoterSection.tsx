@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
-import { MapPin, Scale, Phone, Mail, CheckCircle2, Loader2, AlertCircle } from "lucide-react"
+import { Search, MapPin, Package, Scale, ArrowRight, Loader2, CheckCircle2, ChevronRight, Mail, Phone, Calculator, Printer, AlertCircle } from "lucide-react"
 import { quoterAPI, type Location, type QuoteRequest, type QuoteResponse } from "@/services/quoter-api"
 import {
     Select,
@@ -130,7 +130,7 @@ export function QuoterSection() {
                 selected: serviceType, // Dynamic service type
                 origen: selectedOrigin,
                 destino: selectedDestination,
-                pago: formaPago, // EFE, T-D or CTA
+                pago: formaPago, // EFE, PED or CTA
                 lugar: lugarEntrega === "domicilio" ? "DOM" : "SUC", // Domicilio o Sucursal
                 largo: formData.largo,
                 ancho: formData.ancho,
@@ -162,7 +162,7 @@ export function QuoterSection() {
                             origen: origins.find(o => o.id === selectedOrigin)?.name,
                             destino: destinations.find(d => d.id === selectedDestination)?.name,
                             servicio: serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express",
-                            formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "T-D" ? "Pago en Destino" : "Cuenta Corriente",
+                            formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "PED" ? "Pago en Destino" : "Cuenta Corriente",
                             lugarEntrega: lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal",
                         },
                         result: response
@@ -308,7 +308,7 @@ export function QuoterSection() {
                                             </SelectTrigger>
                                             <SelectContent>
                                                 <SelectItem value="EFE">Pago en Origen (Efectivo/Débito/Crédito)</SelectItem>
-                                                <SelectItem value="T-D">Pago en Destino (Tari-Destino)</SelectItem>
+                                                <SelectItem value="PED">Pago en Destino (Tari-Destino)</SelectItem>
                                                 <SelectItem value="CTA">Cuenta Corriente (Corporativo)</SelectItem>
                                             </SelectContent>
                                         </Select>
@@ -441,17 +441,26 @@ export function QuoterSection() {
                                         <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
                                         <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
                                         <div className="space-y-2">
-                                            {result.estado && result.precioTotal && (
+                                            {result.estado && result.precioTotal > 0 ? (
                                                 <>
                                                     <h3 className="text-5xl font-semibold text-secondary"> <span className="text-3xl opacity-50">$</span>{result.precioTotal.toLocaleString("es-CL")}</h3>
                                                     <p className="text-gray-500 text-sm mt-2">{result.descripcionOrigen} → {result.descripcionDestino}</p>
                                                 </>
-                                            )}
-                                            {!result.estado && (
-                                                <p className="text-red-400 text-sm">{result.mensaje}</p>
+                                            ) : (
+                                                <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm font-semibold border border-red-100">
+                                                    {result.mensaje || "Esta combinación de datos no tiene una tarifa asociada para el tipo de servicio seleccionado."}
+                                                </div>
                                             )}
                                         </div>
-                                        <div className="pt-6">
+                                        <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 no-print">
+                                            <Button
+                                                variant="outline"
+                                                className="w-full border-gray-200 text-secondary hover:bg-gray-50 font-bold uppercase rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2"
+                                                onClick={() => window.print()}
+                                            >
+                                                <Printer className="w-4 h-4" />
+                                                PDF / Imprimir
+                                            </Button>
                                             <Button
                                                 className="w-full bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all"
                                                 onClick={() => {
@@ -459,6 +468,7 @@ export function QuoterSection() {
                                                         origen: result.descripcionOrigen,
                                                         destino: result.descripcionDestino,
                                                         precio: result.precioTotal.toString(),
+                                                        servicio: serviceType,
                                                         largo: formData.largo,
                                                         ancho: formData.ancho,
                                                         alto: formData.alto,
@@ -470,7 +480,7 @@ export function QuoterSection() {
                                                     window.location.href = `/contratar?${params.toString()}`
                                                 }}
                                             >
-                                                Contratar Servicio
+                                                Contratar
                                             </Button>
                                         </div>
                                     </div>

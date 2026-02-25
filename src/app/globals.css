@@ -136,6 +136,15 @@
 }
 
 @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
@@ -146,5 +155,28 @@
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-gray-200 rounded-full hover:bg-gray-300 transition-colors;
+  }
+}
+
+@media print {
+
+  .no-print,
+  header,
+  footer,
+  nav,
+  button:not(.print-only),
+  .scroll-reveal {
+    display: none !important;
+  }
+
+  #quote-result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 2rem !important;
   }
 }
