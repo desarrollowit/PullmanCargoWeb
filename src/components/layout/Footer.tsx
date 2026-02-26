@@ -1,13 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Footer() {
-    const pathname = usePathname()
-    const isEmpresas = pathname === "/empresas"
 
     return (
         <footer id="contacto" className="bg-secondary text-white">
@@ -86,21 +83,18 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Certificate Logos - Only for Empresas */}
-                        {isEmpresas && (
-                            <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                                <img
-                                    src="/brand/logo-iso.svg"
-                                    alt="ISO Logo"
-                                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
-                                />
-                                <img
-                                    src="/brand/pacto-global.jpg"
-                                    alt="Pacto Global"
-                                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity rounded-lg grayscale hover:grayscale-0"
-                                />
-                            </div>
-                        )}
+                        <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                            <img
+                                src="/brand/logo-iso.svg"
+                                alt="ISO Logo"
+                                className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
+                            />
+                            <img
+                                src="/brand/pacto-global.jpg"
+                                alt="Pacto Global"
+                                className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity rounded-lg grayscale hover:grayscale-0"
+                            />
+                        </div>
                     </div>
                 </ScrollReveal>
             </div>
