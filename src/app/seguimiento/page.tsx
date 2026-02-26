@@ -113,7 +113,7 @@ function TrackingContent() {
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 uppercase">Información no disponible</h3>
                             <p className="text-gray-500 max-w-xs mx-auto text-sm">{error}</p>
-                            <Button variant="outline" onClick={() => router.push("/")} className="mt-4 border-gray-200 rounded-2xl hover:bg-gray-50">
+                            <Button variant="outline" onClick={() => router.push("/#tracking")} className="mt-4 border-gray-200 rounded-2xl hover:bg-gray-50">
                                 Intentar con otro número
                             </Button>
                         </div>
@@ -153,7 +153,7 @@ function TrackingContent() {
                     <Button variant="ghost" onClick={() => router.push("/")} className="text-gray-500 hover:text-secondary rounded-2xl">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Volver
                     </Button>
-                    <Button onClick={() => router.push("/")} className="bg-secondary hover:bg-black text-white font-bold uppercase tracking-wider text-xs px-8 h-12 rounded-2xl transition-all shadow-lg hover:shadow-xl">
+                    <Button onClick={() => router.push("/#tracking")} className="bg-secondary hover:bg-black text-white font-bold uppercase tracking-wider text-xs px-8 h-12 rounded-2xl transition-all shadow-lg hover:shadow-xl">
                         Nueva Consulta
                     </Button>
                 </div>
