@@ -436,45 +436,88 @@ export function QuoterSection() {
                         <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
                             {result ? (
                                 <div id="quote-result" className="bg-white p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500 rounded-3xl shadow-xl border border-gray-100 scroll-mt-32">
-                                    <div className="relative z-10 text-center space-y-4">
-                                        <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                                        <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
-                                        <div className="space-y-2">
-                                            {result.estado && result.precioTotal > 0 ? (
-                                                <>
-                                                    <h3 className="text-5xl font-semibold text-secondary"> <span className="text-3xl opacity-50">$</span>{result.precioTotal.toLocaleString("es-CL")}</h3>
-                                                    <p className="text-gray-500 text-sm mt-2">{result.descripcionOrigen} → {result.descripcionDestino}</p>
-                                                </>
-                                            ) : (
-                                                <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm font-semibold border border-red-100">
-                                                    {result.mensaje || "Esta combinación de datos no tiene una tarifa asociada para el tipo de servicio seleccionado."}
+                                    <div className="relative z-10 text-left space-y-6">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <CheckCircle2 className="w-8 h-8 text-green-500" />
+                                            <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
+                                        </div>
+
+                                        {result.estado && result.precioTotal > 0 ? (
+                                            <div className="space-y-6">
+                                                {/* Ruta */}
+                                                <div>
+                                                    <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Ruta</h4>
+                                                    <div className="text-xl font-bold uppercase text-secondary">
+                                                        <p>{result.descripcionOrigen}</p>
+                                                        <p>{result.descripcionDestino}</p>
+                                                    </div>
                                                 </div>
-                                            )}
-                                        </div>
-                                        <div className="pt-6 no-print">
-                                            <Button
-                                                className="w-full h-12 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2"
-                                                onClick={() => {
-                                                    const params = new URLSearchParams({
-                                                        origen: result.descripcionOrigen || "",
-                                                        destino: result.descripcionDestino || "",
-                                                        precio: result.precioTotal.toString(),
-                                                        servicio: serviceType,
-                                                        largo: formData.largo,
-                                                        ancho: formData.ancho,
-                                                        alto: formData.alto,
-                                                        peso: formData.peso,
-                                                        telefono: formData.telefono,
-                                                        email: formData.email,
-                                                        lugar: lugarEntrega,
-                                                    })
-                                                    window.location.href = `/contratar?${params.toString()}`
-                                                }}
-                                            >
-                                                Continuar a Contratar
-                                                <ChevronRight className="w-5 h-5" />
-                                            </Button>
-                                        </div>
+
+                                                {/* Paquete */}
+                                                <div>
+                                                    <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Paquete</h4>
+                                                    <div className="text-sm space-y-1 text-gray-600 font-medium">
+                                                        <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
+                                                        <p>Peso: {formData.peso} kg</p>
+                                                    </div>
+                                                </div>
+
+                                                {/* Contacto */}
+                                                <div>
+                                                    <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Contacto</h4>
+                                                    <div className="text-sm space-y-1 text-gray-600 font-medium">
+                                                        <p>{formData.telefono}</p>
+                                                        <p>{formData.email}</p>
+                                                    </div>
+                                                </div>
+
+                                                {/* Total */}
+                                                <div className="pt-4 border-t border-gray-100">
+                                                    <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Total</h4>
+                                                    <p className="text-4xl font-black text-secondary">
+                                                        <span className="text-2xl opacity-50 mr-1">$</span>
+                                                        {result.precioTotal.toLocaleString("es-CL")}
+                                                    </p>
+                                                </div>
+
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 no-print">
+                                                    <Button
+                                                        variant="outline"
+                                                        className="h-12 border-primary text-primary hover:bg-primary/5 font-bold uppercase rounded-2xl flex items-center justify-center gap-2"
+                                                        onClick={() => window.print()}
+                                                    >
+                                                        <Printer className="w-5 h-5" />
+                                                        Imprimir Cotización
+                                                    </Button>
+                                                    <Button
+                                                        className="h-12 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2"
+                                                        onClick={() => {
+                                                            const params = new URLSearchParams({
+                                                                origen: result.descripcionOrigen || "",
+                                                                destino: result.descripcionDestino || "",
+                                                                precio: result.precioTotal.toString(),
+                                                                servicio: serviceType,
+                                                                largo: formData.largo,
+                                                                ancho: formData.ancho,
+                                                                alto: formData.alto,
+                                                                peso: formData.peso,
+                                                                telefono: formData.telefono,
+                                                                email: formData.email,
+                                                                lugar: lugarEntrega,
+                                                            })
+                                                            window.location.href = `/contratar?${params.toString()}`
+                                                        }}
+                                                    >
+                                                        Continuar a Contratar
+                                                        <ChevronRight className="w-5 h-5" />
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm font-semibold border border-red-100">
+                                                {result.mensaje || "Esta combinación de datos no tiene una tarifa asociada para el tipo de servicio seleccionado."}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ) : (
@@ -511,6 +554,68 @@ export function QuoterSection() {
                     </div>
                 </div>
             </div>
+
+            {/* Printable Quote Section - HIDDEN BY DEFAULT, VISIBLE ONLY ON PRINT */}
+            {result && (
+                <div id="printable-quote" className="hidden print:block space-y-8 p-12 bg-white text-secondary font-sans leading-relaxed">
+                    <div className="flex justify-between items-start border-b-2 border-[#003fa2] pb-6 mb-8">
+                        <div>
+                            <img src="/brand/logo_cargo.png" alt="Pullman Cargo" className="h-10 w-auto brightness-0" />
+                            <p className="text-[10px] text-gray-500 mt-2 uppercase tracking-widest font-bold">Comprobante de Cotización Online</p>
+                        </div>
+                        <div className="text-right">
+                            <p className="text-xs font-bold text-gray-400">FECHA: {new Date().toLocaleDateString('es-CL')}</p>
+                            <p className="text-xs font-bold text-gray-400">VALIDEZ: 7 DÍAS</p>
+                        </div>
+                    </div>
+
+                    <div className="space-y-8">
+                        {/* Ruta */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Ruta</h3>
+                            <div className="text-2xl font-black uppercase text-secondary">
+                                <p>{result.descripcionOrigen}</p>
+                                <p>{result.descripcionDestino}</p>
+                            </div>
+                        </section>
+
+                        {/* Paquete */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Paquete</h3>
+                            <div className="text-base font-bold text-secondary space-y-1">
+                                <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
+                                <p>Peso: {formData.peso} kg</p>
+                                <p>Lugar entrega: {lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal"}</p>
+                            </div>
+                        </section>
+
+                        {/* Contacto */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Contacto</h3>
+                            <div className="text-base font-bold text-secondary space-y-1">
+                                <p>Teléfono: {formData.telefono}</p>
+                                <p>Email: {formData.email}</p>
+                            </div>
+                        </section>
+
+                        {/* Total */}
+                        <section className="pt-8 border-t border-gray-100">
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Total</h3>
+                            <p className="text-5xl font-black text-secondary">
+                                <span className="text-2xl opacity-50 mr-1">$</span>
+                                {result.precioTotal.toLocaleString("es-CL")}
+                            </p>
+                        </section>
+                    </div>
+
+                    <div className="pt-12 mt-12 border-t border-gray-100 text-center">
+                        <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+                            Cotización referencial sujeta a verificación de pesos y medidas en oficina.
+                        </p>
+                        <p className="text-[10px] text-[#003fa2] font-bold mt-1">WWW.PULLMANCARGO.CL</p>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
