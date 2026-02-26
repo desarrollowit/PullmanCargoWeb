@@ -72,7 +72,7 @@ export function AgenciesGridSection() {
 
                 <div className="grid lg:grid-cols-12 gap-8 relative items-start">
                     {/* Map Column (Left - 4 cols) - Sticky - Order 1 on mobile */}
-                    <div className="lg:col-span-4 relative z-20 order-1">
+                    <div className="lg:col-span-4 relative z-20 order-first mb-6 lg:mb-0">
                         <div className="lg:sticky lg:top-24 bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
                             <ChileMap
                                 selectedRegion={selectedRegion}
@@ -83,7 +83,7 @@ export function AgenciesGridSection() {
                     </div>
 
                     {/* Content Column (Right - 8 cols) - Order 2 on mobile */}
-                    <div className="lg:col-span-8 flex flex-col gap-6 order-2 lg:order-2">
+                    <div className="lg:col-span-8 flex flex-col gap-6 order-last">
                         {/* Filters Bar */}
                         <Card className="border-none shadow-sm bg-gray-50">
                             <CardContent className="p-4 flex flex-col md:flex-row gap-4 items-center">

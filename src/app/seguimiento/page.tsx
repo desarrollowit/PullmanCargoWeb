@@ -32,9 +32,14 @@ function TrackingContent() {
             const data = await response.json()
 
             if (Array.isArray(data) && data.length > 0) {
-                setOdtInfo(data[0])
+                // Determine most recent info (usually last from API)
+                setOdtInfo(data[data.length - 1])
+
+                // Reverse data to show most recent at the top
+                const reversedData = [...data].reverse()
+
                 // Map API data to UI steps
-                const mappedSteps = data.map((item: any, index: number) => ({
+                const mappedSteps = reversedData.map((item: any, index: number) => ({
                     id: index,
                     title: item.estadoWeb || "Estado Desconocido",
                     description: `Agencia: ${item.agencia || 'No disponible'}`,
