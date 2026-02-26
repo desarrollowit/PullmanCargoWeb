@@ -16,7 +16,8 @@ import {
     CheckCircle2,
     ArrowRight,
     Edit,
-    Truck
+    Truck,
+    Printer
 } from "lucide-react"
 import Link from "next/link"
 import {
@@ -178,12 +179,23 @@ export default function ContratarForm() {
                                         </p>
                                     </div>
 
-                                    <Link href="/#cotizador">
-                                        <Button variant="outline" className="w-full" size="sm">
-                                            <Edit className="w-4 h-4 mr-2" />
-                                            Editar Cotización
+                                    <div className="space-y-3">
+                                        <Link href="/#cotizador" className="block w-full">
+                                            <Button variant="outline" className="w-full" size="sm">
+                                                <Edit className="w-4 h-4 mr-2" />
+                                                Editar Cotización
+                                            </Button>
+                                        </Link>
+                                        <Button
+                                            variant="outline"
+                                            className="w-full border-[#003fa2] text-[#003fa2] hover:bg-[#003fa2]/5 font-bold uppercase transition-all flex items-center justify-center gap-2"
+                                            size="sm"
+                                            onClick={() => window.print()}
+                                        >
+                                            <Printer className="w-4 h-4" />
+                                            Descargar PDF / Imprimir
                                         </Button>
-                                    </Link>
+                                    </div>
                                 </CardContent>
                             </Card>
                         </ScrollReveal>
@@ -273,6 +285,65 @@ export default function ContratarForm() {
                             </Card>
                         </ScrollReveal>
                     </div>
+                </div>
+            </div>
+            {/* Printable Quote Section - HIDDEN BY DEFAULT, VISIBLE ONLY ON PRINT */}
+            <div id="printable-quote" className="hidden print-block space-y-8 p-12 bg-white text-secondary font-sans leading-relaxed">
+                <div className="flex justify-between items-start border-b-2 border-[#003fa2] pb-6 mb-8">
+                    <div>
+                        <img src="/brand/logo_cargo.png" alt="Pullman Cargo" className="h-10 w-auto brightness-0" />
+                        <p className="text-[10px] text-gray-500 mt-2 uppercase tracking-widest font-bold">Comprobante de Cotización Online</p>
+                    </div>
+                    <div className="text-right">
+                        <p className="text-xs font-bold text-gray-400">FECHA: {new Date().toLocaleDateString('es-CL')}</p>
+                        <p className="text-xs font-bold text-gray-400">VALIDEZ: 7 DÍAS</p>
+                    </div>
+                </div>
+
+                <div className="space-y-8">
+                    {/* Ruta */}
+                    <section>
+                        <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Ruta</h3>
+                        <div className="text-2xl font-black uppercase text-secondary">
+                            <p>{quoteData.origin}</p>
+                            <p>{quoteData.destination}</p>
+                        </div>
+                    </section>
+
+                    {/* Paquete */}
+                    <section>
+                        <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Paquete</h3>
+                        <div className="text-base font-bold text-secondary space-y-1">
+                            <p>Dimensiones: {quoteData.dimensions.largo}x{quoteData.dimensions.ancho}x{quoteData.dimensions.alto} cm</p>
+                            <p>Peso: {quoteData.weight} kg</p>
+                            <p>Lugar entrega: {quoteData.lugar === "DOM" ? "Domicilio" : "Sucursal"}</p>
+                        </div>
+                    </section>
+
+                    {/* Contacto */}
+                    <section>
+                        <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Contacto</h3>
+                        <div className="text-base font-bold text-secondary space-y-1">
+                            <p>Teléfono: {quoteData.phone}</p>
+                            <p>Email: {quoteData.email}</p>
+                        </div>
+                    </section>
+
+                    {/* Total */}
+                    <section className="pt-8 border-t border-gray-100">
+                        <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Total</h3>
+                        <p className="text-5xl font-black text-secondary">
+                            <span className="text-2xl opacity-50 mr-1">$</span>
+                            {parseInt(quoteData.price).toLocaleString("es-CL")}
+                        </p>
+                    </section>
+                </div>
+
+                <div className="pt-12 mt-12 border-t border-gray-100 text-center">
+                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+                        Cotización referencial sujeta a verificación de pesos y medidas en oficina.
+                    </p>
+                    <p className="text-[10px] text-[#003fa2] font-bold mt-1">WWW.PULLMANCARGO.CL</p>
                 </div>
             </div>
         </div>

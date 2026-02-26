@@ -452,134 +452,31 @@ export function QuoterSection() {
                                                 </div>
                                             )}
                                         </div>
-                                        <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 no-print">
-                                            <Button
-                                                variant="outline"
-                                                className="w-full border-gray-200 text-secondary hover:bg-gray-50 font-bold uppercase rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2"
-                                                onClick={() => window.print()}
-                                            >
-                                                <Printer className="w-4 h-4" />
-                                                PDF / Imprimir
-                                            </Button>
-                                            <Button
-                                                className="w-full bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all"
-                                                onClick={() => {
-                                                    const params = new URLSearchParams({
-                                                        origen: result.descripcionOrigen,
-                                                        destino: result.descripcionDestino,
-                                                        precio: result.precioTotal.toString(),
-                                                        servicio: serviceType,
-                                                        largo: formData.largo,
-                                                        ancho: formData.ancho,
-                                                        alto: formData.alto,
-                                                        peso: formData.peso,
-                                                        telefono: formData.telefono,
-                                                        email: formData.email,
-                                                        lugar: lugarEntrega,
-                                                    })
-                                                    window.location.href = `/contratar?${params.toString()}`
-                                                }}
-                                            >
-                                                Contratar
-                                            </Button>
+                                        <div className="pt-6 no-print">
                                         </div>
                                     </div>
                                 </div>
                             ) : (
-                                <div className="relative">
-                                    <h3 className="text-2xl md:text-3xl font-semibold uppercase text-secondary mb-4">
-                                        ¿Por qué cotizar con <br /> <span className="text-primary">Pullman Cargo?</span>
-                                    </h3>
-                                    <ul className="space-y-4">
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                            <div>
-                                                <p className="font-bold text-gray-900">Tarifas Competitivas</p>
-                                                <p className="text-sm text-gray-500">Los mejores precios del mercado</p>
+                                <p className="text-sm text-gray-500">Llegamos a todo Chile</p>
                                             </div>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                            <div>
-                                                <p className="font-bold text-gray-900">Cobertura Nacional</p>
-                                                <p className="text-sm text-gray-500">Llegamos a todo Chile</p>
-                                            </div>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                            <div>
-                                                <p className="font-bold text-gray-900">Seguimiento en Tiempo Real</p>
-                                                <p className="text-sm text-gray-500">Rastrea tu envío en todo momento</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            )}
-                        </ScrollReveal>
+                </li>
+                <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                        <p className="font-bold text-gray-900">Seguimiento en Tiempo Real</p>
+                        <p className="text-sm text-gray-500">Rastrea tu envío en todo momento</p>
                     </div>
-                </div>
-            </div>
-            {/* Printable Quote Section - HIDDEN BY DEFAULT, VISIBLE ONLY ON PRINT */}
-            {result && (
-                <div id="printable-quote" className="hidden print-block space-y-8 p-12 bg-white text-secondary font-sans leading-relaxed">
-                    <div className="flex justify-between items-start border-b-2 border-primary pb-6 mb-8">
-                        <div>
-                            <img src="/brand/logo_cargo.png" alt="Pullman Cargo" className="h-10 w-auto brightness-0" />
-                            <p className="text-[10px] text-gray-500 mt-2 uppercase tracking-widest font-bold">Comprobante de Cotización Online</p>
-                        </div>
-                        <div className="text-right">
-                            <p className="text-xs font-bold text-gray-400">FECHA: {new Date().toLocaleDateString('es-CL')}</p>
-                            <p className="text-xs font-bold text-gray-400">VALIDEZ: 7 DÍAS</p>
-                        </div>
-                    </div>
-
-                    <div className="space-y-8">
-                        {/* Ruta */}
-                        <section>
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Ruta</h3>
-                            <div className="text-2xl font-black uppercase text-secondary">
-                                <p>{result.descripcionOrigen}</p>
-                                <p>{result.descripcionDestino}</p>
-                            </div>
-                        </section>
-
-                        {/* Paquete */}
-                        <section>
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Paquete</h3>
-                            <div className="text-base font-bold text-secondary space-y-1">
-                                <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
-                                <p>Peso: {formData.peso} kg</p>
-                                <p>Servicio: {serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express"}</p>
-                            </div>
-                        </section>
-
-                        {/* Contacto */}
-                        <section>
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Contacto</h3>
-                            <div className="text-base font-bold text-secondary space-y-1">
-                                <p>{formData.telefono}</p>
-                                <p>{formData.email}</p>
-                            </div>
-                        </section>
-
-                        {/* Total */}
-                        <section className="pt-8 border-t border-gray-100">
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Total</h3>
-                            <p className="text-5xl font-black text-secondary">
-                                <span className="text-2xl opacity-50 mr-1">$</span>
-                                {result.precioTotal.toLocaleString("es-CL")}
-                            </p>
-                        </section>
-                    </div>
-
-                    <div className="pt-12 mt-12 border-t border-gray-100 text-center">
-                        <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
-                            Cotización referencial sujeta a verificación de pesos y medidas en oficina.
-                        </p>
-                        <p className="text-[10px] text-primary font-bold mt-1">WWW.PULLMANCARGO.CL</p>
-                    </div>
-                </div>
-            )}
-        </section>
+                </li>
+            </ul>
+        </div>
+    )
+}
+                        </ScrollReveal >
+                    </div >
+                </div >
+            </div >
+        </div >
+            </div >
+        </section >
     )
 }
