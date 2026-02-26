@@ -453,30 +453,65 @@ export function QuoterSection() {
                                             )}
                                         </div>
                                         <div className="pt-6 no-print">
+                                            <Button
+                                                className="w-full h-12 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2"
+                                                onClick={() => {
+                                                    const params = new URLSearchParams({
+                                                        origen: result.descripcionOrigen || "",
+                                                        destino: result.descripcionDestino || "",
+                                                        precio: result.precioTotal.toString(),
+                                                        servicio: serviceType,
+                                                        largo: formData.largo,
+                                                        ancho: formData.ancho,
+                                                        alto: formData.alto,
+                                                        peso: formData.peso,
+                                                        telefono: formData.telefono,
+                                                        email: formData.email,
+                                                        lugar: lugarEntrega,
+                                                    })
+                                                    window.location.href = `/contratar?${params.toString()}`
+                                                }}
+                                            >
+                                                Continuar a Contratar
+                                                <ChevronRight className="w-5 h-5" />
+                                            </Button>
                                         </div>
                                     </div>
                                 </div>
                             ) : (
-                                <p className="text-sm text-gray-500">Llegamos a todo Chile</p>
+                                <div className="relative">
+                                    <h3 className="text-2xl md:text-3xl font-semibold uppercase text-secondary mb-4">
+                                        ¿Por qué cotizar con <br /> <span className="text-primary">Pullman Cargo?</span>
+                                    </h3>
+                                    <ul className="space-y-4">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                                            <div>
+                                                <p className="font-bold text-gray-900">Tarifas Competitivas</p>
+                                                <p className="text-sm text-gray-500">Los mejores precios del mercado</p>
                                             </div>
-                </li>
-                <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                        <p className="font-bold text-gray-900">Seguimiento en Tiempo Real</p>
-                        <p className="text-sm text-gray-500">Rastrea tu envío en todo momento</p>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                                            <div>
+                                                <p className="font-bold text-gray-900">Cobertura Nacional</p>
+                                                <p className="text-sm text-gray-500">Llegamos a todo Chile</p>
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                                            <div>
+                                                <p className="font-bold text-gray-900">Seguimiento en Tiempo Real</p>
+                                                <p className="text-sm text-gray-500">Rastrea tu envío en todo momento</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )}
+                        </ScrollReveal>
                     </div>
-                </li>
-            </ul>
-        </div>
-    )
-}
-                        </ScrollReveal >
-                    </div >
-                </div >
-            </div >
-        </div >
-            </div >
-        </section >
+                </div>
+            </div>
+        </section>
     )
 }
