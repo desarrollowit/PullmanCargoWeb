@@ -35,12 +35,14 @@ function TrackingContent() {
                 // Determine most recent info (usually last from API)
                 setOdtInfo(data[data.length - 1])
 
-                // Reverse data to show most recent at the top per user's latest request
-                // User said: "7 feb (oldest) should be at the bottom"
-                const reversedData = [...data].reverse()
+                // Chronological order: Oldest at top, Newest at bottom
+                // We sort by date just in case
+                const sortedData = [...data].sort((a: any, b: any) =>
+                    new Date(a.fecha.replace(/\[UTC\]$/, '')).getTime() - new Date(b.fecha.replace(/\[UTC\]$/, '')).getTime()
+                )
 
                 // Map API data to UI steps
-                const mappedSteps = reversedData.map((item: any, index: number) => ({
+                const mappedSteps = sortedData.map((item: any, index: number) => ({
                     id: index,
                     title: item.estadoWeb || "Estado Desconocido",
                     description: `Agencia: ${item.agencia || 'No disponible'}`,
@@ -52,7 +54,7 @@ function TrackingContent() {
                     }) : 'Sin fecha',
                     location: `${item.origen} → ${item.destino}`,
                     icon: item.paso === 4 ? CheckCircle2 : item.paso === 1 ? Package : item.paso === 2 ? Warehouse : Truck,
-                    status: index === 0 ? "active" : "completed"
+                    status: index === sortedData.length - 1 ? "active" : "completed"
                 }))
                 setSteps(mappedSteps)
             } else {
