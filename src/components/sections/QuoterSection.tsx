@@ -480,36 +480,14 @@ export function QuoterSection() {
                                                     </p>
                                                 </div>
 
-                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 no-print">
+                                                <div className="pt-4 no-print text-center">
                                                     <Button
-                                                        variant="outline"
-                                                        className="h-12 border-primary text-primary hover:bg-primary/5 font-bold uppercase rounded-2xl flex items-center justify-center gap-2"
+                                                        variant="default"
+                                                        className="w-full h-14 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 text-lg"
                                                         onClick={() => window.print()}
                                                     >
-                                                        <Printer className="w-5 h-5" />
+                                                        <Printer className="w-6 h-6" />
                                                         Imprimir Cotización
-                                                    </Button>
-                                                    <Button
-                                                        className="h-12 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2"
-                                                        onClick={() => {
-                                                            const params = new URLSearchParams({
-                                                                origen: result.descripcionOrigen || "",
-                                                                destino: result.descripcionDestino || "",
-                                                                precio: result.precioTotal.toString(),
-                                                                servicio: serviceType,
-                                                                largo: formData.largo,
-                                                                ancho: formData.ancho,
-                                                                alto: formData.alto,
-                                                                peso: formData.peso,
-                                                                telefono: formData.telefono,
-                                                                email: formData.email,
-                                                                lugar: lugarEntrega,
-                                                            })
-                                                            window.location.href = `/contratar?${params.toString()}`
-                                                        }}
-                                                    >
-                                                        Continuar a Contratar
-                                                        <ChevronRight className="w-5 h-5" />
                                                     </Button>
                                                 </div>
                                             </div>
