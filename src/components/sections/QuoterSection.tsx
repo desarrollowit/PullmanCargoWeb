@@ -254,21 +254,6 @@ export function QuoterSection() {
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        {/* Service Type */}
-                                        <div className="space-y-2">
-                                            <Label htmlFor="serviceType" className="text-sm font-bold uppercase text-gray-500">Tipo de Servicio</Label>
-                                            <Select value={serviceType} onValueChange={setServiceType}>
-                                                <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
-                                                    <SelectValue placeholder="Tipo de Servicio" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="CGR">Carga Estándar</SelectItem>
-                                                    <SelectItem value="ENC">Encomienda</SelectItem>
-                                                    <SelectItem value="EXP">Servicio Express</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                        </div>
-
                                         {/* Delivery Location */}
                                         <div className="space-y-2 text-left">
                                             <Label className="text-sm font-bold uppercase text-gray-500">Lugar de Entrega</Label>
@@ -297,21 +282,20 @@ export function QuoterSection() {
                                                 </label>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    {/* Payment Method Selector */}
-                                    <div className="space-y-2">
-                                        <Label htmlFor="formaPago" className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
-                                        <Select value={formaPago} onValueChange={setFormaPago}>
-                                            <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
-                                                <SelectValue placeholder="Forma de Pago" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="EFE">Pago en Origen (Efectivo/Débito/Crédito)</SelectItem>
-                                                <SelectItem value="PED">Pago en Destino (Tari-Destino)</SelectItem>
-                                                <SelectItem value="CTA">Cuenta Corriente (Corporativo)</SelectItem>
-                                            </SelectContent>
-                                        </Select>
+                                        {/* Payment Method Selector */}
+                                        <div className="space-y-2">
+                                            <Label htmlFor="formaPago" className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
+                                            <Select value={formaPago} onValueChange={setFormaPago}>
+                                                <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
+                                                    <SelectValue placeholder="Forma de Pago" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="EFE">Pago en Origen (Efectivo/Débito/Crédito)</SelectItem>
+                                                    <SelectItem value="PED">Pago en Destino (Tari-Destino)</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
                                     </div>
 
                                     {/* Dimensions */}
