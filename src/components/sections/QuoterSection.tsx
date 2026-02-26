@@ -436,9 +436,9 @@ export function QuoterSection() {
                         <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
                             {result ? (
                                 <div id="quote-result" className="bg-white p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500 rounded-3xl shadow-xl border border-gray-100 scroll-mt-32">
-                                    <div className="relative z-10 text-left space-y-6">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <CheckCircle2 className="w-8 h-8 text-green-500" />
+                                    <div className="relative z-10 text-center space-y-6">
+                                        <div className="flex flex-col items-center gap-2 mb-4">
+                                            <CheckCircle2 className="w-12 h-12 text-green-500" />
                                             <p className="text-gray-400 uppercase tracking-widest font-bold text-sm">Cotización Generada</p>
                                         </div>
 
