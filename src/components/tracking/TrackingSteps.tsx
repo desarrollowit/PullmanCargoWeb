@@ -20,15 +20,11 @@ interface TrackingStepsProps {
 export function TrackingSteps({ steps }: TrackingStepsProps) {
     return (
         <div className="relative">
-            {/* Vertical Line - Only visible if there are more than 1 step */}
-            {steps.length > 1 && (
-                <div className="absolute left-6 top-8 bottom-12 w-1 bg-gray-200"></div>
-            )}
-
             {steps.map((step, index) => {
                 const isCompleted = step.status === "completed"
                 const isActive = step.status === "active"
                 const isPending = step.status === "pending"
+                const isLast = index === steps.length - 1
 
                 return (
                     <ScrollReveal
@@ -37,6 +33,10 @@ export function TrackingSteps({ steps }: TrackingStepsProps) {
                         delay={index * 150}
                         className={`relative flex gap-6 ${isPending ? 'opacity-60 grayscale' : ''}`}
                     >
+                        {/* Timeline Line Connection */}
+                        {!isLast && (
+                            <div className="absolute left-6 top-10 bottom-0 w-1 bg-gray-200 -z-10 translate-x-[-0.5px]"></div>
+                        )}
                         {/* Icon Bubble */}
                         <div className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center border-4 transition-all duration-300 shadow-lg ${isActive
                             ? 'bg-[#003fa2] border-[#003fa2] text-white scale-110'
