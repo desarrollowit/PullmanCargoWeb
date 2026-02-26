@@ -164,19 +164,30 @@
   header,
   footer,
   nav,
-  button:not(.print-only),
+  section:not(#cotizador),
+  form,
+  button,
   .scroll-reveal {
     display: none !important;
   }
 
-  #quote-result {
-    position: fixed;
+  .print-block {
+    display: block !important;
+  }
+
+  #cotizador {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  #printable-quote {
+    display: block !important;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    padding: 2rem !important;
+    z-index: 9999;
+    background: white !important;
   }
 }

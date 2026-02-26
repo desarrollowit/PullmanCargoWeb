@@ -519,6 +519,67 @@ export function QuoterSection() {
                     </div>
                 </div>
             </div>
+            {/* Printable Quote Section - HIDDEN BY DEFAULT, VISIBLE ONLY ON PRINT */}
+            {result && (
+                <div id="printable-quote" className="hidden print-block space-y-8 p-12 bg-white text-secondary font-sans leading-relaxed">
+                    <div className="flex justify-between items-start border-b-2 border-primary pb-6 mb-8">
+                        <div>
+                            <img src="/brand/logo_cargo.png" alt="Pullman Cargo" className="h-10 w-auto brightness-0" />
+                            <p className="text-[10px] text-gray-500 mt-2 uppercase tracking-widest font-bold">Comprobante de Cotización Online</p>
+                        </div>
+                        <div className="text-right">
+                            <p className="text-xs font-bold text-gray-400">FECHA: {new Date().toLocaleDateString('es-CL')}</p>
+                            <p className="text-xs font-bold text-gray-400">VALIDEZ: 7 DÍAS</p>
+                        </div>
+                    </div>
+
+                    <div className="space-y-8">
+                        {/* Ruta */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Ruta</h3>
+                            <div className="text-2xl font-black uppercase text-secondary">
+                                <p>{result.descripcionOrigen}</p>
+                                <p>{result.descripcionDestino}</p>
+                            </div>
+                        </section>
+
+                        {/* Paquete */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Paquete</h3>
+                            <div className="text-base font-bold text-secondary space-y-1">
+                                <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
+                                <p>Peso: {formData.peso} kg</p>
+                                <p>Servicio: {serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express"}</p>
+                            </div>
+                        </section>
+
+                        {/* Contacto */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Contacto</h3>
+                            <div className="text-base font-bold text-secondary space-y-1">
+                                <p>{formData.telefono}</p>
+                                <p>{formData.email}</p>
+                            </div>
+                        </section>
+
+                        {/* Total */}
+                        <section className="pt-8 border-t border-gray-100">
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-3">Total</h3>
+                            <p className="text-5xl font-black text-secondary">
+                                <span className="text-2xl opacity-50 mr-1">$</span>
+                                {result.precioTotal.toLocaleString("es-CL")}
+                            </p>
+                        </section>
+                    </div>
+
+                    <div className="pt-12 mt-12 border-t border-gray-100 text-center">
+                        <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+                            Cotización referencial sujeta a verificación de pesos y medidas en oficina.
+                        </p>
+                        <p className="text-[10px] text-primary font-bold mt-1">WWW.PULLMANCARGO.CL</p>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
