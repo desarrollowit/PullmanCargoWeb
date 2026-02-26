@@ -284,17 +284,32 @@ export function QuoterSection() {
                                         </div>
 
                                         {/* Payment Method Selector */}
-                                        <div className="space-y-2">
-                                            <Label htmlFor="formaPago" className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
-                                            <Select value={formaPago} onValueChange={setFormaPago}>
-                                                <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
-                                                    <SelectValue placeholder="Forma de Pago" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="EFE">Pago en Origen (Efectivo/Débito/Crédito)</SelectItem>
-                                                    <SelectItem value="PED">Pago en Destino (Tari-Destino)</SelectItem>
-                                                </SelectContent>
-                                            </Select>
+                                        <div className="space-y-2 text-left">
+                                            <Label className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
+                                            <div className="flex gap-4 h-12 items-center bg-gray-50 px-4 rounded-2xl border border-gray-200">
+                                                <label className="flex items-center gap-2 cursor-pointer">
+                                                    <input
+                                                        type="radio"
+                                                        name="formaPago"
+                                                        value="EFE"
+                                                        checked={formaPago === "EFE"}
+                                                        onChange={(e) => setFormaPago(e.target.value)}
+                                                        className="w-4 h-4 text-primary focus:ring-primary"
+                                                    />
+                                                    <span className="text-sm font-medium">Pago en Origen</span>
+                                                </label>
+                                                <label className="flex items-center gap-2 cursor-pointer">
+                                                    <input
+                                                        type="radio"
+                                                        name="formaPago"
+                                                        value="PED"
+                                                        checked={formaPago === "PED"}
+                                                        onChange={(e) => setFormaPago(e.target.value)}
+                                                        className="w-4 h-4 text-primary focus:ring-primary"
+                                                    />
+                                                    <span className="text-sm font-medium">Pago en Destino</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
 
