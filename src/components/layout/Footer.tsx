@@ -69,6 +69,7 @@ export function Footer() {
                             <li><Link href="#nosotros" className="text-white/80 hover:text-[#ffffff] transition-colors">Sobre Nosotros</Link></li>
                             <li><Link href="#flota" className="text-white/80 hover:text-[#ffffff] transition-colors">Nuestra Flota</Link></li>
                             <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Certificaciones</Link></li>
+                            <li><Link href="/condiciones" className="text-white/80 hover:text-[#ffffff] transition-colors">Condiciones Generales del Servicio</Link></li>
                             <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Trabaja con Nosotros</Link></li>
                         </ul>
                     </div>
