@@ -20,8 +20,10 @@ interface TrackingStepsProps {
 export function TrackingSteps({ steps }: TrackingStepsProps) {
     return (
         <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-6 top-4 bottom-4 w-1 bg-gray-200"></div>
+            {/* Vertical Line - Only visible if there are more than 1 step */}
+            {steps.length > 1 && (
+                <div className="absolute left-6 top-8 bottom-12 w-1 bg-gray-200"></div>
+            )}
 
             {steps.map((step, index) => {
                 const isCompleted = step.status === "completed"
@@ -37,10 +39,10 @@ export function TrackingSteps({ steps }: TrackingStepsProps) {
                     >
                         {/* Icon Bubble */}
                         <div className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center border-4 transition-all duration-300 shadow-lg ${isActive
-                                ? 'bg-[#003fa2] border-[#003fa2] text-white scale-110'
-                                : isCompleted
-                                    ? 'bg-white border-[#003fa2] text-[#003fa2]'
-                                    : 'bg-gray-100 border-gray-300 text-gray-400'
+                            ? 'bg-[#003fa2] border-[#003fa2] text-white scale-110'
+                            : isCompleted
+                                ? 'bg-white border-[#003fa2] text-[#003fa2]'
+                                : 'bg-gray-100 border-gray-300 text-gray-400'
                             }`}>
                             <step.icon className="w-5 h-5" />
                         </div>
