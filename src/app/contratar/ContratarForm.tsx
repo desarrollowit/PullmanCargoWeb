@@ -116,7 +116,7 @@ export default function ContratarForm() {
 
     return (
         <div className="min-h-screen bg-white py-12">
-            <div className="container px-4 md:px-6 mx-auto max-w-6xl">
+            <div className="container px-4 md:px-6 mx-auto max-w-6xl no-print">
                 <ScrollReveal animation="fade-in">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
@@ -249,7 +249,7 @@ export default function ContratarForm() {
                                             <Label htmlFor="notes" className="font-bold uppercase text-gray-400 text-xs">Instrucciones Adicionales (Opcional)</Label>
                                             <Textarea
                                                 id="notes"
-                                                placeholder="Por favor, indícanos si tienes alguna preferencia de horario o detalle especial..."
+                                                placeholder="Por favor, indícanos si tienes alguna preference de horario o detalle especial..."
                                                 value={formData.notes}
                                                 onChange={(e) => handleInputChange("notes", e.target.value)}
                                                 rows={4}
@@ -287,8 +287,9 @@ export default function ContratarForm() {
                     </div>
                 </div>
             </div>
+
             {/* Printable Quote Section - HIDDEN BY DEFAULT, VISIBLE ONLY ON PRINT */}
-            <div id="printable-quote" className="hidden print-block space-y-8 p-12 bg-white text-secondary font-sans leading-relaxed">
+            <div id="printable-quote" className="hidden print:block space-y-8 p-12 bg-white text-secondary font-sans leading-relaxed">
                 <div className="flex justify-between items-start border-b-2 border-[#003fa2] pb-6 mb-8">
                     <div>
                         <img src="/brand/logo_cargo.png" alt="Pullman Cargo" className="h-10 w-auto brightness-0" />
