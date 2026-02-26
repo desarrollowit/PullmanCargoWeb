@@ -18,34 +18,16 @@ export function ServicesSectionEmpresas() {
             delay: 100
         },
         {
-            title: "Carga Consolidada (LTL)",
-            description: "Optimiza costos compartiendo espacio en nuestros camiones. Ideal para envíos regulares.",
-            icon: <Package className="h-8 w-8 text-current" />,
-            delay: 200
-        },
-        {
             title: "Distribución Última Milla",
             description: "Entrega capilar en zonas urbanas con nuestra flota ligera y seguimiento en tiempo real.",
             icon: <Clock className="h-8 w-8 text-current" />,
-            delay: 300
-        },
-        {
-            title: "Almacenaje y Fullfilment",
-            description: "Gestión de inventario y preparación de pedidos en nuestros centros de distribución.",
-            icon: <Warehouse className="h-8 w-8 text-current" />,
-            delay: 400
-        },
-        {
-            title: "Logística Inversa",
-            description: "Gestión eficiente de devoluciones y retornos de mercadería.",
-            icon: <BarChart3 className="h-8 w-8 text-current" />,
-            delay: 500
+            delay: 200
         },
         {
             title: "Seguros de Carga",
             description: "Protección total para tu mercadería con nuestras pólizas de cobertura amplia.",
             icon: <ShieldCheck className="h-8 w-8 text-current" />,
-            delay: 600
+            delay: 300
         }
     ]
 
