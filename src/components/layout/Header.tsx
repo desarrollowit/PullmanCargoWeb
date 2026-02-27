@@ -43,11 +43,11 @@ export function Header() {
   const showTrackingButton = placeholderText === "INGRESA ODT" || trackingId.length > 0;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-background transition-all duration-300 ${isScrolled ? "shadow-xl py-2" : "shadow-lg py-4"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-background transition-all duration-300 ${isScrolled ? "shadow-xl py-1" : "shadow-lg py-2"}`}>
       {/* Top Bar (Optional, can be added if needed, kept simple for now as per clean design) */}
 
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href={isEmpresas ? "/empresas" : "/"}
