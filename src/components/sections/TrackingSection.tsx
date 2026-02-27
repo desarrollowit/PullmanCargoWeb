@@ -14,8 +14,8 @@ export function TrackingSection() {
         <section id="tracking" className="relative w-full py-32 overflow-hidden">
             {/* ... (backgrounds remain same) ... */}
             <div className="absolute inset-0 bg-fixed bg-cover bg-center z-0" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200')" }} />
-            <div className="absolute inset-0 bg-secondary/80 mix-blend-multiply z-0" />
-            <div className="absolute inset-0 bg-black/40 z-0" />
+            <div className="absolute inset-0 bg-[#58351e]/70 mix-blend-multiply z-0" />
+            <div className="absolute inset-0 bg-black/30 z-0" />
 
             <div className="container relative z-10 px-4 md:px-6 mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">

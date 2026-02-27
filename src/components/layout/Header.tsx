@@ -127,9 +127,9 @@ export function Header() {
           </div>
 
           {/* CTA Button + WIT Logo */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
             {!isEmpresas && (
-              <Button asChild className="bg-primary hover:bg-secondary text-white font-bold rounded-2xl px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              <Button asChild className="bg-primary hover:bg-secondary text-white font-bold rounded-2xl px-4 lg:px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-xs lg:text-sm h-10 lg:h-11">
                 <Link href="/#cotizador">
                   Cotizar Ahora
                 </Link>
@@ -137,11 +137,11 @@ export function Header() {
             )}
 
             {/* Vertical Separator */}
-            <div className="w-px h-12 bg-gray-200" />
+            <div className="w-px h-10 lg:h-12 bg-gray-200" />
 
             {/* WIT Logo */}
             <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 border-none outline-none opacity-70 hover:opacity-100 transition-opacity duration-200">
-              <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-11 w-auto object-contain border-none p-0" />
+              <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-9 lg:h-11 w-auto object-contain border-none p-0" />
             </a>
           </div>
 
