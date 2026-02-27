@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HeroSectionEmpresas() {
     return (
-        <section id="inicio" className="relative w-full h-[75vh] flex items-center overflow-hidden mt-28">
+        <section id="inicio" className="relative w-full h-[75vh] flex items-center overflow-hidden mt-24">
             {/* Background Pullman Bus Image - different one if optimal, or same for consistency */}
             <div className="absolute inset-0 z-0">
                 <Image
