@@ -141,7 +141,7 @@ export function Header() {
 
             {/* WIT Logo */}
             <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 border-none outline-none opacity-70 hover:opacity-100 transition-opacity duration-200">
-              <img src="/brand/wit-logo.svg" alt="A Global Partnership wit" className="h-14 w-auto object-contain border-none p-0" />
+              <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-14 w-auto object-contain border-none p-0" />
             </a>
           </div>
 
@@ -211,7 +211,7 @@ export function Header() {
                     {/* WIT Logo in mobile menu */}
                     <div className="flex justify-center pt-2">
                       <a href="https://wit.la" target="_blank" rel="noopener noreferrer">
-                        <img src="/brand/wit-logo.svg" alt="A Global Partnership wit" className="h-10 w-auto object-contain opacity-70" />
+                        <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-10 w-auto object-contain opacity-70" />
                       </a>
                     </div>
                   </div>
