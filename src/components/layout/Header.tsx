@@ -62,7 +62,7 @@ export function Header() {
             <img
               src="/brand/logo_cargo.png"
               alt="Pullman Cargo"
-              className="h-[36px] md:h-[43px] w-auto object-contain"
+              className="h-[32px] md:h-[36px] lg:h-[43px] w-auto object-contain"
             />
           </Link>
 
@@ -126,115 +126,115 @@ export function Header() {
             </form>
           </div>
 
-          {/* CTA Button + WIT Logo */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-6">
-            {!isEmpresas && (
-              <Button asChild className="bg-primary hover:bg-secondary text-white font-bold rounded-2xl px-4 lg:px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-xs lg:text-sm h-10 lg:h-11">
-                <Link href="/#cotizador">
-                  Cotizar Ahora
-                </Link>
-              </Button>
-            )}
-
-            {/* Vertical Separator */}
-            <div className="w-px h-10 lg:h-12 bg-gray-200" />
-
-            {/* WIT Logo */}
-            <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 border-none outline-none opacity-70 hover:opacity-100 transition-opacity duration-200">
-              <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-9 lg:h-11 w-auto object-contain border-none p-0" />
-            </a>
-          </div>
-
-          {/* Mobile Nav */}
-          <div className="lg:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground hover:bg-muted">
-                  <Menu className="h-8 w-8" />
-                  <span className="sr-only">Toggle menu</span>
+          {/* Right side elements (CTA + WIT + Mobile Menu) */}
+          <div className="flex items-center gap-2 md:gap-4 ml-auto">
+            {/* CTA Button + WIT Logo (Desktop & Tablet) */}
+            <div className="hidden md:flex items-center gap-2 lg:gap-6">
+              {!isEmpresas && (
+                <Button asChild className="bg-primary hover:bg-secondary text-white font-bold rounded-2xl px-3 lg:px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-[10px] lg:text-sm h-9 lg:h-11">
+                  <Link href="/#cotizador">
+                    Cotizar Ahora
+                  </Link>
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l border-white/20 bg-white/90 backdrop-blur-xl p-0 shadow-2xl">
+              )}
 
-                {/* Decorative Background Elements */}
-                <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-[#003fa2]/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+              {/* Vertical Separator */}
+              <div className="w-px h-8 lg:h-12 bg-gray-200" />
 
-                <div className="flex flex-col h-full relative z-10">
-                  {/* Menu Header */}
-                  <div className="p-6 pt-12 flex justify-center border-b border-gray-100/50">
-                    <Link href="/" className="group transition-transform duration-300 hover:scale-105">
-                      <img
-                        src="/brand/logo_cargo.png"
-                        alt="Pullman Cargo"
-                        className="h-12 w-auto object-contain"
-                      />
-                    </Link>
-                  </div>
+              {/* WIT Logo */}
+              <a href="https://wit.la" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 border-none outline-none opacity-70 hover:opacity-100 transition-opacity duration-200">
+                <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-7 lg:h-11 w-auto object-contain border-none p-0" />
+              </a>
+            </div>
 
-                  {/* Menu Links */}
-                  <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
-                    {navLinks.map((link, index) => (
-                      <SheetClose asChild key={link.href}>
-                        <Link
-                          href={link.href}
-                          onClick={(e) => {
-                            // Handle smooth scroll for anchor links on the same page
-                            if (link.href.startsWith('#')) {
-                              e.preventDefault();
-                              const element = document.querySelector(link.href);
-                              if (element) {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            {/* Mobile Nav Toggle */}
+            <div className="lg:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-foreground hover:bg-muted">
+                    <Menu className="h-8 w-8 text-secondary" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l border-white/20 bg-white/90 backdrop-blur-xl p-0 shadow-2xl">
+                  {/* ... contents remain same ... */}
+                  {/* Decorative Background Elements */}
+                  <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-[#003fa2]/10 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+
+                  <div className="flex flex-col h-full relative z-10">
+                    {/* Menu Header */}
+                    <div className="p-6 pt-12 flex justify-center border-b border-gray-100/50">
+                      <Link href="/" className="group transition-transform duration-300 hover:scale-105">
+                        <img
+                          src="/brand/logo_cargo.png"
+                          alt="Pullman Cargo"
+                          className="h-12 w-auto object-contain"
+                        />
+                      </Link>
+                    </div>
+
+                    {/* Menu Links */}
+                    <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
+                      {navLinks.map((link, index) => (
+                        <SheetClose asChild key={link.href}>
+                          <Link
+                            href={link.href}
+                            onClick={(e) => {
+                              // Handle smooth scroll for anchor links on the same page
+                              if (link.href.startsWith('#')) {
+                                e.preventDefault();
+                                const element = document.querySelector(link.href);
+                                if (element) {
+                                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
                               }
-                            }
-                          }}
-                          className="group flex items-center justify-between text-2xl font-bold text-gray-800 hover:text-[#003fa2] transition-all duration-300"
-                          style={{ animationDelay: `${index * 100}ms` }}
-                        >
-                          <span className="relative">
-                            {link.label}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003fa2] group-hover:w-full transition-all duration-300"></span>
-                          </span>
-                          {/* Arrow or Chevron could go here */}
-                        </Link>
-                      </SheetClose>
-                    ))}
-                  </nav>
-
-                  {/* Call to Actions */}
-                  <div className="px-8 pb-4 space-y-3">
-                    <SheetClose asChild>
-                      <Button asChild className="w-full bg-primary hover:bg-secondary text-white font-bold h-12 text-lg shadow-lg hover:shadow-primary/20 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
-                        <Link href="#cotizador">Cotizar Ahora</Link>
-                      </Button>
-                    </SheetClose>
-                    {/* WIT Logo in mobile menu */}
-                    <div className="flex justify-center pt-2">
-                      <a href="https://wit.la" target="_blank" rel="noopener noreferrer">
-                        <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-8 w-auto object-contain opacity-70" />
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Menu Footer */}
-                  <div className="p-8 bg-gray-50/50 border-t border-gray-100/50 space-y-6">
-                    {/* Social Icons */}
-                    <div className="flex justify-center gap-6">
-                      {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-                        <Link key={i} href="#" className="p-2 rounded-2xl bg-white text-gray-500 hover:text-primary hover:bg-white shadow-sm hover:shadow-md transition-all duration-300">
-                          <Icon className="w-5 h-5" />
-                        </Link>
+                            }}
+                            className="group flex items-center justify-between text-2xl font-bold text-gray-800 hover:text-[#003fa2] transition-all duration-300"
+                            style={{ animationDelay: `${index * 100}ms` }}
+                          >
+                            <span className="relative">
+                              {link.label}
+                              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003fa2] group-hover:w-full transition-all duration-300"></span>
+                            </span>
+                          </Link>
+                        </SheetClose>
                       ))}
+                    </nav>
+
+                    {/* Call to Actions */}
+                    <div className="px-8 pb-4 space-y-3">
+                      <SheetClose asChild>
+                        <Button asChild className="w-full bg-primary hover:bg-secondary text-white font-bold h-12 text-lg shadow-lg hover:shadow-primary/20 rounded-2xl transition-all duration-300 transform hover:-translate-y-1">
+                          <Link href="#cotizador">Cotizar Ahora</Link>
+                        </Button>
+                      </SheetClose>
+                      {/* WIT Logo in mobile menu */}
+                      <div className="flex justify-center pt-2">
+                        <a href="https://wit.la" target="_blank" rel="noopener noreferrer">
+                          <img src="https://www.pullmanviajes.cl/logo-wit-dark.png" alt="A Global Partnership wit" className="h-8 w-auto object-contain opacity-70" />
+                        </a>
+                      </div>
                     </div>
-                    {/* Contact Info */}
-                    <div className="text-center space-y-1 text-sm text-gray-500">
-                      <p>contacto@pullmancargo.cl</p>
-                      <p>600 300 3000</p>
+
+                    {/* Menu Footer */}
+                    <div className="p-8 bg-gray-50/50 border-t border-gray-100/50 space-y-6">
+                      <div className="flex justify-center gap-6">
+                        {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                          <Link key={i} href="#" className="p-2 rounded-2xl bg-white text-gray-500 hover:text-primary hover:bg-white shadow-sm hover:shadow-md transition-all duration-300">
+                            <Icon className="w-5 h-5" />
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="text-center space-y-1 text-sm text-gray-500">
+                        <p>contacto@pullmancargo.cl</p>
+                        <p>600 300 3000</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
