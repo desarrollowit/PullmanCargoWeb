@@ -7,6 +7,7 @@ export const API_CONFIG = {
         GET_DESTINATIONS: '/api/quoter/destinations',
         GET_DESTINATIONS_BY_ORIGIN: '/api/quoter/destinations-by-origin',
         CALCULATE_QUOTE: '/api/quoter/calculate',
+        GET_AGENCIES: '/api/agencies',
     },
     HEADERS: {
         'accept': 'application/json',
@@ -45,6 +46,16 @@ export interface QuoteResponse {
     valorNumerico: number // Numeric value (same as precioTotal)
     descripcionOrigen: string // Origin city name
     descripcionDestino: string // Destination city name
+}
+
+export interface DynamicAgency {
+    nombreAgencia: string
+    direccion: string
+    telefono: string
+    horario: string
+    idVenta: string
+    region: string
+    comuna: string
 }
 
 // API Service Class
@@ -195,6 +206,21 @@ class QuoterAPIService {
         } catch (error) {
             console.error('Failed to calculate quote:', error)
             throw new Error('No se pudo calcular la cotización. Intenta nuevamente.')
+        }
+    }
+
+    /**
+     * Endpoint 5: Get agencies by region
+     * GET /api/agencies?idRegion=XX
+     * Response format: [{nombreAgencia, direccion, telefono, horario, idVenta, region, comuna}, ...]
+     */
+    async getAgenciesByRegion(regionId: string): Promise<DynamicAgency[]> {
+        try {
+            const data = await this.fetchAPI<any>(`${API_CONFIG.ENDPOINTS.GET_AGENCIES}?idRegion=${regionId}`)
+            return Array.isArray(data) ? data : []
+        } catch (error) {
+            console.error(`Failed to fetch agencies for region ${regionId}:`, error)
+            throw new Error('No se pudieron cargar las sucursales de esta región')
         }
     }
 }
