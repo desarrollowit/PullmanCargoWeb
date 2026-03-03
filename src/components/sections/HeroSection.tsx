@@ -12,8 +12,8 @@ export function HeroSection() {
             {/* Background Pullman Bus Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200"
-                    alt="Background Pullman Bus"
+                    src="/flota/hero.png"
+                    alt="Flota Pullman Cargo"
                     fill
                     priority
                     className="object-cover"

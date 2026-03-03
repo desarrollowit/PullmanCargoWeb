@@ -1,17 +1,64 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Send, Loader2, CheckCircle2 } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import { useToast } from "@/components/ui/use-toast"
 
 export function ContactSection() {
+    const { toast } = useToast()
+    const [loading, setLoading] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
+    const [formData, setFormData] = useState({
+        nombre: "",
+        telefono: "",
+        email: "",
+        mensaje: ""
+    })
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target
+        setFormData(prev => ({ ...prev, [id]: value }))
+    }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setLoading(true)
+
+        try {
+            const response = await fetch('/api/notifications/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+
+            if (response.ok) {
+                setSubmitted(true)
+                toast({
+                    title: "Mensaje Enviado",
+                    description: "Gracias por contactarnos. Te responderemos a la brevedad.",
+                })
+            } else {
+                throw new Error('Failed to send message')
+            }
+        } catch (error) {
+            console.error(error)
+            toast({
+                title: "Error",
+                description: "No se pudo enviar el mensaje. Por favor intenta más tarde.",
+                variant: "destructive"
+            })
+        } finally {
+            setLoading(false)
+        }
+    }
+
     return (
         <section id="contacto" className="w-full py-24 bg-background relative overflow-hidden">
-
-
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter text-primary uppercase mb-6">
@@ -65,31 +112,95 @@ export function ContactSection() {
 
                     {/* RIGHT: FORM */}
                     <ScrollReveal animation="slide-in-right" delay={200}>
-                        <div className="bg-white p-8 md:p-10 shadow-2xl border-t-4 border-primary rounded-3xl overflow-hidden relative">
-                            <h3 className="text-xl font-semibold uppercase text-primary mb-6">Formulario de Contacto</h3>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold uppercase text-gray-500">Nombre Completo</label>
-                                        <Input placeholder="Tu nombre" className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary h-12" />
+                        <div className="bg-white p-8 md:p-10 shadow-2xl border-t-4 border-primary rounded-3xl overflow-hidden relative min-h-[500px] flex flex-col justify-center">
+                            {submitted ? (
+                                <div className="text-center space-y-4 animate-in fade-in zoom-in duration-500">
+                                    <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
+                                        <CheckCircle2 className="w-10 h-10 text-green-600" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold uppercase text-gray-500">Teléfono</label>
-                                        <Input placeholder="+56 9 ..." className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary h-12" />
-                                    </div>
+                                    <h3 className="text-2xl font-bold text-secondary uppercase">¡Mensaje Enviado!</h3>
+                                    <p className="text-gray-500">Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos a la brevedad posible.</p>
+                                    <Button
+                                        onClick={() => setSubmitted(false)}
+                                        variant="outline"
+                                        className="mt-6 rounded-2xl border-primary text-primary hover:bg-primary hover:text-white"
+                                    >
+                                        Enviar otro mensaje
+                                    </Button>
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase text-gray-500">Correo Electrónico</label>
-                                    <Input placeholder="correo@ejemplo.com" className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary h-12" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase text-gray-500">Mensaje</label>
-                                    <Textarea placeholder="Cuéntanos en qué podemos ayudarte..." className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary min-h-[150px]" />
-                                </div>
-                                <Button className="w-full h-14 bg-primary hover:bg-secondary text-white font-bold uppercase tracking-widest text-lg rounded-2xl transition-all shadow-lg hover:shadow-xl group">
-                                    Enviar Mensaje <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                            </form>
+                            ) : (
+                                <>
+                                    <h3 className="text-xl font-semibold uppercase text-primary mb-6">Formulario de Contacto</h3>
+                                    <form onSubmit={handleSubmit} className="space-y-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="space-y-2">
+                                                <label className="text-xs font-bold uppercase text-gray-500">Nombre Completo</label>
+                                                <Input
+                                                    id="nombre"
+                                                    value={formData.nombre}
+                                                    onChange={handleChange}
+                                                    required
+                                                    placeholder="Tu nombre"
+                                                    className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary h-12"
+                                                    disabled={loading}
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-xs font-bold uppercase text-gray-500">Teléfono</label>
+                                                <Input
+                                                    id="telefono"
+                                                    value={formData.telefono}
+                                                    onChange={handleChange}
+                                                    placeholder="+56 9 ..."
+                                                    className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary h-12"
+                                                    disabled={loading}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold uppercase text-gray-500">Correo Electrónico</label>
+                                            <Input
+                                                id="email"
+                                                type="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                                placeholder="correo@ejemplo.com"
+                                                className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary h-12"
+                                                disabled={loading}
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold uppercase text-gray-500">Mensaje</label>
+                                            <Textarea
+                                                id="mensaje"
+                                                value={formData.mensaje}
+                                                onChange={handleChange}
+                                                required
+                                                placeholder="Cuéntanos en qué podemos ayudarte..."
+                                                className="rounded-2xl bg-gray-50 border-gray-200 focus:border-primary min-h-[150px]"
+                                                disabled={loading}
+                                            />
+                                        </div>
+                                        <Button
+                                            type="submit"
+                                            disabled={loading}
+                                            className="w-full h-14 bg-primary hover:bg-secondary text-white font-bold uppercase tracking-widest text-lg rounded-2xl transition-all shadow-lg hover:shadow-xl group"
+                                        >
+                                            {loading ? (
+                                                <>
+                                                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                                                    Enviando...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Enviar Mensaje <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                                </>
+                                            )}
+                                        </Button>
+                                    </form>
+                                </>
+                            )}
                         </div>
                     </ScrollReveal>
                 </div>

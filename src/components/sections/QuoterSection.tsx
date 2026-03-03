@@ -27,6 +27,7 @@ export function QuoterSection() {
     const [selectedDestination, setSelectedDestination] = useState("")
     const [lugarEntrega, setLugarEntrega] = useState("oficina") // "domicilio" or "oficina" - default to oficina for better coverage
     const [formData, setFormData] = useState({
+        nombre: "",
         largo: "",
         ancho: "",
         alto: "",
@@ -118,8 +119,8 @@ export function QuoterSection() {
             return
         }
 
-        if (!formData.telefono || !formData.email) {
-            setError("Por favor ingresa tu teléfono y email")
+        if (!formData.nombre || !formData.telefono || !formData.email) {
+            setError("Por favor ingresa tu nombre, teléfono y email")
             return
         }
 
@@ -382,6 +383,21 @@ export function QuoterSection() {
                                     </div>
 
                                     {/* Contact Info */}
+                                    <div className="space-y-2">
+                                        <Label htmlFor="nombre" className="text-sm font-bold uppercase text-gray-500">Nombre Completo</Label>
+                                        <div className="relative">
+                                            <Search className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                            <Input
+                                                id="nombre"
+                                                placeholder="Tu nombre completo"
+                                                className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold"
+                                                value={formData.nombre}
+                                                onChange={(e) => handleInputChange("nombre", e.target.value)}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <Label htmlFor="phone" className="text-sm font-bold uppercase text-gray-500">Teléfono</Label>
@@ -466,6 +482,7 @@ export function QuoterSection() {
                                                 <div>
                                                     <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Contacto</h4>
                                                     <div className="text-sm space-y-1 text-gray-600 font-medium">
+                                                        <p>{formData.nombre}</p>
                                                         <p>{formData.telefono}</p>
                                                         <p>{formData.email}</p>
                                                     </div>
@@ -571,6 +588,7 @@ export function QuoterSection() {
                         <section>
                             <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Contacto</h3>
                             <div className="text-base font-bold text-secondary space-y-1">
+                                <p>Nombre: {formData.nombre}</p>
                                 <p>Teléfono: {formData.telefono}</p>
                                 <p>Email: {formData.email}</p>
                             </div>

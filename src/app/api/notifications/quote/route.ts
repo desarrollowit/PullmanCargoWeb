@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
         }
 
         const msg = {
-            to: process.env.EMAIL_TO || 'admin@pullmancargo.cl',
+            to: [process.env.EMAIL_TO || 'admin@pullmancargo.cl', formData.email],
             from: process.env.EMAIL_FROM || 'contacto@pullmancargo.cl',
             subject: `Nueva Cotización: ${formData.origen} -> ${formData.destino}`,
             html: `
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
             `,
         }
 
-        console.log('Sending email with SendGrid to client...', { to: msg.to, from: msg.from, subject: msg.subject })
+        console.log('Sending email with SendGrid to admin and client...', { to: msg.to, from: msg.from, subject: msg.subject })
         const response = await sgMail.send(msg)
         console.log('SendGrid Response Status:', response[0].statusCode)
 
