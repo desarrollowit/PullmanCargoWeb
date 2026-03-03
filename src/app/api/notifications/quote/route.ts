@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
         }
 
         const msg = {
-            to: [process.env.EMAIL_TO || 'admin@pullmancargo.cl', formData.email],
+            to: formData.email,
             from: process.env.EMAIL_FROM || 'contacto@pullmancargo.cl',
             subject: `Nueva Cotización: ${formData.origen} -> ${formData.destino}`,
             html: `
@@ -38,6 +38,8 @@ export async function POST(request: NextRequest) {
                                 <p style="margin: 8px 0;"><strong>Servicio:</strong> ${formData.servicio}</p>
                                 <p style="margin: 8px 0;"><strong>Dimensiones:</strong> ${formData.largo}x${formData.ancho}x${formData.alto} cm</p>
                                 <p style="margin: 8px 0;"><strong>Peso:</strong> ${formData.peso} kg</p>
+                                <p style="margin: 8px 0;"><strong>Entrega:</strong> ${formData.lugarEntrega}</p>
+                                <p style="margin: 8px 0;"><strong>Forma de Pago:</strong> ${formData.formaPago}</p>
                             </div>
                             
                             <div style="background-color: #f8f9fa; padding: 25px; border-radius: 16px; text-align: center; border: 1px dashed #003fa2;">

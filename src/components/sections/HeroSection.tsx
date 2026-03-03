@@ -8,7 +8,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HeroSection() {
     return (
-        <section id="inicio" className="relative w-full h-[70vh] flex items-center overflow-hidden mt-20">
+        <section id="inicio" className="relative w-full h-[60vh] flex items-center overflow-hidden mt-20">
             {/* Background Pullman Bus Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -19,7 +19,7 @@ export function HeroSection() {
                     className="object-cover"
                     sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#58351e]/80 via-[#58351e]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#58351e]/50 via-[#58351e]/30 to-transparent" />
             </div>
 
             <div className="container relative z-10 px-4 md:px-6 mx-auto pt-8">

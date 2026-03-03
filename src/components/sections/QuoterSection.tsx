@@ -182,7 +182,14 @@ export function QuoterSection() {
 
     const handleInputChange = (field: string, value: string) => {
         setFormData(prev => ({ ...prev, [field]: value }))
+        // Clear result when form changes to force re-calculation and prevent stale/blank prints
+        if (result) setResult(null)
     }
+
+    // Clear result when key selections change
+    useEffect(() => {
+        if (result) setResult(null)
+    }, [selectedOrigin, selectedDestination, lugarEntrega, formaPago, serviceType])
 
     return (
         <section id="cotizador" className="w-full py-24 bg-background border-t border-gray-100">
@@ -470,11 +477,20 @@ export function QuoterSection() {
                                                 </div>
 
                                                 {/* Paquete */}
-                                                <div>
-                                                    <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Paquete</h4>
-                                                    <div className="text-sm space-y-1 text-gray-600 font-medium">
-                                                        <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
-                                                        <p>Peso: {formData.peso} kg</p>
+                                                <div className="grid grid-cols-2 gap-4">
+                                                    <div>
+                                                        <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Paquete</h4>
+                                                        <div className="text-sm space-y-1 text-gray-600 font-medium">
+                                                            <p>Dim: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
+                                                            <p>Peso: {formData.peso} kg</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Detalles</h4>
+                                                        <div className="text-sm space-y-1 text-gray-600 font-medium">
+                                                            <p className="capitalize">{lugarEntrega}</p>
+                                                            <p className="text-[10px] uppercase">{formaPago === "EFE" ? "Pago Origen" : "Pago Destino"}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -575,12 +591,20 @@ export function QuoterSection() {
                         </section>
 
                         {/* Paquete */}
-                        <section>
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Paquete</h3>
-                            <div className="text-base font-bold text-secondary space-y-1">
-                                <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
-                                <p>Peso: {formData.peso} kg</p>
-                                <p>Lugar entrega: {lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal"}</p>
+                        <section className="grid grid-cols-2 gap-8">
+                            <div>
+                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Paquete</h3>
+                                <div className="text-base font-bold text-secondary space-y-1">
+                                    <p>Dimensiones: {formData.largo}x{formData.ancho}x{formData.alto} cm</p>
+                                    <p>Peso: {formData.peso} kg</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Servicio</h3>
+                                <div className="text-base font-bold text-secondary space-y-1">
+                                    <p>Entrega: {lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal"}</p>
+                                    <p>Pago: {formaPago === "EFE" ? "En Origen" : "En Destino"}</p>
+                                </div>
                             </div>
                         </section>
 
