@@ -66,7 +66,6 @@ export function Footer() {
                             <li><Link href="#nosotros" className="text-white/80 hover:text-[#ffffff] transition-colors">Sobre Nosotros</Link></li>
                             <li><Link href="#flota" className="text-white/80 hover:text-[#ffffff] transition-colors">Nuestra Flota</Link></li>
                             <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Certificaciones</Link></li>
-                            <li><Link href="/condiciones" className="text-white/80 hover:text-[#ffffff] transition-colors font-bold text-primary">Condiciones Generales del Servicio</Link></li>
                             <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Trabaja con Nosotros</Link></li>
                         </ul>
                     </div>
@@ -77,8 +76,8 @@ export function Footer() {
                             <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Soporte</h3>
                             <ul className="space-y-3">
                                 <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Centro de Ayuda</Link></li>
-                                <li><Link href="/condiciones" className="text-white/80 hover:text-[#ffffff] transition-colors">Términos y Condiciones</Link></li>
-                                <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Política de Privacidad</Link></li>
+                                <li><Link href="/condiciones" className="text-white/80 hover:text-[#ffffff] transition-colors">Condiciones Generales del Servicio</Link></li>
+                                <li><Link href="/politicas" className="text-white/80 hover:text-[#ffffff] transition-colors">Política de Privacidad</Link></li>
                                 <li><Link href="#faq" className="text-white/80 hover:text-[#ffffff] transition-colors">Preguntas Frecuentes</Link></li>
                             </ul>
                         </div>
