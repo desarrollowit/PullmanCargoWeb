@@ -549,14 +549,16 @@ export function QuoterSection() {
                                                 </div>
 
                                                 {/* Contacto */}
-                                                <div>
-                                                    <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Contacto</h4>
-                                                    <div className="text-sm space-y-1 text-gray-600 font-medium">
-                                                        <p>{formData.nombre}</p>
-                                                        <p>{formData.telefono}</p>
-                                                        <p>{formData.email}</p>
+                                                {(formData.nombre || formData.telefono || formData.email) && (
+                                                    <div>
+                                                        <h4 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Contacto</h4>
+                                                        <div className="text-sm space-y-1 text-gray-600 font-medium">
+                                                            {formData.nombre && <p>{formData.nombre}</p>}
+                                                            {formData.telefono && <p>{formData.telefono}</p>}
+                                                            {formData.email && <p>{formData.email}</p>}
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                )}
 
                                                 {/* Total */}
                                                 <div className="pt-4 border-t border-gray-100">
@@ -663,14 +665,16 @@ export function QuoterSection() {
                         </section>
 
                         {/* Contacto */}
-                        <section>
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Contacto</h3>
-                            <div className="text-base font-bold text-secondary space-y-1">
-                                <p>Nombre: {formData.nombre}</p>
-                                <p>Teléfono: {formData.telefono}</p>
-                                <p>Email: {formData.email}</p>
-                            </div>
-                        </section>
+                        {(formData.nombre || formData.telefono || formData.email) && (
+                            <section>
+                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#003fa2] mb-3">Contacto</h3>
+                                <div className="text-base font-bold text-secondary space-y-1">
+                                    {formData.nombre && <p>Nombre: {formData.nombre}</p>}
+                                    {formData.telefono && <p>Teléfono: {formData.telefono}</p>}
+                                    {formData.email && <p>Email: {formData.email}</p>}
+                                </div>
+                            </section>
+                        )}
 
                         {/* Total */}
                         <section className="pt-8 border-t border-gray-100">
