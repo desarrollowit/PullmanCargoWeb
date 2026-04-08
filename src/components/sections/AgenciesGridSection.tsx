@@ -192,6 +192,12 @@ export function AgenciesGridSection() {
                                     const phone = isDynamic ? (agency as DynamicAgency).telefono : (agency as Agency).phone
                                     const hours = isDynamic ? (agency as DynamicAgency).horario : (agency as Agency).hours
                                     const commune = isDynamic ? (agency as DynamicAgency).comuna : ((agency as Agency).commune || (agency as Agency).city)
+                                    const lat = isDynamic ? (agency as DynamicAgency).latitud : null
+                                    const lng = isDynamic ? (agency as DynamicAgency).longitud : null
+                                    
+                                    const mapLink = (lat && lng && lat !== '0' && lng !== '0') 
+                                        ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`
+                                        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${address}, ${commune}, Chile`)}`
 
                                     return (
                                         <ScrollReveal key={`${selectedRegion}-${currentPage}-${index}`} animation="fade-in" delay={index * 50}>
@@ -224,7 +230,7 @@ export function AgenciesGridSection() {
                                                         asChild
                                                     >
                                                         <a
-                                                            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${address}, ${commune}, Chile`)}`}
+                                                            href={mapLink}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                         >

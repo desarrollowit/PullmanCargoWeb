@@ -56,6 +56,8 @@ export interface DynamicAgency {
     idVenta: string
     region: string
     comuna: string
+    latitud?: string
+    longitud?: string
 }
 
 // API Service Class
@@ -172,11 +174,39 @@ class QuoterAPIService {
     /**
      * Endpoint 5: Get agencies by region
      * GET /api/agencies?idRegion=XX
-     * Response format: [{nombreAgencia, direccion, telefono, horario, idVenta, region, comuna}, ...]
+     * Response format: { agencia: [{agencia, descripcion, latitud, longitud...}] }
      */
     async getAgenciesByRegion(regionId: string): Promise<DynamicAgency[]> {
         try {
             const data = await this.fetchAPI<any>(`${API_CONFIG.ENDPOINTS.GET_AGENCIES}?idRegion=${regionId}`)
+            
+            // The API returns an object with an "agencia" array
+            if (data && Array.isArray(data.agencia)) {
+                return data.agencia.map((item: any) => {
+                    // Sanitize coordinates because API returns them in weird formats like 70-62171 or -26,34566
+                    let lat = item.latitud ? item.latitud.toString().replace(',', '.') : ''
+                    let lng = item.longitud ? item.longitud.toString().replace(',', '.').replace('-', '.') : ''
+                    
+                    // Force longitude to be negative for Chile if it's positive
+                    if (lng && !lng.startsWith('-') && lng !== '0') {
+                        lng = `-${lng}`
+                    }
+
+                    return {
+                        nombreAgencia: item.descripcion || '',
+                        direccion: item.direccion || '',
+                        telefono: item.telefono || '',
+                        horario: item.horario || '',
+                        idVenta: item.agencia || '',
+                        region: regionId,
+                        comuna: item.descripcion || '',
+                        latitud: lat,
+                        longitud: lng
+                    } as DynamicAgency
+                })
+            }
+            
+            // Fallback for direct array format just in case
             return Array.isArray(data) ? data : []
         } catch (error) {
             console.error(`Failed to fetch agencies for region ${regionId}:`, error)

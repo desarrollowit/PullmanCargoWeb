@@ -13,12 +13,19 @@ export async function GET(request: NextRequest) {
 
     try {
         const baseUrl = process.env.NEXT_PUBLIC_PULLMAN_API_URL || 'https://www.pullmancargo.cl'
+        
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 15000)
+
         const response = await fetch(`${baseUrl}/api/agencias?idRegion=${idRegion}`, {
             headers: {
                 'accept': '*/*',
                 'accept-language': 'es-419,es;q=0.9,en;q=0.8',
             },
+            signal: controller.signal
         })
+
+        clearTimeout(timeoutId)
 
         if (!response.ok) {
             throw new Error(`API responded with status: ${response.status}`)
