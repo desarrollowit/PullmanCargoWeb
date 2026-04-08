@@ -8,13 +8,81 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { Search, MapPin, Package, Scale, ArrowRight, Loader2, CheckCircle2, ChevronRight, Mail, Phone, Calculator, Printer, AlertCircle } from "lucide-react"
 import { quoterAPI, type Location, type QuoteRequest, type QuoteResponse } from "@/services/quoter-api"
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+
+interface SearchableSelectProps {
+    options: Location[]
+    value: string
+    onChange: (value: string) => void
+    placeholder: string
+    disabled?: boolean
+}
+
+function SearchableSelect({ options, value, onChange, placeholder, disabled }: SearchableSelectProps) {
+    const [open, setOpen] = useState(false)
+    const [search, setSearch] = useState("")
+
+    // Find the selected option's name to display
+    const selectedOption = options.find(o => o.id === value)
+    const displayValue = open ? search : (selectedOption ? selectedOption.name : "")
+
+    const filteredOptions = options.filter(o => o.name.toLowerCase().includes(search.toLowerCase()))
+
+    return (
+        <div className="relative w-full">
+            <div 
+                className={`relative flex items-center w-full h-12 px-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-2xl ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-text focus-within:border-primary focus-within:ring-1 focus-within:ring-primary'}`}
+            >
+                <input
+                    type="text"
+                    className="w-full h-full bg-transparent outline-none font-semibold text-gray-900 placeholder:text-gray-500"
+                    placeholder={placeholder}
+                    value={displayValue}
+                    onChange={(e) => {
+                        setSearch(e.target.value)
+                        if (!open) setOpen(true)
+                        if (value && e.target.value !== selectedOption?.name) {
+                            onChange("") // clear selection if they start typing
+                        }
+                    }}
+                    onFocus={() => {
+                        setSearch("")
+                        setOpen(true)
+                    }}
+                    onBlur={() => {
+                        // Close after a small delay to allow click on option
+                        setTimeout(() => setOpen(false), 200)
+                    }}
+                    disabled={disabled}
+                />
+                <ChevronRight className={`w-4 h-4 text-gray-500 transition-transform ${open ? 'rotate-90' : ''}`} />
+            </div>
+
+            {open && !disabled && (
+                <div className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-auto">
+                    {filteredOptions.length > 0 ? (
+                        filteredOptions.map((option) => (
+                            <div
+                                key={option.id}
+                                className={`px-4 py-3 text-sm cursor-pointer hover:bg-gray-100 font-medium ${option.id === value ? 'bg-primary/5 text-primary' : 'text-gray-700'}`}
+                                onClick={() => {
+                                    onChange(option.id)
+                                    setSearch(option.name)
+                                    setOpen(false)
+                                }}
+                            >
+                                {option.name}
+                            </div>
+                        ))
+                    ) : (
+                        <div className="px-4 py-3 text-sm text-gray-500 font-medium">
+                            No se encontraron ciudades
+                        </div>
+                    )}
+                </div>
+            )}
+        </div>
+    )
+}
 
 export function QuoterSection() {
     // State for locations
@@ -119,10 +187,7 @@ export function QuoterSection() {
             return
         }
 
-        if (!formData.nombre || !formData.telefono || !formData.email) {
-            setError("Por favor ingresa tu nombre, teléfono y email")
-            return
-        }
+        // Personal data is no longer mandatory for calculation
 
         try {
             setLoading(true)
@@ -152,25 +217,27 @@ export function QuoterSection() {
                 }
             }, 100);
 
-            // Trigger Email Notification
-            try {
-                await fetch('/api/notifications/quote', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        formData: {
-                            ...formData,
-                            origen: origins.find(o => o.id === selectedOrigin)?.name,
-                            destino: destinations.find(d => d.id === selectedDestination)?.name,
-                            servicio: serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express",
-                            formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "PED" ? "Pago en Destino" : "Cuenta Corriente",
-                            lugarEntrega: lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal",
-                        },
-                        result: response
+            // Trigger Email Notification only if email is provided
+            if (formData.email) {
+                try {
+                    await fetch('/api/notifications/quote', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            formData: {
+                                ...formData,
+                                origen: origins.find(o => o.id === selectedOrigin)?.name,
+                                destino: destinations.find(d => d.id === selectedDestination)?.name,
+                                servicio: serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express",
+                                formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "PED" ? "Pago en Destino" : "Cuenta Corriente",
+                                lugarEntrega: lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal",
+                            },
+                            result: response
+                        })
                     })
-                })
-            } catch (emailErr) {
-                console.error("Failed to trigger email notification:", emailErr)
+                } catch (emailErr) {
+                    console.error("Failed to trigger email notification:", emailErr)
+                }
             }
         } catch (err: any) {
             console.error("Error calculating quote:", err)
@@ -229,35 +296,25 @@ export function QuoterSection() {
                                         {/* Origin */}
                                         <div className="space-y-2">
                                             <Label htmlFor="origin" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
-                                            <Select value={selectedOrigin} onValueChange={setSelectedOrigin} disabled={loadingLocations}>
-                                                <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
-                                                    <SelectValue placeholder={loadingLocations ? "Cargando..." : "Selecciona origen"} />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    {origins.map((location) => (
-                                                        <SelectItem key={location.id} value={location.id}>
-                                                            {location.name}
-                                                        </SelectItem>
-                                                    ))}
-                                                </SelectContent>
-                                            </Select>
+                                            <SearchableSelect 
+                                                options={origins}
+                                                value={selectedOrigin}
+                                                onChange={setSelectedOrigin}
+                                                placeholder={loadingLocations ? "Cargando..." : "Buscar origen..."}
+                                                disabled={loadingLocations}
+                                            />
                                         </div>
 
                                         {/* Destination */}
                                         <div className="space-y-2">
                                             <Label htmlFor="destination" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
-                                            <Select value={selectedDestination} onValueChange={setSelectedDestination} disabled={!selectedOrigin || loadingLocations}>
-                                                <SelectTrigger className="h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold">
-                                                    <SelectValue placeholder={loadingLocations ? "Cargando..." : "Selecciona destino"} />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    {destinations.map((location) => (
-                                                        <SelectItem key={location.id} value={location.id}>
-                                                            {location.name}
-                                                        </SelectItem>
-                                                    ))}
-                                                </SelectContent>
-                                            </Select>
+                                            <SearchableSelect 
+                                                options={destinations}
+                                                value={selectedDestination}
+                                                onChange={setSelectedDestination}
+                                                placeholder={loadingLocations ? "Cargando..." : "Buscar destino..."}
+                                                disabled={!selectedOrigin || loadingLocations}
+                                            />
                                         </div>
                                     </div>
 
@@ -265,7 +322,7 @@ export function QuoterSection() {
                                         {/* Delivery Location */}
                                         <div className="space-y-2 text-left">
                                             <Label className="text-sm font-bold uppercase text-gray-500">Lugar de Entrega</Label>
-                                            <div className="flex gap-4 h-12 items-center bg-gray-50 px-4 rounded-2xl border border-gray-200">
+                                            <div className="flex flex-wrap gap-3 min-h-[3rem] py-2 items-center bg-gray-50 px-4 rounded-2xl border border-gray-200">
                                                 <label className="flex items-center gap-2 cursor-pointer">
                                                     <input
                                                         type="radio"
@@ -275,7 +332,7 @@ export function QuoterSection() {
                                                         onChange={(e) => setLugarEntrega(e.target.value)}
                                                         className="w-4 h-4 text-primary focus:ring-primary"
                                                     />
-                                                    <span className="text-sm font-medium">Domicilio</span>
+                                                    <span className="text-xs sm:text-sm font-medium">Domicilio</span>
                                                 </label>
                                                 <label className="flex items-center gap-2 cursor-pointer">
                                                     <input
@@ -286,7 +343,7 @@ export function QuoterSection() {
                                                         onChange={(e) => setLugarEntrega(e.target.value)}
                                                         className="w-4 h-4 text-primary focus:ring-primary"
                                                     />
-                                                    <span className="text-sm font-medium">Oficina</span>
+                                                    <span className="text-xs sm:text-sm font-medium">Oficina</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -294,7 +351,7 @@ export function QuoterSection() {
                                         {/* Payment Method Selector */}
                                         <div className="space-y-2 text-left">
                                             <Label className="text-sm font-bold uppercase text-gray-500">Forma de Pago</Label>
-                                            <div className="flex gap-4 h-12 items-center bg-gray-50 px-4 rounded-2xl border border-gray-200">
+                                            <div className="flex flex-wrap gap-3 min-h-[3rem] py-2 items-center bg-gray-50 px-4 rounded-2xl border border-gray-200">
                                                 <label className="flex items-center gap-2 cursor-pointer">
                                                     <input
                                                         type="radio"
@@ -304,7 +361,7 @@ export function QuoterSection() {
                                                         onChange={(e) => setFormaPago(e.target.value)}
                                                         className="w-4 h-4 text-primary focus:ring-primary"
                                                     />
-                                                    <span className="text-sm font-medium">Pago en Origen</span>
+                                                    <span className="text-xs sm:text-sm font-medium">Origen</span>
                                                 </label>
                                                 <label className="flex items-center gap-2 cursor-pointer">
                                                     <input
@@ -315,7 +372,7 @@ export function QuoterSection() {
                                                         onChange={(e) => setFormaPago(e.target.value)}
                                                         className="w-4 h-4 text-primary focus:ring-primary"
                                                     />
-                                                    <span className="text-sm font-medium">Pago en Destino</span>
+                                                    <span className="text-xs sm:text-sm font-medium">Destino</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -391,7 +448,7 @@ export function QuoterSection() {
 
                                     {/* Contact Info */}
                                     <div className="space-y-2">
-                                        <Label htmlFor="nombre" className="text-sm font-bold uppercase text-gray-500">Nombre Completo</Label>
+                                        <Label htmlFor="nombre" className="text-sm font-bold uppercase text-gray-500">Nombre Completo (Opcional)</Label>
                                         <div className="relative">
                                             <Search className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
                                             <Input
@@ -400,7 +457,6 @@ export function QuoterSection() {
                                                 className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold"
                                                 value={formData.nombre}
                                                 onChange={(e) => handleInputChange("nombre", e.target.value)}
-                                                required
                                             />
                                         </div>
                                     </div>
@@ -417,12 +473,11 @@ export function QuoterSection() {
                                                     className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold"
                                                     value={formData.telefono}
                                                     onChange={(e) => handleInputChange("telefono", e.target.value)}
-                                                    required
                                                 />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <Label htmlFor="email" className="text-sm font-bold uppercase text-gray-500">Email</Label>
+                                            <Label htmlFor="email" className="text-sm font-bold uppercase text-gray-500">Email (Opcional)</Label>
                                             <div className="relative">
                                                 <Mail className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
                                                 <Input
@@ -432,7 +487,6 @@ export function QuoterSection() {
                                                     className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-2xl focus:border-primary font-semibold"
                                                     value={formData.email}
                                                     onChange={(e) => handleInputChange("email", e.target.value)}
-                                                    required
                                                 />
                                             </div>
                                         </div>

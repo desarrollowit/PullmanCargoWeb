@@ -12,7 +12,9 @@ export async function GET(request: NextRequest) {
         console.log('--- CALLING PULLMAN GO TRACKING API ---')
         console.log('ODT:', odt)
 
-        const response = await fetch(`https://www.pullmango.cl/api/seguimiento?odt=${odt}`, {
+        const baseUrl = process.env.NEXT_PUBLIC_PULLMAN_API_URL || 'https://www.pullmancargo.cl'
+        // Using the new SvelteKit data endpoint provided by the user
+        const response = await fetch(`${baseUrl}/seguimiento/${odt}/__data.json?x-sveltekit-invalidated=01`, {
             method: 'GET',
             headers: {
                 'accept': 'application/json, text/plain, */*',

@@ -91,24 +91,12 @@ class QuoterAPIService {
 
     /**
      * Endpoint 1: Get origin cities
-     * GET /api/quoter/origins (proxies to /api/origenes-cotizador)
-     * Response format: [{"codigo": "1310100101", "descripcion": "SANTIAGO"}, ...]
+     * GET /api/quoter/origins 
+     * Response format: [{"id": "1310100101&SANTIAGO", "name": "SANTIAGO"}, ...]
      */
     async getOrigins(): Promise<Location[]> {
         try {
-            const data = await this.fetchAPI<any>(API_CONFIG.ENDPOINTS.GET_ORIGINS)
-
-            // Transform API response to Location format
-            // API returns: {codigo: string, descripcion: string}
-            if (Array.isArray(data)) {
-                return data.map((item: any) => ({
-                    id: `${item.codigo}&${item.descripcion}`, // Format: "code&NAME"
-                    name: item.descripcion || '',
-                    code: item.codigo,
-                }))
-            }
-
-            return data
+            return await this.fetchAPI<Location[]>(API_CONFIG.ENDPOINTS.GET_ORIGINS)
         } catch (error) {
             console.error('Failed to fetch origins:', error)
             throw new Error('No se pudieron cargar las ciudades de origen')
@@ -117,24 +105,12 @@ class QuoterAPIService {
 
     /**
      * Endpoint 2: Get all destination cities
-     * GET /api/quoter/destinations (proxies to /api/destinos-cotizador)
-     * Response format: [{"codigo": "0510900101", "descripcion": "VIÑA DEL MAR"}, ...]
+     * GET /api/quoter/destinations 
+     * Response format: [{"id": "0510900101&VIÑA DEL MAR", "name": "VIÑA DEL MAR"}, ...]
      */
     async getDestinations(): Promise<Location[]> {
         try {
-            const data = await this.fetchAPI<any>(API_CONFIG.ENDPOINTS.GET_DESTINATIONS)
-
-            // Transform API response to Location format
-            // API returns: {codigo: string, descripcion: string}
-            if (Array.isArray(data)) {
-                return data.map((item: any) => ({
-                    id: `${item.codigo}&${item.descripcion}`, // Format: "code&NAME"
-                    name: item.descripcion || '',
-                    code: item.codigo,
-                }))
-            }
-
-            return data
+            return await this.fetchAPI<Location[]>(API_CONFIG.ENDPOINTS.GET_DESTINATIONS)
         } catch (error) {
             console.error('Failed to fetch destinations:', error)
             throw new Error('No se pudieron cargar las ciudades de destino')
@@ -143,34 +119,18 @@ class QuoterAPIService {
 
     /**
      * Endpoint 3: Get destinations filtered by origin city
-     * POST /api/quoter/destinations-by-origin (proxies to /api/destinos-cotizador-atlas)
+     * POST /api/quoter/destinations-by-origin
      * Body: {"id_ciudad": "1310100101&SANTIAGO"}
-     * Response format: [{"codigo": "0510900101", "descripcion": "VIÑA DEL MAR"}, ...]
      */
     async getDestinationsByOrigin(originId: string): Promise<Location[]> {
         try {
-            const data = await this.fetchAPI<any>(
-                API_CONFIG.ENDPOINTS.GET_DESTINATIONS_BY_ORIGIN,
-                {
-                    method: 'POST',
-                    body: JSON.stringify({ id_ciudad: originId }),
-                }
-            )
-
-            // Transform API response to Location format
-            // API returns: {codigo: string, descripcion: string}
-            if (Array.isArray(data)) {
-                return data.map((item: any) => ({
-                    id: `${item.codigo}&${item.descripcion}`, // Format: "code&NAME"
-                    name: item.descripcion || '',
-                    code: item.codigo,
-                }))
-            }
-
-            return data
+            return await this.fetchAPI<Location[]>(API_CONFIG.ENDPOINTS.GET_DESTINATIONS_BY_ORIGIN, {
+                method: 'POST',
+                body: JSON.stringify({ id_ciudad: originId })
+            })
         } catch (error) {
             console.error('Failed to fetch destinations by origin:', error)
-            throw new Error('No se pudieron cargar los destinos disponibles')
+            throw new Error('No se pudieron cargar las ciudades de destino para este origen')
         }
     }
 

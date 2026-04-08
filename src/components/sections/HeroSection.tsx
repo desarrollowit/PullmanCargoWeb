@@ -8,7 +8,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HeroSection() {
     return (
-        <section id="inicio" className="relative w-full h-[60vh] flex items-center overflow-hidden mt-20">
+        <section id="inicio" className="relative w-full h-[50vh] flex items-center overflow-hidden mt-20">
             {/* Background Pullman Bus Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -37,11 +37,19 @@ export function HeroSection() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <Button asChild size="lg" className="h-14 px-10 bg-primary hover:bg-white hover:text-primary text-white font-bold text-lg uppercase tracking-wider rounded-2xl transition-all duration-300 shadow-xl hover:translate-x-1">
-                                <Link href="#cotizador">Cotizar Ahora</Link>
+                            <Button
+                                onClick={() => document.getElementById('cotizador')?.scrollIntoView({ behavior: 'smooth' })}
+                                size="lg"
+                                className="h-14 px-10 bg-primary hover:bg-white hover:text-primary text-white font-bold text-lg uppercase tracking-wider rounded-2xl transition-all duration-300 shadow-xl hover:translate-x-1 cursor-pointer"
+                            >
+                                Cotizar Ahora
                             </Button>
-                            <Button asChild size="lg" className="h-14 px-10 bg-primary hover:bg-secondary text-white border-2 border-primary font-bold text-lg uppercase tracking-wider rounded-2xl transition-all duration-300">
-                                <Link href="#servicios">Nuestros Servicios</Link>
+                            <Button
+                                onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })}
+                                size="lg"
+                                className="h-14 px-10 bg-primary hover:bg-secondary text-white border-2 border-primary font-bold text-lg uppercase tracking-wider rounded-2xl transition-all duration-300 cursor-pointer"
+                            >
+                                Nuestros Servicios
                             </Button>
                         </div>
                     </ScrollReveal>

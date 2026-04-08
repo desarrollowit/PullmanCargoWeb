@@ -12,18 +12,11 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        const response = await fetch(`https://api.pullman.cl/pullmancargo-clientes/api/agencias?idRegion=${idRegion}`, {
+        const baseUrl = process.env.NEXT_PUBLIC_PULLMAN_API_URL || 'https://www.pullmancargo.cl'
+        const response = await fetch(`${baseUrl}/api/agencias?idRegion=${idRegion}`, {
             headers: {
                 'accept': '*/*',
                 'accept-language': 'es-419,es;q=0.9,en;q=0.8',
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36',
-                // Adding other headers provided by the user for reliability
-                'sec-ch-ua': '"Not:A-Brand";v="99", "Google Chrome";v="145", "Chromium";v="145"',
-                'sec-ch-ua-mobile': '?0',
-                'sec-ch-ua-platform': '"Windows"',
-                'sec-fetch-dest': 'empty',
-                'sec-fetch-mode': 'cors',
-                'sec-fetch-site': 'same-origin',
             },
         })
 

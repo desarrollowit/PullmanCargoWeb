@@ -42,7 +42,7 @@ export function BusinessPortalCTA() {
                         className="h-16 px-12 bg-primary hover:bg-secondary text-white font-bold text-lg uppercase tracking-widest rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
                     >
                         <a
-                            href="https://empresas.pullmango.cl/login.php"
+                            href="https://empresas.pullmancargo.cl/login.php"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-3"

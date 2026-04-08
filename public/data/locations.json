@@ -1,0 +1,1687 @@
+[
+  {
+    "id": "0560200101&ALGARROBO",
+    "name": "ALGARROBO",
+    "originalId": "0560200101"
+  },
+  {
+    "id": "0110701001&ALTO HOSPICIO",
+    "name": "ALTO HOSPICIO",
+    "originalId": "0110701001"
+  },
+  {
+    "id": "1020200101&ANCUD",
+    "name": "ANCUD",
+    "originalId": "1020200101"
+  },
+  {
+    "id": "0410300101&ANDACOLLO",
+    "name": "ANDACOLLO",
+    "originalId": "0410300101"
+  },
+  {
+    "id": "0920100101&ANGOL",
+    "name": "ANGOL",
+    "originalId": "0920100101"
+  },
+  {
+    "id": "0210100101&ANTOFAGASTA",
+    "name": "ANTOFAGASTA",
+    "originalId": "0210100101"
+  },
+  {
+    "id": "0830200201&ANTUCO",
+    "name": "ANTUCO",
+    "originalId": "0830200201"
+  },
+  {
+    "id": "0820200801&ARAUCO",
+    "name": "ARAUCO",
+    "originalId": "0820200801"
+  },
+  {
+    "id": "0120100101&ARICA",
+    "name": "ARICA",
+    "originalId": "0120100101"
+  },
+  {
+    "id": "0120100601&AZAPA",
+    "name": "AZAPA",
+    "originalId": "0120100601"
+  },
+  {
+    "id": "0310200101&BAHIA INGLESA",
+    "name": "BAHIA INGLESA",
+    "originalId": "0310200101"
+  },
+  {
+    "id": "1110101501&BALMACEDA",
+    "name": "BALMACEDA",
+    "originalId": "1110101501"
+  },
+  {
+    "id": "0210301001&BAQUEDANO",
+    "name": "BAQUEDANO",
+    "originalId": "0210301001"
+  },
+  {
+    "id": "0570101501&BARRANCAS",
+    "name": "BARRANCAS",
+    "originalId": "0570101501"
+  },
+  {
+    "id": "1310100101&BUIN",
+    "name": "BUIN",
+    "originalId": "1310100101"
+  },
+  {
+    "id": "1340200102&BUIN",
+    "name": "BUIN",
+    "originalId": "1340200102"
+  },
+  {
+    "id": "0840200101&BULNES",
+    "name": "BULNES",
+    "originalId": "0840200101"
+  },
+  {
+    "id": "0540200701&CABILDO",
+    "name": "CABILDO",
+    "originalId": "0540200701"
+  },
+  {
+    "id": "0830300201&CABRERO",
+    "name": "CABRERO",
+    "originalId": "0830300201"
+  },
+  {
+    "id": "0540500105&CACHAGUA",
+    "name": "CACHAGUA",
+    "originalId": "0540500105"
+  },
+  {
+    "id": "0911905302&CAJON",
+    "name": "CAJON",
+    "originalId": "0911905302"
+  },
+  {
+    "id": "0220100101&CALAMA",
+    "name": "CALAMA",
+    "originalId": "0220100101"
+  },
+  {
+    "id": "1010202401&CALBUCO",
+    "name": "CALBUCO",
+    "originalId": "1010202401"
+  },
+  {
+    "id": "0310200201&CALDERA",
+    "name": "CALDERA",
+    "originalId": "0310200201"
+  },
+  {
+    "id": "1340300101&CALERA DE TANGO",
+    "name": "CALERA DE TANGO",
+    "originalId": "1340300101"
+  },
+  {
+    "id": "0530200102&CALLE LARGA",
+    "name": "CALLE LARGA",
+    "originalId": "0530200102"
+  },
+  {
+    "id": "0420201818&CANELA BAJA",
+    "name": "CANELA BAJA",
+    "originalId": "0420201818"
+  },
+  {
+    "id": "0820300101&CAÑETE",
+    "name": "CAÑETE",
+    "originalId": "0820300101"
+  },
+  {
+    "id": "0920708301&CAPITAN PASTENE",
+    "name": "CAPITAN PASTENE",
+    "originalId": "0920708301"
+  },
+  {
+    "id": "0560300401&CARTAGENA",
+    "name": "CARTAGENA",
+    "originalId": "0560300401"
+  },
+  {
+    "id": "0510200101&CASABLANCA",
+    "name": "CASABLANCA",
+    "originalId": "0510200101"
+  },
+  {
+    "id": "1020100101&CASTRO",
+    "name": "CASTRO",
+    "originalId": "1020100101"
+  },
+  {
+    "id": "0720100101&CAUQUENES",
+    "name": "CAUQUENES",
+    "originalId": "0720100101"
+  },
+  {
+    "id": "1310200101&CERRILLOS",
+    "name": "CERRILLOS",
+    "originalId": "1310200101"
+  },
+  {
+    "id": "1310300101&CERRO NAVIA",
+    "name": "CERRO NAVIA",
+    "originalId": "1310300101"
+  },
+  {
+    "id": "0720200201&CHANCO",
+    "name": "CHANCO",
+    "originalId": "0720200201"
+  },
+  {
+    "id": "0320100301&CHAÑARAL",
+    "name": "CHAÑARAL",
+    "originalId": "0320100301"
+  },
+  {
+    "id": "0630200101&CHEPICA",
+    "name": "CHEPICA",
+    "originalId": "0630200101"
+  },
+  {
+    "id": "0810300102&CHIGUAYANTE",
+    "name": "CHIGUAYANTE",
+    "originalId": "0810300102"
+  },
+  {
+    "id": "0840100101&CHILLAN",
+    "name": "CHILLAN",
+    "originalId": "0840100101"
+  },
+  {
+    "id": "0630300101&CHIMBARONGO",
+    "name": "CHIMBARONGO",
+    "originalId": "0630300101"
+  },
+  {
+    "id": "1020300101&CHONCHI",
+    "name": "CHONCHI",
+    "originalId": "1020300101"
+  },
+  {
+    "id": "0220100201&CHUQUICAMATA",
+    "name": "CHUQUICAMATA",
+    "originalId": "0220100201"
+  },
+  {
+    "id": "0740200303&COLBUN",
+    "name": "COLBUN",
+    "originalId": "0740200303"
+  },
+  {
+    "id": "1330100101&COLINA",
+    "name": "COLINA",
+    "originalId": "1330100101"
+  },
+  {
+    "id": "0920200601&COLLIPULLI",
+    "name": "COLLIPULLI",
+    "originalId": "0920200601"
+  },
+  {
+    "id": "0610400101&COLTAUCO",
+    "name": "COLTAUCO",
+    "originalId": "0610400101"
+  },
+  {
+    "id": "0430200201&COMBARBALA",
+    "name": "COMBARBALA",
+    "originalId": "0430200201"
+  },
+  {
+    "id": "0810100102&CONCEPCION",
+    "name": "CONCEPCION",
+    "originalId": "0810100102"
+  },
+  {
+    "id": "1310400101&CONCHALI",
+    "name": "CONCHALI",
+    "originalId": "1310400101"
+  },
+  {
+    "id": "0510300102&CONCON",
+    "name": "CONCON",
+    "originalId": "0510300102"
+  },
+  {
+    "id": "0710200101&CONSTITUCION",
+    "name": "CONSTITUCION",
+    "originalId": "0710200101"
+  },
+  {
+    "id": "0310100101&COPIAPO",
+    "name": "COPIAPO",
+    "originalId": "0310100101"
+  },
+  {
+    "id": "0410200102&COQUIMBO",
+    "name": "COQUIMBO",
+    "originalId": "0410200102"
+  },
+  {
+    "id": "0810200101&CORONEL",
+    "name": "CORONEL",
+    "originalId": "0810200101"
+  },
+  {
+    "id": "1110100101&COYHAIQUE",
+    "name": "COYHAIQUE",
+    "originalId": "1110100101"
+  },
+  {
+    "id": "0630501801&CUNACO",
+    "name": "CUNACO",
+    "originalId": "0630501801"
+  },
+  {
+    "id": "1350300201&CURACAVI",
+    "name": "CURACAVI",
+    "originalId": "1350300201"
+  },
+  {
+    "id": "0820500101&CURANILAHUE",
+    "name": "CURANILAHUE",
+    "originalId": "0820500101"
+  },
+  {
+    "id": "0730100101&CURICO",
+    "name": "CURICO",
+    "originalId": "0730100101"
+  },
+  {
+    "id": "0570100203&CURIMON",
+    "name": "CURIMON",
+    "originalId": "0570100203"
+  },
+  {
+    "id": "1020500203&DALCAHUE",
+    "name": "DALCAHUE",
+    "originalId": "1020500203"
+  },
+  {
+    "id": "0320200101&DIEGO DE ALMAGRO",
+    "name": "DIEGO DE ALMAGRO",
+    "originalId": "0320200101"
+  },
+  {
+    "id": "0610500302&DOÑIHUE",
+    "name": "DOÑIHUE",
+    "originalId": "0610500302"
+  },
+  {
+    "id": "0550400403&EL BELLOTO",
+    "name": "EL BELLOTO",
+    "originalId": "0550400403"
+  },
+  {
+    "id": "1310500101&EL BOSQUE",
+    "name": "EL BOSQUE",
+    "originalId": "1310500101"
+  },
+  {
+    "id": "0550300601&EL MELON",
+    "name": "EL MELON",
+    "originalId": "0550300601"
+  },
+  {
+    "id": "0550600605&EL MELON",
+    "name": "EL MELON",
+    "originalId": "0550600605"
+  },
+  {
+    "id": "1360200105&EL MONTE",
+    "name": "EL MONTE",
+    "originalId": "1360200105"
+  },
+  {
+    "id": "1360200203&EL PAICO ALTO",
+    "name": "EL PAICO ALTO",
+    "originalId": "1360200203"
+  },
+  {
+    "id": "0430304905&EL PALQUI",
+    "name": "EL PALQUI",
+    "originalId": "0430304905"
+  },
+  {
+    "id": "0560400101&EL QUISCO",
+    "name": "EL QUISCO",
+    "originalId": "0560400101"
+  },
+  {
+    "id": "0320101001&EL SALADO",
+    "name": "EL SALADO",
+    "originalId": "0320101001"
+  },
+  {
+    "id": "0320200902&EL SALVADOR",
+    "name": "EL SALVADOR",
+    "originalId": "0320200902"
+  },
+  {
+    "id": "0560500301&EL TABO",
+    "name": "EL TABO",
+    "originalId": "0560500301"
+  },
+  {
+    "id": "1030400703&ENTRE LAGOS",
+    "name": "ENTRE LAGOS",
+    "originalId": "1030400703"
+  },
+  {
+    "id": "0920400501&ERCILLA",
+    "name": "ERCILLA",
+    "originalId": "0920400501"
+  },
+  {
+    "id": "1310600101&ESTACION CENTRAL",
+    "name": "ESTACION CENTRAL",
+    "originalId": "1310600101"
+  },
+  {
+    "id": "0910500501&FREIRE",
+    "name": "FREIRE",
+    "originalId": "0910500501"
+  },
+  {
+    "id": "0330300301&FREIRINA",
+    "name": "FREIRINA",
+    "originalId": "0330300301"
+  },
+  {
+    "id": "1010401207&FRESIA",
+    "name": "FRESIA",
+    "originalId": "1010401207"
+  },
+  {
+    "id": "1010500204&FRUTILLAR",
+    "name": "FRUTILLAR",
+    "originalId": "1010500204"
+  },
+  {
+    "id": "0910600103&GALVARINO",
+    "name": "GALVARINO",
+    "originalId": "0910600103"
+  },
+  {
+    "id": "0841003001&GENERAL CRUZ",
+    "name": "GENERAL CRUZ",
+    "originalId": "0841003001"
+  },
+  {
+    "id": "0910700601&GORBEA",
+    "name": "GORBEA",
+    "originalId": "0910700601"
+  },
+  {
+    "id": "0610600101&GRANEROS",
+    "name": "GRANEROS",
+    "originalId": "0610600101"
+  },
+  {
+    "id": "0410202808&GUANAQUEROS",
+    "name": "GUANAQUEROS",
+    "originalId": "0410202808"
+  },
+  {
+    "id": "0550300401&HIJUELAS",
+    "name": "HIJUELAS",
+    "originalId": "0550300401"
+  },
+  {
+    "id": "0510500305&HORCON",
+    "name": "HORCON",
+    "originalId": "0510500305"
+  },
+  {
+    "id": "0730200302&HUALANE",
+    "name": "HUALANE",
+    "originalId": "0730200302"
+  },
+  {
+    "id": "0811200101&HUALPEN",
+    "name": "HUALPEN",
+    "originalId": "0811200101"
+  },
+  {
+    "id": "0330400301&HUASCO",
+    "name": "HUASCO",
+    "originalId": "0330400301"
+  },
+  {
+    "id": "1310700101&HUECHURABA",
+    "name": "HUECHURABA",
+    "originalId": "1310700101"
+  },
+  {
+    "id": "0420100201&ILLAPEL",
+    "name": "ILLAPEL",
+    "originalId": "0420100201"
+  },
+  {
+    "id": "1310800101&INDEPENDENCIA",
+    "name": "INDEPENDENCIA",
+    "originalId": "1310800101"
+  },
+  {
+    "id": "0110100101&IQUIQUE",
+    "name": "IQUIQUE",
+    "originalId": "0110100101"
+  },
+  {
+    "id": "1360300203&ISLA DE MAIPO",
+    "name": "ISLA DE MAIPO",
+    "originalId": "1360300203"
+  },
+  {
+    "id": "0560400301&ISLA NEGRA",
+    "name": "ISLA NEGRA",
+    "originalId": "0560400301"
+  },
+  {
+    "id": "0550200101&LA CALERA",
+    "name": "LA CALERA",
+    "originalId": "0550200101"
+  },
+  {
+    "id": "1310900101&LA CISTERNA",
+    "name": "LA CISTERNA",
+    "originalId": "1310900101"
+  },
+  {
+    "id": "0550400101&LA CRUZ",
+    "name": "LA CRUZ",
+    "originalId": "0550400101"
+  },
+  {
+    "id": "0620200701&LA ESTRELLA",
+    "name": "LA ESTRELLA",
+    "originalId": "0620200701"
+  },
+  {
+    "id": "1311000101&LA FLORIDA",
+    "name": "LA FLORIDA",
+    "originalId": "1311000101"
+  },
+  {
+    "id": "1311100101&LA GRANJA",
+    "name": "LA GRANJA",
+    "originalId": "1311100101"
+  },
+  {
+    "id": "0410200103&LA HERRADURA",
+    "name": "LA HERRADURA",
+    "originalId": "0410200103"
+  },
+  {
+    "id": "0510500401&LA LAGUNA",
+    "name": "LA LAGUNA",
+    "originalId": "0510500401"
+  },
+  {
+    "id": "0540100201&LA LIGUA",
+    "name": "LA LIGUA",
+    "originalId": "0540100201"
+  },
+  {
+    "id": "0210101903&LA NEGRA",
+    "name": "LA NEGRA",
+    "originalId": "0210101903"
+  },
+  {
+    "id": "1311300101&LA REINA",
+    "name": "LA REINA",
+    "originalId": "1311300101"
+  },
+  {
+    "id": "0410100102&LA SERENA",
+    "name": "LA SERENA",
+    "originalId": "0410100102"
+  },
+  {
+    "id": "1050400201&LA UNION",
+    "name": "LA UNION",
+    "originalId": "1050400201"
+  },
+  {
+    "id": "0830902201&LAJA",
+    "name": "LAJA",
+    "originalId": "0830902201"
+  },
+  {
+    "id": "1330200401&LAMPA",
+    "name": "LAMPA",
+    "originalId": "1330200401"
+  },
+  {
+    "id": "1050600601&LANCO",
+    "name": "LANCO",
+    "originalId": "1050600601"
+  },
+  {
+    "id": "0820200101&LARAQUETE",
+    "name": "LARAQUETE",
+    "originalId": "0820200101"
+  },
+  {
+    "id": "0610700202&LAS CABRAS",
+    "name": "LAS CABRAS",
+    "originalId": "0610700202"
+  },
+  {
+    "id": "1311400101&LAS CONDES",
+    "name": "LAS CONDES",
+    "originalId": "1311400101"
+  },
+  {
+    "id": "0560500302&LAS CRUCES",
+    "name": "LAS CRUCES",
+    "originalId": "0560500302"
+  },
+  {
+    "id": "0811000103&LAS HIGUERAS",
+    "name": "LAS HIGUERAS",
+    "originalId": "0811000103"
+  },
+  {
+    "id": "0910800101&LAUTARO",
+    "name": "LAUTARO",
+    "originalId": "0910800101"
+  },
+  {
+    "id": "0820100101&LEBU",
+    "name": "LEBU",
+    "originalId": "0820100101"
+  },
+  {
+    "id": "0550500301&LIMACHE",
+    "name": "LIMACHE",
+    "originalId": "0550500301"
+  },
+  {
+    "id": "0740100101&LINARES",
+    "name": "LINARES",
+    "originalId": "0740100101"
+  },
+  {
+    "id": "0810700103&LIRQUEN",
+    "name": "LIRQUEN",
+    "originalId": "0810700103"
+  },
+  {
+    "id": "0620300301&LITUECHE",
+    "name": "LITUECHE",
+    "originalId": "0620300301"
+  },
+  {
+    "id": "1010700401&LLANQUIHUE",
+    "name": "LLANQUIHUE",
+    "originalId": "1010700401"
+  },
+  {
+    "id": "0320200401&LLANTA",
+    "name": "LLANTA",
+    "originalId": "0320200401"
+  },
+  {
+    "id": "0570300101&LLAY LLAY",
+    "name": "LLAY LLAY",
+    "originalId": "0570300101"
+  },
+  {
+    "id": "0560102001&LLO-LLEO",
+    "name": "LLO-LLEO",
+    "originalId": "0560102001"
+  },
+  {
+    "id": "1311500101&LO BARNECHEA",
+    "name": "LO BARNECHEA",
+    "originalId": "1311500101"
+  },
+  {
+    "id": "1311600101&LO ESPEJO",
+    "name": "LO ESPEJO",
+    "originalId": "1311600101"
+  },
+  {
+    "id": "0610500503&LO MIRANDA",
+    "name": "LO MIRANDA",
+    "originalId": "0610500503"
+  },
+  {
+    "id": "1311700101&LO PRADO",
+    "name": "LO PRADO",
+    "originalId": "1311700101"
+  },
+  {
+    "id": "0210300903&LOGIK - ANTOFAGASTA",
+    "name": "LOGIK - ANTOFAGASTA",
+    "originalId": "0210300903"
+  },
+  {
+    "id": "0210300916&LOGIK - CALAMA",
+    "name": "LOGIK - CALAMA",
+    "originalId": "0210300916"
+  },
+  {
+    "id": "0320100312&LOGIK - CHAÑARAL",
+    "name": "LOGIK - CHAÑARAL",
+    "originalId": "0320100312"
+  },
+  {
+    "id": "0320200907&LOGIK - COPIAPÓ",
+    "name": "LOGIK - COPIAPÓ",
+    "originalId": "0320200907"
+  },
+  {
+    "id": "0320200908&LOGIK - SALVADOR",
+    "name": "LOGIK - SALVADOR",
+    "originalId": "0320200908"
+  },
+  {
+    "id": "0630400301&LOLOL",
+    "name": "LOLOL",
+    "originalId": "0630400301"
+  },
+  {
+    "id": "0910900201&LONCOCHE",
+    "name": "LONCOCHE",
+    "originalId": "0910900201"
+  },
+  {
+    "id": "0740300301&LONGAVI",
+    "name": "LONGAVI",
+    "originalId": "0740300301"
+  },
+  {
+    "id": "0730401401&LONTUE",
+    "name": "LONTUE",
+    "originalId": "0730401401"
+  },
+  {
+    "id": "0530100101&LOS ANDES",
+    "name": "LOS ANDES",
+    "originalId": "0530100101"
+  },
+  {
+    "id": "0830100101&LOS ANGELES",
+    "name": "LOS ANGELES",
+    "originalId": "0830100101"
+  },
+  {
+    "id": "1050700602&LOS LAGOS",
+    "name": "LOS LAGOS",
+    "originalId": "1050700602"
+  },
+  {
+    "id": "1010600502&LOS MUERMOS",
+    "name": "LOS MUERMOS",
+    "originalId": "1010600502"
+  },
+  {
+    "id": "0420300403&LOS VILOS",
+    "name": "LOS VILOS",
+    "originalId": "0420300403"
+  },
+  {
+    "id": "0810600101&LOTA",
+    "name": "LOTA",
+    "originalId": "0810600101"
+  },
+  {
+    "id": "0610800301&MACHALI",
+    "name": "MACHALI",
+    "originalId": "0610800301"
+  },
+  {
+    "id": "1311800101&MACUL",
+    "name": "MACUL",
+    "originalId": "1311800101"
+  },
+  {
+    "id": "1050800401&MAFIL",
+    "name": "MAFIL",
+    "originalId": "1050800401"
+  },
+  {
+    "id": "1311900101&MAIPU",
+    "name": "MAIPU",
+    "originalId": "1311900101"
+  },
+  {
+    "id": "0510500201&MAITENCILLO",
+    "name": "MAITENCILLO",
+    "originalId": "0510500201"
+  },
+  {
+    "id": "0610900605&MALLOA",
+    "name": "MALLOA",
+    "originalId": "0610900605"
+  },
+  {
+    "id": "1360500302&MALLOCO",
+    "name": "MALLOCO",
+    "originalId": "1360500302"
+  },
+  {
+    "id": "0510500203&MARBELLA",
+    "name": "MARBELLA",
+    "originalId": "0510500203"
+  },
+  {
+    "id": "0230200801&MARIA ELENA",
+    "name": "MARIA ELENA",
+    "originalId": "0230200801"
+  },
+  {
+    "id": "1350400701&MARIA PINTO",
+    "name": "MARIA PINTO",
+    "originalId": "1350400701"
+  },
+  {
+    "id": "0710500101&MAULE",
+    "name": "MAULE",
+    "originalId": "0710500101"
+  },
+  {
+    "id": "1010800502&MAULLIN",
+    "name": "MAULLIN",
+    "originalId": "1010800502"
+  },
+  {
+    "id": "0210200301&MEJILLONES",
+    "name": "MEJILLONES",
+    "originalId": "0210200301"
+  },
+  {
+    "id": "0911000903&MELIPEUCO",
+    "name": "MELIPEUCO",
+    "originalId": "0911000903"
+  },
+  {
+    "id": "1350100201&MELIPILLA",
+    "name": "MELIPILLA",
+    "originalId": "1350100201"
+  },
+  {
+    "id": "0210300904&MINERA ANTUCOYA",
+    "name": "MINERA ANTUCOYA",
+    "originalId": "0210300904"
+  },
+  {
+    "id": "0320200906&MINERA CASERONES",
+    "name": "MINERA CASERONES",
+    "originalId": "0320200906"
+  },
+  {
+    "id": "0210300915&MINERA CENTINELA MUELLE",
+    "name": "MINERA CENTINELA MUELLE",
+    "originalId": "0210300915"
+  },
+  {
+    "id": "0210300913&MINERA CENTINELA OXIDOS",
+    "name": "MINERA CENTINELA OXIDOS",
+    "originalId": "0210300913"
+  },
+  {
+    "id": "0210300914&MINERA CENTINELA SULFUROS",
+    "name": "MINERA CENTINELA SULFUROS",
+    "originalId": "0210300914"
+  },
+  {
+    "id": "0210300911&MINERA EL ABRA",
+    "name": "MINERA EL ABRA",
+    "originalId": "0210300911"
+  },
+  {
+    "id": "0210103903&MINERA EL TESORO",
+    "name": "MINERA EL TESORO",
+    "originalId": "0210103903"
+  },
+  {
+    "id": "0210300905&MINERA ESCONDIDA",
+    "name": "MINERA ESCONDIDA",
+    "originalId": "0210300905"
+  },
+  {
+    "id": "0210300906&MINERA ESCONDIDA(TECNOFAST)",
+    "name": "MINERA ESCONDIDA(TECNOFAST)",
+    "originalId": "0210300906"
+  },
+  {
+    "id": "0610100102&MINERA FLORIDA",
+    "name": "MINERA FLORIDA",
+    "originalId": "0610100102"
+  },
+  {
+    "id": "0210300902&MINERA LOMAS BAYAS",
+    "name": "MINERA LOMAS BAYAS",
+    "originalId": "0210300902"
+  },
+  {
+    "id": "0210300908&MINERA MANTOS BLANCOS",
+    "name": "MINERA MANTOS BLANCOS",
+    "originalId": "0210300908"
+  },
+  {
+    "id": "0320200905&MINERA MANTOS VERDE",
+    "name": "MINERA MANTOS VERDE",
+    "originalId": "0320200905"
+  },
+  {
+    "id": "0210300909&MINERA MERIDIAN",
+    "name": "MINERA MERIDIAN",
+    "originalId": "0210300909"
+  },
+  {
+    "id": "0210300907&MINERA ZALDIVAR",
+    "name": "MINERA ZALDIVAR",
+    "originalId": "0210300907"
+  },
+  {
+    "id": "0560201002&MIRASOL",
+    "name": "MIRASOL",
+    "originalId": "0560201002"
+  },
+  {
+    "id": "1030601601&MISION SAN JUAN DE LA COSTA",
+    "name": "MISION SAN JUAN DE LA COSTA",
+    "originalId": "1030601601"
+  },
+  {
+    "id": "0730400101&MOLINA",
+    "name": "MOLINA",
+    "originalId": "0730400101"
+  },
+  {
+    "id": "0830304904&MONTE AGUILA",
+    "name": "MONTE AGUILA",
+    "originalId": "0830304904"
+  },
+  {
+    "id": "0430300205&MONTE PATRIA",
+    "name": "MONTE PATRIA",
+    "originalId": "0430300205"
+  },
+  {
+    "id": "0830500101&MULCHEN",
+    "name": "MULCHEN",
+    "originalId": "0830500101"
+  },
+  {
+    "id": "0830600101&NACIMIENTO",
+    "name": "NACIMIENTO",
+    "originalId": "0830600101"
+  },
+  {
+    "id": "0630500412&NANCAGUA",
+    "name": "NANCAGUA",
+    "originalId": "0630500412"
+  },
+  {
+    "id": "0830700602&NEGRETE",
+    "name": "NEGRETE",
+    "originalId": "0830700602"
+  },
+  {
+    "id": "0840902802&NIQUEN",
+    "name": "NIQUEN",
+    "originalId": "0840902802"
+  },
+  {
+    "id": "0550600201&NOGALES",
+    "name": "NOGALES",
+    "originalId": "0550600201"
+  },
+  {
+    "id": "0911100101&NUEVA IMPERIAL",
+    "name": "NUEVA IMPERIAL",
+    "originalId": "0911100101"
+  },
+  {
+    "id": "1312000101&NUNOA",
+    "name": "NUNOA",
+    "originalId": "1312000101"
+  },
+  {
+    "id": "0611100208&OLIVAR ALTO",
+    "name": "OLIVAR ALTO",
+    "originalId": "0611100208"
+  },
+  {
+    "id": "0611100306&OLIVAR BAJO",
+    "name": "OLIVAR BAJO",
+    "originalId": "0611100306"
+  },
+  {
+    "id": "0550700104&OLMUE",
+    "name": "OLMUE",
+    "originalId": "0550700104"
+  },
+  {
+    "id": "1030100101&OSORNO",
+    "name": "OSORNO",
+    "originalId": "1030100101"
+  },
+  {
+    "id": "0430100201&OVALLE",
+    "name": "OVALLE",
+    "originalId": "0430100201"
+  },
+  {
+    "id": "1360400101&PADRE HURTADO",
+    "name": "PADRE HURTADO",
+    "originalId": "1360400101"
+  },
+  {
+    "id": "0911200102&PADRE LAS CASAS",
+    "name": "PADRE LAS CASAS",
+    "originalId": "0911200102"
+  },
+  {
+    "id": "1051000309&PAILLACO",
+    "name": "PAILLACO",
+    "originalId": "1051000309"
+  },
+  {
+    "id": "1340400105&PAINE",
+    "name": "PAINE",
+    "originalId": "1340400105"
+  },
+  {
+    "id": "0310100102&PAIPOTE",
+    "name": "PAIPOTE",
+    "originalId": "0310100102"
+  },
+  {
+    "id": "0710100812&PANGUILEMO",
+    "name": "PANGUILEMO",
+    "originalId": "0710100812"
+  },
+  {
+    "id": "1051100501&PANGUIPULLI",
+    "name": "PANGUIPULLI",
+    "originalId": "1051100501"
+  },
+  {
+    "id": "0631002701&PANIAHUE",
+    "name": "PANIAHUE",
+    "originalId": "0631002701"
+  },
+  {
+    "id": "0740203608&PANIMAVIDA",
+    "name": "PANIMAVIDA",
+    "originalId": "0740203608"
+  },
+  {
+    "id": "0570400601&PANQUEHUE",
+    "name": "PANQUEHUE",
+    "originalId": "0570400601"
+  },
+  {
+    "id": "0540300701&PAPUDO",
+    "name": "PAPUDO",
+    "originalId": "0540300701"
+  },
+  {
+    "id": "0620600502&PAREDONES",
+    "name": "PAREDONES",
+    "originalId": "0620600502"
+  },
+  {
+    "id": "0740400101&PARRAL",
+    "name": "PARRAL",
+    "originalId": "0740400101"
+  },
+  {
+    "id": "1312100101&PEDRO AGUIRRE CERDA",
+    "name": "PEDRO AGUIRRE CERDA",
+    "originalId": "1312100101"
+  },
+  {
+    "id": "0610900201&PELEQUEN",
+    "name": "PELEQUEN",
+    "originalId": "0610900201"
+  },
+  {
+    "id": "0720301001&PELLUHUE",
+    "name": "PELLUHUE",
+    "originalId": "0720301001"
+  },
+  {
+    "id": "0841000101&PEMUCO",
+    "name": "PEMUCO",
+    "originalId": "0841000101"
+  },
+  {
+    "id": "1312200101&PENALOLEN",
+    "name": "PENALOLEN",
+    "originalId": "1312200101"
+  },
+  {
+    "id": "0810700102&PENCO",
+    "name": "PENCO",
+    "originalId": "0810700102"
+  },
+  {
+    "id": "0510600103&PEÑABLANCA",
+    "name": "PEÑABLANCA",
+    "originalId": "0510600103"
+  },
+  {
+    "id": "1360500301&PEÑAFLOR",
+    "name": "PEÑAFLOR",
+    "originalId": "1360500301"
+  },
+  {
+    "id": "0630700506&PERALILLO",
+    "name": "PERALILLO",
+    "originalId": "0630700506"
+  },
+  {
+    "id": "0540400903&PETORCA",
+    "name": "PETORCA",
+    "originalId": "0540400903"
+  },
+  {
+    "id": "0611200102&PEUMO",
+    "name": "PEUMO",
+    "originalId": "0611200102"
+  },
+  {
+    "id": "0611300304&PICHIDEGUA",
+    "name": "PICHIDEGUA",
+    "originalId": "0611300304"
+  },
+  {
+    "id": "0620101102&PICHILEMU",
+    "name": "PICHILEMU",
+    "originalId": "0620101102"
+  },
+  {
+    "id": "1320200101&PIRQUE",
+    "name": "PIRQUE",
+    "originalId": "1320200101"
+  },
+  {
+    "id": "0911400201&PITRUFQUEN",
+    "name": "PITRUFQUEN",
+    "originalId": "0911400201"
+  },
+  {
+    "id": "0510100601&PLACILLA DE PENUELAS",
+    "name": "PLACILLA DE PENUELAS",
+    "originalId": "0510100601"
+  },
+  {
+    "id": "0630800406&PLACILLA VI REGION",
+    "name": "PLACILLA VI REGION",
+    "originalId": "0630800406"
+  },
+  {
+    "id": "0110600603&POZO ALMONTE",
+    "name": "POZO ALMONTE",
+    "originalId": "0110600603"
+  },
+  {
+    "id": "1312300101&PROVIDENCIA",
+    "name": "PROVIDENCIA",
+    "originalId": "1312300101"
+  },
+  {
+    "id": "0510500304&PUCHUNCAVI",
+    "name": "PUCHUNCAVI",
+    "originalId": "0510500304"
+  },
+  {
+    "id": "0911500201&PUCON",
+    "name": "PUCON",
+    "originalId": "0911500201"
+  },
+  {
+    "id": "1312400101&PUDAHUEL",
+    "name": "PUDAHUEL",
+    "originalId": "1312400101"
+  },
+  {
+    "id": "0841802902&PUEBLO SECO",
+    "name": "PUEBLO SECO",
+    "originalId": "0841802902"
+  },
+  {
+    "id": "1320100101&PUENTE ALTO",
+    "name": "PUENTE ALTO",
+    "originalId": "1320100101"
+  },
+  {
+    "id": "1120100302&PUERTO AISEN",
+    "name": "PUERTO AISEN",
+    "originalId": "1120100302"
+  },
+  {
+    "id": "1120106203&PUERTO CHACABUCO",
+    "name": "PUERTO CHACABUCO",
+    "originalId": "1120106203"
+  },
+  {
+    "id": "1010100101&PUERTO MONTT",
+    "name": "PUERTO MONTT",
+    "originalId": "1010100101"
+  },
+  {
+    "id": "1240100802&PUERTO NATALES",
+    "name": "PUERTO NATALES",
+    "originalId": "1240100802"
+  },
+  {
+    "id": "1010900306&PUERTO VARAS",
+    "name": "PUERTO VARAS",
+    "originalId": "1010900306"
+  },
+  {
+    "id": "0540301101&PULLALLI",
+    "name": "PULLALLI",
+    "originalId": "0540301101"
+  },
+  {
+    "id": "0630900603&PUMANQUE",
+    "name": "PUMANQUE",
+    "originalId": "0630900603"
+  },
+  {
+    "id": "1210100101&PUNTA ARENAS",
+    "name": "PUNTA ARENAS",
+    "originalId": "1210100101"
+  },
+  {
+    "id": "1030300413&PURRANQUE",
+    "name": "PURRANQUE",
+    "originalId": "1030300413"
+  },
+  {
+    "id": "0570500103&PUTAENDO",
+    "name": "PUTAENDO",
+    "originalId": "0570500103"
+  },
+  {
+    "id": "0740703603&PUTAGAN",
+    "name": "PUTAGAN",
+    "originalId": "0740703603"
+  },
+  {
+    "id": "1020800401&QUELLON",
+    "name": "QUELLON",
+    "originalId": "1020800401"
+  },
+  {
+    "id": "0910500901&QUEPE",
+    "name": "QUEPE",
+    "originalId": "0910500901"
+  },
+  {
+    "id": "0830800602&QUILACO",
+    "name": "QUILACO",
+    "originalId": "0830800602"
+  },
+  {
+    "id": "1312500101&QUILICURA",
+    "name": "QUILICURA",
+    "originalId": "1312500101"
+  },
+  {
+    "id": "0841300601&QUILLON",
+    "name": "QUILLON",
+    "originalId": "0841300601"
+  },
+  {
+    "id": "0550100101&QUILLOTA",
+    "name": "QUILLOTA",
+    "originalId": "0550100101"
+  },
+  {
+    "id": "0510600102&QUILPUE",
+    "name": "QUILPUE",
+    "originalId": "0510600102"
+  },
+  {
+    "id": "0740203304&QUINAMAVIDA",
+    "name": "QUINAMAVIDA",
+    "originalId": "0740203304"
+  },
+  {
+    "id": "1312600101&QUINTA NORMAL",
+    "name": "QUINTA NORMAL",
+    "originalId": "1312600101"
+  },
+  {
+    "id": "0611400709&QUINTA TILCOCO",
+    "name": "QUINTA TILCOCO",
+    "originalId": "0611400709"
+  },
+  {
+    "id": "0510700202&QUINTERO",
+    "name": "QUINTERO",
+    "originalId": "0510700202"
+  },
+  {
+    "id": "0841401201&QUIRIHUE",
+    "name": "QUIRIHUE",
+    "originalId": "0841401201"
+  },
+  {
+    "id": "0840903801&QUIRIQUINA",
+    "name": "QUIRIQUINA",
+    "originalId": "0840903801"
+  },
+  {
+    "id": "0220100202&RADOMIRO TOMIC",
+    "name": "RADOMIRO TOMIC",
+    "originalId": "0220100202"
+  },
+  {
+    "id": "1030100311&RAHUE UNO",
+    "name": "RAHUE UNO",
+    "originalId": "1030100311"
+  },
+  {
+    "id": "0610100101&RANCAGUA",
+    "name": "RANCAGUA",
+    "originalId": "0610100101"
+  },
+  {
+    "id": "0730500515&RAUCO",
+    "name": "RAUCO",
+    "originalId": "0730500515"
+  },
+  {
+    "id": "1312700101&RECOLETA",
+    "name": "RECOLETA",
+    "originalId": "1312700101"
+  },
+  {
+    "id": "0510300301&RENACA ALTO",
+    "name": "RENACA ALTO",
+    "originalId": "0510300301"
+  },
+  {
+    "id": "0830506003&RENAICO",
+    "name": "RENAICO",
+    "originalId": "0830506003"
+  },
+  {
+    "id": "1312800101&RENCA",
+    "name": "RENCA",
+    "originalId": "1312800101"
+  },
+  {
+    "id": "0611500501&RENGO",
+    "name": "RENGO",
+    "originalId": "0611500501"
+  },
+  {
+    "id": "0611600505&REQUINOA",
+    "name": "REQUINOA",
+    "originalId": "0611600505"
+  },
+  {
+    "id": "0740500602&RETIRO",
+    "name": "RETIRO",
+    "originalId": "0740500602"
+  },
+  {
+    "id": "0530300401&RINCONADA",
+    "name": "RINCONADA",
+    "originalId": "0530300401"
+  },
+  {
+    "id": "1051200301&RIO BUENO",
+    "name": "RIO BUENO",
+    "originalId": "1051200301"
+  },
+  {
+    "id": "1030500409&RIO NEGRO",
+    "name": "RIO NEGRO",
+    "originalId": "1030500409"
+  },
+  {
+    "id": "0730600601&ROMERAL",
+    "name": "ROMERAL",
+    "originalId": "0730600601"
+  },
+  {
+    "id": "0611503101&ROSARIO",
+    "name": "ROSARIO",
+    "originalId": "0611503101"
+  },
+  {
+    "id": "0420400102&SALAMANCA",
+    "name": "SALAMANCA",
+    "originalId": "0420400102"
+  },
+  {
+    "id": "0560100401&SAN ANTONIO",
+    "name": "SAN ANTONIO",
+    "originalId": "0560100401"
+  },
+  {
+    "id": "1340100101&SAN BERNARDO",
+    "name": "SAN BERNARDO",
+    "originalId": "1340100101"
+  },
+  {
+    "id": "0841601001&SAN CARLOS",
+    "name": "SAN CARLOS",
+    "originalId": "0841601001"
+  },
+  {
+    "id": "0710900511&SAN CLEMENTE",
+    "name": "SAN CLEMENTE",
+    "originalId": "0710900511"
+  },
+  {
+    "id": "0530400401&SAN ESTEBAN",
+    "name": "SAN ESTEBAN",
+    "originalId": "0530400401"
+  },
+  {
+    "id": "0841701901&SAN FABIAN DE ALICO",
+    "name": "SAN FABIAN DE ALICO",
+    "originalId": "0841701901"
+  },
+  {
+    "id": "0570100201&SAN FELIPE",
+    "name": "SAN FELIPE",
+    "originalId": "0570100201"
+  },
+  {
+    "id": "0630100203&SAN FERNANDO",
+    "name": "SAN FERNANDO",
+    "originalId": "0630100203"
+  },
+  {
+    "id": "0611000701&SAN FRANCISCO DE MOSTAZAL",
+    "name": "SAN FRANCISCO DE MOSTAZAL",
+    "originalId": "0611000701"
+  },
+  {
+    "id": "0841800802&SAN IGNACIO",
+    "name": "SAN IGNACIO",
+    "originalId": "0841800802"
+  },
+  {
+    "id": "0740600101&SAN JAVIER",
+    "name": "SAN JAVIER",
+    "originalId": "0740600101"
+  },
+  {
+    "id": "1312900101&SAN JOAQUIN",
+    "name": "SAN JOAQUIN",
+    "originalId": "1312900101"
+  },
+  {
+    "id": "1050901901&SAN JOSE DE LA MARIQUINA",
+    "name": "SAN JOSE DE LA MARIQUINA",
+    "originalId": "1050901901"
+  },
+  {
+    "id": "1320300505&SAN JOSE DE MAIPO",
+    "name": "SAN JOSE DE MAIPO",
+    "originalId": "1320300505"
+  },
+  {
+    "id": "1313000101&SAN MIGUEL",
+    "name": "SAN MIGUEL",
+    "originalId": "1313000101"
+  },
+  {
+    "id": "0841901701&SAN NICOLAS",
+    "name": "SAN NICOLAS",
+    "originalId": "0841901701"
+  },
+  {
+    "id": "1030700201&SAN PABLO",
+    "name": "SAN PABLO",
+    "originalId": "1030700201"
+  },
+  {
+    "id": "0810100609&SAN PEDRO",
+    "name": "SAN PEDRO",
+    "originalId": "0810100609"
+  },
+  {
+    "id": "0220300317&SAN PEDRO DE ATACAMA",
+    "name": "SAN PEDRO DE ATACAMA",
+    "originalId": "0220300317"
+  },
+  {
+    "id": "0711000914&SAN RAFAEL",
+    "name": "SAN RAFAEL",
+    "originalId": "0711000914"
+  },
+  {
+    "id": "1313100101&SAN RAMON",
+    "name": "SAN RAMON",
+    "originalId": "1313100101"
+  },
+  {
+    "id": "0831000602&SAN ROSENDO",
+    "name": "SAN ROSENDO",
+    "originalId": "0831000602"
+  },
+  {
+    "id": "0560300402&SAN SEBASTIAN",
+    "name": "SAN SEBASTIAN",
+    "originalId": "0560300402"
+  },
+  {
+    "id": "0830402202&SAN VICENTE",
+    "name": "SAN VICENTE",
+    "originalId": "0830402202"
+  },
+  {
+    "id": "0611700403&SAN VICENTE T T",
+    "name": "SAN VICENTE T T",
+    "originalId": "0611700403"
+  },
+  {
+    "id": "0831100401&SANTA BARBARA",
+    "name": "SANTA BARBARA",
+    "originalId": "0831100401"
+  },
+  {
+    "id": "0631000601&SANTA CRUZ",
+    "name": "SANTA CRUZ",
+    "originalId": "0631000601"
+  },
+  {
+    "id": "0570600207&SANTA MARIA",
+    "name": "SANTA MARIA",
+    "originalId": "0570600207"
+  },
+  {
+    "id": "1330102302&SANTA MARIA",
+    "name": "SANTA MARIA",
+    "originalId": "1330102302"
+  },
+  {
+    "id": "0560600801&SANTO DOMINGO",
+    "name": "SANTO DOMINGO",
+    "originalId": "0560600801"
+  },
+  {
+    "id": "0210300610&SIERRA GORDA",
+    "name": "SIERRA GORDA",
+    "originalId": "0210300610"
+  },
+  {
+    "id": "1360100601&TALAGANTE",
+    "name": "TALAGANTE",
+    "originalId": "1360100601"
+  },
+  {
+    "id": "0710100101&TALCA",
+    "name": "TALCA",
+    "originalId": "0710100101"
+  },
+  {
+    "id": "0811000102&TALCAHUANO",
+    "name": "TALCAHUANO",
+    "originalId": "0811000102"
+  },
+  {
+    "id": "0910100102&TEMUCO",
+    "name": "TEMUCO",
+    "originalId": "0910100102"
+  },
+  {
+    "id": "0730800801&TENO",
+    "name": "TENO",
+    "originalId": "0730800801"
+  },
+  {
+    "id": "0310300407&TIERRA AMARILLA",
+    "name": "TIERRA AMARILLA",
+    "originalId": "0310300407"
+  },
+  {
+    "id": "0410400115&TIERRAS BLANCAS",
+    "name": "TIERRAS BLANCAS",
+    "originalId": "0410400115"
+  },
+  {
+    "id": "0920902101&TIJERAL",
+    "name": "TIJERAL",
+    "originalId": "0920902101"
+  },
+  {
+    "id": "1330300327&TIL TIL",
+    "name": "TIL TIL",
+    "originalId": "1330300327"
+  },
+  {
+    "id": "0230100101&TOCOPILLA",
+    "name": "TOCOPILLA",
+    "originalId": "0230100101"
+  },
+  {
+    "id": "0911800902&TOLTEN",
+    "name": "TOLTEN",
+    "originalId": "0911800902"
+  },
+  {
+    "id": "0811100401&TOME",
+    "name": "TOME",
+    "originalId": "0811100401"
+  },
+  {
+    "id": "0410202702&TONGOY",
+    "name": "TONGOY",
+    "originalId": "0410202702"
+  },
+  {
+    "id": "0921000101&TRAIGUEN",
+    "name": "TRAIGUEN",
+    "originalId": "0921000101"
+  },
+  {
+    "id": "0842003501&TREGUACO",
+    "name": "TREGUACO",
+    "originalId": "0842003501"
+  },
+  {
+    "id": "0831200401&TUCAPEL",
+    "name": "TUCAPEL",
+    "originalId": "0831200401"
+  },
+  {
+    "id": "1050100101&VALDIVIA",
+    "name": "VALDIVIA",
+    "originalId": "1050100101"
+  },
+  {
+    "id": "0330100101&VALLENAR",
+    "name": "VALLENAR",
+    "originalId": "0330100101"
+  },
+  {
+    "id": "0510100102&VALPARAISO",
+    "name": "VALPARAISO",
+    "originalId": "0510100102"
+  },
+  {
+    "id": "0510501602&VENTANAS",
+    "name": "VENTANAS",
+    "originalId": "0510501602"
+  },
+  {
+    "id": "0921100101&VICTORIA",
+    "name": "VICTORIA",
+    "originalId": "0921100101"
+  },
+  {
+    "id": "0410601001&VICUÑA",
+    "name": "VICUÑA",
+    "originalId": "0410601001"
+  },
+  {
+    "id": "0911900801&VILCUN",
+    "name": "VILCUN",
+    "originalId": "0911900801"
+  },
+  {
+    "id": "0740700801&VILLA ALEGRE",
+    "name": "VILLA ALEGRE",
+    "originalId": "0740700801"
+  },
+  {
+    "id": "0510800102&VILLA ALEMANA",
+    "name": "VILLA ALEMANA",
+    "originalId": "0510800102"
+  },
+  {
+    "id": "0912000201&VILLARRICA",
+    "name": "VILLARRICA",
+    "originalId": "0912000201"
+  },
+  {
+    "id": "0510900101&VIÑA DEL MAR",
+    "name": "VIÑA DEL MAR",
+    "originalId": "0510900101"
+  },
+  {
+    "id": "1313200101&VITACURA",
+    "name": "VITACURA",
+    "originalId": "1313200101"
+  },
+  {
+    "id": "0740800305&YERBAS BUENAS",
+    "name": "YERBAS BUENAS",
+    "originalId": "0740800305"
+  },
+  {
+    "id": "0831301301&YUMBEL",
+    "name": "YUMBEL",
+    "originalId": "0831301301"
+  },
+  {
+    "id": "0842100801&YUNGAY",
+    "name": "YUNGAY",
+    "originalId": "0842100801"
+  },
+  {
+    "id": "0540402402&ZAPALLAR",
+    "name": "ZAPALLAR",
+    "originalId": "0540402402"
+  }
+]

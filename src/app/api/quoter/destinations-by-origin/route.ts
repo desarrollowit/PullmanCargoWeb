@@ -1,23 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { promises as fs } from 'fs'
+import path from 'path'
 
 export async function POST(request: NextRequest) {
     try {
-        const body = await request.json()
+        // We evaluate the body just to act as the same API format
+        await request.json()
 
-        const response = await fetch('https://www.pullmango.cl/api/destinos-cotizador-atlas', {
-            method: 'POST',
-            headers: {
-                'accept': 'application/json, text/plain, */*',
-                'content-type': 'application/json;charset=UTF-8',
-            },
-            body: JSON.stringify(body),
-        })
+        const filePath = path.join(process.cwd(), 'public', 'data', 'locations.json')
+        const fileContents = await fs.readFile(filePath, 'utf8')
+        const data = JSON.parse(fileContents)
 
-        if (!response.ok) {
-            throw new Error(`API responded with status: ${response.status}`)
-        }
-
-        const data = await response.json()
         return NextResponse.json(data)
     } catch (error) {
         console.error('Error fetching destinations by origin:', error)

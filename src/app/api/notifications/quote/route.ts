@@ -16,16 +16,19 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Mail service unavailable' }, { status: 500 })
         }
 
-        const msg = {
-            to: formData.email,
-            from: process.env.NEXT_PUBLIC_EMAIL_FROM || 'contacto@pullmancargo.cl',
-            subject: `Nueva Cotización: ${formData.origen} -> ${formData.destino}`,
-            html: `
+        if (!formData.email) {
+            return NextResponse.json({ error: 'Email address is required' }, { status: 400 })
+        }
+
+        const emailFrom = process.env.NEXT_PUBLIC_EMAIL_FROM || 'contacto@pullmancargo.cl'
+        const emailTo = process.env.NEXT_PUBLIC_EMAIL_TO
+
+        const htmlBody = `
                 <div style="font-family: 'Outfit', Arial, sans-serif; padding: 40px; background-color: #f8f9fa;">
-                    <div style="max-width: 600px; margin: 0 auto; bg-color: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e9ecef;">
+                    <div style="max-width: 600px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e9ecef;">
                         <div style="background-color: #003fa2; padding: 30px; text-align: center;">
                             <img src="https://www.pullmancargo.cl/brand/LOGO%20CARGO.png" alt="Pullman Cargo" style="height: 60px; width: auto; margin-bottom: 20px;">
-                            <h1 style="color: #ffffff; margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 2px;">Nueva Cotización</h1>
+                            <h1 style="color: #ffffff; margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 2px;">COTIZACION PULLMAN</h1>
                         </div>
                         <div style="padding: 40px; background-color: #ffffff;">
                             <div style="margin-bottom: 30px;">
@@ -59,12 +62,27 @@ export async function POST(request: NextRequest) {
                         </div>
                     </div>
                 </div>
-            `,
-        }
+            `
 
-        console.log('Sending email with SendGrid to admin and client...', { to: msg.to, from: msg.from, subject: msg.subject })
-        const response = await sgMail.send(msg)
-        console.log('SendGrid Response Status:', response[0].statusCode)
+        // 1. Send to client
+        console.log('Sending email to client:', formData.email)
+        await sgMail.send({
+            to: formData.email,
+            from: emailFrom,
+            subject: `Cotización Pullman Cargo: ${formData.origen} → ${formData.destino}`,
+            html: htmlBody,
+        })
+
+        // 2. Send internal copy to team if EMAIL_TO is configured
+        if (emailTo && emailTo !== formData.email) {
+            console.log('Sending internal copy to:', emailTo)
+            await sgMail.send({
+                to: emailTo,
+                from: emailFrom,
+                subject: `[Copia Interna] Cotización: ${formData.origen} → ${formData.destino} | ${formData.email}`,
+                html: htmlBody,
+            })
+        }
 
         return NextResponse.json({ success: true, message: 'Email sent successfully' })
     } catch (error: any) {
