@@ -463,7 +463,7 @@ export function QuoterSection() {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <Label htmlFor="phone" className="text-sm font-bold uppercase text-gray-500">Teléfono</Label>
+                                            <Label htmlFor="phone" className="text-sm font-bold uppercase text-gray-500">Teléfono (Opcional)</Label>
                                             <div className="relative">
                                                 <Phone className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
                                                 <Input
