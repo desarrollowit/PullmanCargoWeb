@@ -113,6 +113,12 @@ export function QuoterSection() {
     const [activeTab, setActiveTab] = useState("personas")
     const [serviceType, setServiceType] = useState("CGR") // "CGR", "ENC", "EXP"
 
+    // State for manual email prompt
+    const [sendingEmail, setSendingEmail] = useState(false)
+    const [emailSuccess, setEmailSuccess] = useState(false)
+    const [showEmailInput, setShowEmailInput] = useState(false)
+    const [manualEmail, setManualEmail] = useState("")
+
     // Load origins on mount
     useEffect(() => {
         loadOrigins()
@@ -217,28 +223,8 @@ export function QuoterSection() {
                 }
             }, 100);
 
-            // Trigger Email Notification only if email is provided
-            if (formData.email) {
-                try {
-                    await fetch('/api/notifications/quote', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            formData: {
-                                ...formData,
-                                origen: origins.find(o => o.id === selectedOrigin)?.name,
-                                destino: destinations.find(d => d.id === selectedDestination)?.name,
-                                servicio: serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express",
-                                formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "PED" ? "Pago en Destino" : "Cuenta Corriente",
-                                lugarEntrega: lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal",
-                            },
-                            result: response
-                        })
-                    })
-                } catch (emailErr) {
-                    console.error("Failed to trigger email notification:", emailErr)
-                }
-            }
+            // We no longer automatically trigger the email here. 
+            // It is handled manually by the 'Enviar por Correo' button.
         } catch (err: any) {
             console.error("Error calculating quote:", err)
             setError(err.message || "No se pudo calcular la cotización")
@@ -251,12 +237,56 @@ export function QuoterSection() {
         setFormData(prev => ({ ...prev, [field]: value }))
         // Clear result when form changes to force re-calculation and prevent stale/blank prints
         if (result) setResult(null)
+        // Reset email prompt state
+        setShowEmailInput(false)
+        setManualEmail("")
     }
 
     // Clear result when key selections change
     useEffect(() => {
         if (result) setResult(null)
+        setShowEmailInput(false)
+        setManualEmail("")
     }, [selectedOrigin, selectedDestination, lugarEntrega, formaPago, serviceType])
+
+    const handleSendEmail = async (emailToUse: string) => {
+        if (!result) return
+        
+        try {
+            setSendingEmail(true)
+            await fetch('/api/notifications/quote', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    formData: {
+                        ...formData,
+                        email: emailToUse,
+                        origen: origins.find(o => o.id === selectedOrigin)?.name,
+                        destino: destinations.find(d => d.id === selectedDestination)?.name,
+                        servicio: serviceType === "CGR" ? "Carga" : serviceType === "ENC" ? "Encomienda" : "Express",
+                        formaPago: formaPago === "EFE" ? "Pago en Origen" : formaPago === "PED" ? "Pago en Destino" : "Cuenta Corriente",
+                        lugarEntrega: lugarEntrega === "domicilio" ? "Domicilio" : "Sucursal",
+                    },
+                    result: result
+                })
+            })
+            setEmailSuccess(true)
+            setShowEmailInput(false)
+            setTimeout(() => setEmailSuccess(false), 3000)
+        } catch (emailErr) {
+            console.error("Failed to trigger email notification:", emailErr)
+        } finally {
+            setSendingEmail(false)
+        }
+    }
+
+    const onEmailClick = () => {
+        if (formData.email) {
+            handleSendEmail(formData.email)
+        } else {
+            setShowEmailInput(true)
+        }
+    }
 
     return (
         <section id="cotizador" className="w-full py-24 bg-background border-t border-gray-100">
@@ -569,15 +599,52 @@ export function QuoterSection() {
                                                     </p>
                                                 </div>
 
-                                                <div className="pt-4 no-print text-center">
+                                                <div className="pt-4 no-print flex flex-col gap-3">
                                                     <Button
                                                         variant="default"
-                                                        className="w-full h-14 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 text-lg"
+                                                        className="w-full h-12 bg-gray-900 text-white hover:bg-gray-800 font-bold uppercase rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
                                                         onClick={() => window.print()}
                                                     >
-                                                        <Printer className="w-6 h-6" />
+                                                        <Printer className="w-5 h-5" />
                                                         Imprimir Cotización
                                                     </Button>
+                                                    
+                                                    {showEmailInput ? (
+                                                        <div className="flex gap-2 items-center slide-in-top">
+                                                            <Input 
+                                                                type="email" 
+                                                                placeholder="Ingresa tu correo..." 
+                                                                value={manualEmail} 
+                                                                onChange={(e) => setManualEmail(e.target.value)}
+                                                                className="h-12 border-gray-300 rounded-xl"
+                                                            />
+                                                            <Button 
+                                                                onClick={() => {
+                                                                    if (manualEmail) handleSendEmail(manualEmail)
+                                                                }}
+                                                                disabled={!manualEmail || sendingEmail}
+                                                                className="h-12 px-6 bg-primary hover:bg-secondary text-white rounded-xl"
+                                                            >
+                                                                {sendingEmail ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowRight className="w-4 h-4" />}
+                                                            </Button>
+                                                        </div>
+                                                    ) : (
+                                                        <Button
+                                                            variant="default"
+                                                            className="w-full h-12 bg-primary text-white hover:bg-secondary font-bold uppercase rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                                                            onClick={onEmailClick}
+                                                            disabled={sendingEmail || emailSuccess}
+                                                        >
+                                                            {sendingEmail ? (
+                                                                <Loader2 className="w-5 h-5 animate-spin" />
+                                                            ) : emailSuccess ? (
+                                                                <CheckCircle2 className="w-5 h-5" />
+                                                            ) : (
+                                                                <Mail className="w-5 h-5" />
+                                                            )}
+                                                            {emailSuccess ? "Correo Enviado" : "Enviar por Correo"}
+                                                        </Button>
+                                                    )}
                                                 </div>
                                             </div>
                                         ) : (
