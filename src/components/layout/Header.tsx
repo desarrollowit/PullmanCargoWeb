@@ -97,9 +97,13 @@ export function Header() {
                   // Handle smooth scroll for anchor links on the same page
                   if (link.href.startsWith('#')) {
                     e.preventDefault();
-                    const element = document.querySelector(link.href);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (pathname !== "/") {
+                      router.push(`/${link.href}`);
+                    } else {
+                      const element = document.querySelector(link.href);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
                     }
                   }
                 }}
@@ -152,11 +156,15 @@ export function Header() {
               {!isEmpresas && (
                 <Button
                   onClick={() => {
-                    const element = document.querySelector('#cotizador');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                      // Add hash if needed or just let it scroll
-                      window.location.hash = 'cotizador';
+                    if (pathname !== "/") {
+                      router.push("/#cotizador");
+                    } else {
+                      const element = document.querySelector('#cotizador');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        // Add hash if needed or just let it scroll
+                        window.location.hash = 'cotizador';
+                      }
                     }
                   }}
                   className="bg-primary hover:bg-secondary text-white font-bold rounded-2xl px-3 lg:px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-[10px] lg:text-sm h-9 lg:h-11 cursor-pointer"
@@ -249,9 +257,13 @@ export function Header() {
                               // Handle smooth scroll for anchor links on the same page
                               if (link.href.startsWith('#')) {
                                 e.preventDefault();
-                                const element = document.querySelector(link.href);
-                                if (element) {
-                                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                if (pathname !== "/") {
+                                  router.push(`/${link.href}`);
+                                } else {
+                                  const element = document.querySelector(link.href);
+                                  if (element) {
+                                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                  }
                                 }
                               }
                             }}
@@ -271,7 +283,13 @@ export function Header() {
                     <div className="px-8 pb-4 space-y-3">
                       <SheetClose asChild>
                         <Button
-                          onClick={() => document.getElementById('cotizador')?.scrollIntoView({ behavior: 'smooth' })}
+                          onClick={() => {
+                            if (pathname !== "/") {
+                              router.push("/#cotizador");
+                            } else {
+                              document.getElementById('cotizador')?.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }}
                           className="w-full bg-primary hover:bg-secondary text-white font-bold h-12 text-lg shadow-lg hover:shadow-primary/20 rounded-2xl transition-all duration-300 transform hover:-translate-y-1"
                         >
                           Cotizar Ahora
