@@ -184,10 +184,13 @@ class QuoterAPIService {
             if (data && Array.isArray(data.agencia)) {
                 return data.agencia.map((item: any) => {
                     // Sanitize coordinates because API returns them in weird formats like 70-62171 or -26,34566
-                    let lat = item.latitud ? item.latitud.toString().replace(',', '.') : ''
-                    let lng = item.longitud ? item.longitud.toString().replace(',', '.').replace('-', '.') : ''
+                    let lat = item.latitud ? item.latitud.toString().replace(',', '.').replace(/(?!^)-/g, '.') : ''
+                    let lng = item.longitud ? item.longitud.toString().replace(',', '.').replace(/(?!^)-/g, '.') : ''
                     
-                    // Force longitude to be negative for Chile if it's positive
+                    // Force latitude and longitude to be negative for Chile if they are positive
+                    if (lat && !lat.startsWith('-') && lat !== '0') {
+                        lat = `-${lat}`
+                    }
                     if (lng && !lng.startsWith('-') && lng !== '0') {
                         lng = `-${lng}`
                     }
