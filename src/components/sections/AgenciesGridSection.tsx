@@ -195,9 +195,16 @@ export function AgenciesGridSection() {
                                     const lat = isDynamic ? (agency as DynamicAgency).latitud : null
                                     const lng = isDynamic ? (agency as DynamicAgency).longitud : null
                                     
-                                    const mapLink = (lat && lng && lat !== '0' && lng !== '0') 
+                                    const regionName = isDynamic ? selectedRegion : (agency as Agency).region
+                                    
+                                    const safeString = (str: string) => str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : ""
+                                    const cleanAddress = safeString(address)
+                                    const cleanCommune = safeString(commune)
+                                    const cleanRegion = safeString(regionName)
+                                    
+                                    const mapLink = (lat && lng && lat !== '0' && lng !== '0' && !lat.startsWith('0.') && !lng.startsWith('0.')) 
                                         ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`
-                                        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${address}, ${commune}, Chile`)}`
+                                        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${cleanAddress}, ${cleanCommune}, Region ${cleanRegion}, Chile`)}`
 
                                     return (
                                         <ScrollReveal key={`${selectedRegion}-${currentPage}-${index}`} animation="fade-in" delay={index * 50}>
