@@ -28,16 +28,14 @@ export async function GET(request: NextRequest) {
         clearTimeout(timeoutId)
 
         if (!response.ok) {
-            throw new Error(`API responded with status: ${response.status}`)
+            console.warn(`Upstream API failed for agencies (${response.status}). Graceful fallback enabled.`);
+            return NextResponse.json({ agencia: [] }, { status: 200 })
         }
 
         const data = await response.json()
         return NextResponse.json(data)
     } catch (error) {
-        console.error(`Error fetching agencies for region ${idRegion}:`, error)
-        return NextResponse.json(
-            { error: 'Failed to fetch agencies' },
-            { status: 500 }
-        )
+        console.warn(`Error fetching agencies for region ${idRegion}. Graceful fallback enabled:`, error)
+        return NextResponse.json({ agencia: [] }, { status: 200 })
     }
 }
