@@ -146,12 +146,44 @@ function TrackingContent() {
         }
     }
 
+    const [localOdt, setLocalOdt] = useState("")
+
     if (!odt) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center gap-6">
-                <Search className="w-16 h-16 text-gray-200" />
-                <h2 className="text-2xl font-bold text-gray-900">Ingresa un número de seguimiento</h2>
-                <Button onClick={() => router.push("/")} className="bg-primary text-white rounded-2xl">Volver al Inicio</Button>
+            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center gap-6 px-4">
+                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center shadow-inner">
+                    <Search className="w-10 h-10 text-primary" />
+                </div>
+                <div className="space-y-2">
+                    <h2 className="text-2xl font-black text-secondary tracking-tight">Rastrea tu envío</h2>
+                    <p className="text-gray-500 text-sm">Ingresa el número de orden de transporte (ODT)</p>
+                </div>
+                <form 
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        if (localOdt.trim()) router.push(`/seguimiento?odt=${localOdt.trim()}`)
+                    }}
+                    className="w-full max-w-sm relative mt-2"
+                >
+                    <input
+                        type="text"
+                        value={localOdt}
+                        onChange={(e) => setLocalOdt(e.target.value)}
+                        placeholder="INGRESE ODT"
+                        className="w-full bg-white border-2 border-primary/20 rounded-2xl h-14 pl-6 pr-14 focus:border-primary font-bold text-base tracking-widest placeholder:text-gray-400 text-secondary outline-none uppercase shadow-sm transition-all"
+                        autoComplete="off"
+                    />
+                    <button
+                        type="submit"
+                        disabled={!localOdt.trim()}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-secondary rounded-xl flex items-center justify-center shadow-md active:scale-95 transition-all text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <Search className="w-5 h-5" />
+                    </button>
+                </form>
+                <Button onClick={() => router.push("/")} variant="ghost" className="text-gray-400 hover:text-primary mt-4 rounded-xl text-xs font-bold uppercase tracking-widest">
+                    Volver al Inicio
+                </Button>
             </div>
         )
     }

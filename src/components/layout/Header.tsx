@@ -11,7 +11,8 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose
+  SheetClose,
+  SheetTitle
 } from "@/components/ui/sheet"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
@@ -194,6 +195,7 @@ export function Header() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l border-white/20 bg-white/90 backdrop-blur-xl p-0 shadow-2xl">
+                  <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
                   {/* Decorative Background Elements */}
                   <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-[#003fa2]/10 rounded-full blur-3xl pointer-events-none" />
                   <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
